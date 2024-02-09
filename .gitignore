@@ -1,0 +1,65 @@
+# Ignore almost all of the app directory
+app/*
+!app/wp-content/
+app/wp-content/*
+!app/wp-content/mu-plugins/
+app/wp-content/mu-plugins/*
+!app/wp-content/plugins/
+app/wp-content/plugins/*
+!app/wp-content/uploads/
+app/wp-content/uploads/*
+!app/wp-content/themes/
+app/wp-content/themes/*
+
+# Custom Plugins
+# !app/wp-content/plugins/custom-plugin
+
+# Custom Themes
+!app/wp-content/themes/nsc
+app/wp-content/themes/nsc/node_modules
+
+# Favicons
+!app/android-chrome-192x192.png
+!app/android-chrome-512x512.png
+!app/apple-touch-icon.png
+!app/browserconfig.xml
+!app/favicon-16x16.png
+!app/favicon-32x32.png
+!app/favicon.ico
+!app/mstile-150x150.png
+!app/safari-pinned-tab.svg
+!app/site.webmanifest
+
+# Ignore specific files
+.env
+NOTES.md
+*~
+/.idea
+/.nova
+.env
+.htaccess
+.well-known
+.DS_Store*
+._*
+.Trashes
+ehthumbs.db
+Thumbs.db
+*.log
+*.sql
+*.sqlite
+*.com
+*.class
+*.dll
+*.exe
+*.o
+*.so
+*.swp
+*.swo
+*.7z
+*.dmg
+*.gz
+*.iso
+*.jar
+*.rar
+*.tar
+*.zip
