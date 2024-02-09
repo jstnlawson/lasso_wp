@@ -1,0 +1,69 @@
+version: '3'
+
+name: ${COMPOSE_PROJECT_NAME}
+
+services:
+  mysql:
+    container_name: ${COMPOSE_PROJECT_NAME}.database
+    image: ${COMPOSE_DB_IMAGE}
+    restart: always
+    platform: ${COMPOSE_DB_PLATFORM}
+    ports:
+      - 4000:3306
+    environment:
+      MYSQL_RANDOM_ROOT_PASSWORD: '1'
+      MYSQL_DATABASE: '${COMPOSE_DB_NAME}'
+      MYSQL_USER: '${COMPOSE_DB_USER}'
+      MYSQL_PASSWORD: '${COMPOSE_DB_PASS}'
+    volumes:
+      - db_data:/var/lib/mysql
+    networks:
+      - default
+
+  wordpress:
+    container_name: ${COMPOSE_PROJECT_NAME}.wordpress
+    depends_on:
+      - mysql
+    image: ${COMPOSE_WP_IMAGE}
+    restart: always
+    ports:
+      - 9000:80
+    environment:
+      WORDPRESS_DB_HOST: mysql
+      WORDPRESS_DB_USER: '${COMPOSE_DB_USER}'
+      WORDPRESS_DB_PASSWORD: '${COMPOSE_DB_PASS}'
+      WORDPRESS_DB_NAME: '${COMPOSE_DB_NAME}'
+      WORDPRESS_DEBUG: 1
+      WORDPRESS_CONFIG_EXTRA: |
+        define('DISALLOW_FILE_EDIT', true);
+        define('WP_POST_REVISIONS', 3 );
+    volumes:
+      - ./app:/var/www/html
+    networks:
+      - default
+
+  wpcli:
+    container_name: ${COMPOSE_PROJECT_NAME}.wpcli
+    depends_on:
+      - wordpress
+      - mysql
+    image: wordpress:cli
+    command: tail -f /dev/null
+    environment:
+      WORDPRESS_DB_HOST: mysql
+      WORDPRESS_DB_USER: '${COMPOSE_DB_USER}'
+      WORDPRESS_DB_PASSWORD: '${COMPOSE_DB_PASS}'
+      WORDPRESS_DB_NAME: '${COMPOSE_DB_NAME}'
+    volumes:
+      - ./app:/var/www/html
+    networks:
+      - default
+
+volumes:
+  wordpress:
+  db_data:
+
+networks:
+  default:
+    driver: bridge
+    name: ${COMPOSE_PROJECT_NAME}.network
