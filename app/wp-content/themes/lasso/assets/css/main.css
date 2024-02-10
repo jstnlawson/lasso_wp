@@ -1,49 +1,145 @@
 body {
     font-family: 'Open Sans', sans-serif;
+    color: #333;
     margin: 0;
     padding: 0;
 }
 
-body, h1, p, ul, li {
+body, h1, p, ul, li, a {
     margin: 0;
     padding: 0;
+    list-style-type: none;
+    text-decoration: none;
+    color: inherit;
 }
 
+/* nav a {
+    text-decoration: none;
+    color: inherit; 
+} */
 
-.lasso-header {
-    position: fixed;
-    background: linear-gradient(to bottom, white, #f5e5e5);  
-    width: 100%;
-    height: 10vh;
-}
-
-.lasso-header__spacer {
-    
-    width: 100%;
-    height: 10vh;
-    background: linear-gradient(to bottom, white, #f5e5e5);  
-}
-
-.lasso-main {
+.gradient-gradient {
     display: grid;
     background: linear-gradient(to bottom, #f5e5e5, #b85954);
     padding: 20px;
 }
 
-.lasso-section {
+/*----------------------------------------------------------------------------------
+    Header
+-----------------------------------------------------------------------------------*/
+
+.gradient-header {
+    position: fixed;
+    /* top: 0;
+    left: 0; */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    background: linear-gradient(to bottom, white, #f5e5e5);  
+    width: 100%;
+    height: 15vh;
+    padding: 3vh 0 0 0;
+    box-sizing: border-box; /* Ensures padding is included in height calculation */
+}
+
+.gradient-header__spacer {
+    
+    width: 100%;
+    height: 15vh;
+    background: linear-gradient(to bottom, white, #f5e5e5); 
+    background-color: transparent; 
+}
+
+.gradient-header__title {
+    text-align: center;
+    display: flex;
+    align-items: center; /* Centers title vertically */
+    justify-content: center; /* Centers title horizontally */
+    font-family: cursive;
+    font-size: 2rem;
+    letter-spacing: 3px;
+    height: 7vh;
+    margin-bottom: 2vh;
+}
+
+/* .gradient-nav {
+    width: 100%;  
+      
+} */
+
+.gradient-nav nav ul {
+    padding: 0;
+    margin: 0;
+    list-style-type: none;
+    display: flex;
+    justify-content: center; /* Center nav items horizontally */
+}
+
+.gradient-nav nav ul li {
+    padding: 0 10px; /* Add horizontal spacing between nav items */
+}
+
+/*----------------------------------------------------------------------------------
+    Section
+-----------------------------------------------------------------------------------*/
+
+.gradient-section {
+    display: grid;
+    gap: 10px;
     background-color: transparent;
 }
 
-.lasso-footer {
-    position: bottom;
-    background: linear-gradient(to bottom, #b85954, #a34f4a);  
+/*----------------------------------------------------------------------------------
+    Footer
+-----------------------------------------------------------------------------------*/
+
+.gradient-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: #fefefe;
+    background-color: transparent;  
     width: 100%;
-    height: 10vh;
+    height: fit-content;
 }
 
-.style1 {
-    color: #b85954;
-    font-size: 2em;
-    font-weight: bold;
-    text-align: center;
+.gradient-footer div { 
+    padding: 0 20px;
+ }
+
+.gradient-footer__company {
+    display: flex;
+    align-items: baseline;
+    justify-content: center;
+    background-color: transparent;
+}
+
+.gradient-footer__company--logo {
+    font-family: cursive;
+    font-size: 4rem;
+    background-color: transparent;
+    margin-right: 10px;
+}
+
+.gradient-footer__company--est {
+    font-size: .75rem;
+    background-color: transparent;
+}
+
+.gradient-footer__contact {
+    display: flex;
+    flex-direction: column;
+    background-color: transparent;
+}
+
+.gradient-footer__contact li {
+    font-size: .75rem;
+    background-color: transparent;
+}
+
+.gradient-footer__title {
+    font-size: 1rem;
+    font-weight: 500;
+    background-color: transparent;
 }
