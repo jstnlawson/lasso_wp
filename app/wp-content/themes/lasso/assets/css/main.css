@@ -1,0 +1,49 @@
+body {
+    font-family: 'Open Sans', sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+body, h1, p, ul, li {
+    margin: 0;
+    padding: 0;
+}
+
+
+.lasso-header {
+    position: fixed;
+    background: linear-gradient(to bottom, white, #f5e5e5);  
+    width: 100%;
+    height: 10vh;
+}
+
+.lasso-header__spacer {
+    
+    width: 100%;
+    height: 10vh;
+    background: linear-gradient(to bottom, white, #f5e5e5);  
+}
+
+.lasso-main {
+    display: grid;
+    background: linear-gradient(to bottom, #f5e5e5, #b85954);
+    padding: 20px;
+}
+
+.lasso-section {
+    background-color: transparent;
+}
+
+.lasso-footer {
+    position: bottom;
+    background: linear-gradient(to bottom, #b85954, #a34f4a);  
+    width: 100%;
+    height: 10vh;
+}
+
+.style1 {
+    color: #b85954;
+    font-size: 2em;
+    font-weight: bold;
+    text-align: center;
+}
