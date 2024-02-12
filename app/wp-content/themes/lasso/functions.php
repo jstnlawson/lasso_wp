@@ -32,3 +32,5 @@ function gradient_theme_widgets_init() {
     ) );
 }
 add_action( 'widgets_init', 'gradient_theme_widgets_init' );
+
+

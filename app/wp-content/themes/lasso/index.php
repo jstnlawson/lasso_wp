@@ -47,8 +47,29 @@
                 </div>
                 <div class="gradient-footer__social">
                     <h4 class="gradient-footer__title">follow us</h4>
-                    <ul>
-                        <li><a href="#">facebook</a></li>
+                    <ul class="gradient-footer__social-icons__container">
+                        <li class="gradient-footer__social-icons">
+                            <?php echo file_get_contents(plugin_dir_path(__DIR__) . 'lasso/assets/images/social/facebook.svg'); ?>
+                        </li>
+                        <li class="gradient-footer__social-icons">
+                            <?php echo file_get_contents(plugin_dir_path(__DIR__) . 'lasso/assets/images/social/instagram.svg'); ?>
+                        </li>
+                        <li class="gradient-footer__social-icons">
+                            <?php echo file_get_contents(plugin_dir_path(__DIR__) . 'lasso/assets/images/social/threads.svg'); ?>
+                        </li>
+                        <li class="gradient-footer__social-icons">
+                            <?php echo file_get_contents(plugin_dir_path(__DIR__) . 'lasso/assets/images/social/x.svg'); ?>
+                        </li>
+                        <li class="gradient-footer__social-icons">
+                            <?php echo file_get_contents(plugin_dir_path(__DIR__) . 'lasso/assets/images/social/linkedin.svg'); ?>
+                        </li>
+                        <li class="gradient-footer__social-icons">
+                            <?php echo file_get_contents(plugin_dir_path(__DIR__) . 'lasso/assets/images/social/twitter.svg'); ?>
+                        </li>
+                        <li class="gradient-footer__social-icons">
+                            <?php echo file_get_contents(plugin_dir_path(__DIR__) . 'lasso/assets/images/social/youtube.svg'); ?>
+                        </li>
+                        
                     </ul>
                 </div>
 
