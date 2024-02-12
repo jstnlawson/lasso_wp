@@ -158,6 +158,7 @@ h1, h2, h3, h4, p, ul, li, a {
     /* align-items: center; */
     background-color: transparent;
     max-height: 30px;
+    gap: 10px;
 }
 
 .gradient-footer__social--icons {
@@ -174,4 +175,55 @@ h1, h2, h3, h4, p, ul, li, a {
     max-height: 100%;
     /* Or any specific size you want */
     display: block; /* This can help with sizing and prevent unwanted whitespace */
+}
+
+/*----------------------------------------------------------------------------------
+    Swiper
+-----------------------------------------------------------------------------------*/
+
+.mySwiper .swiper-button-prev,
+.mySwiper .swiper-button-next {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #fff;
+    text-align: center;
+    background: transparent;
+    width: 30px;
+    height: 30px;
+    border-radius: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.mySwiper .swiper-button-prev {
+    left: 10px;
+    z-index: 10;
+}
+
+.mySwiper .swiper-button-next {
+    right: 10px;
+    z-index: 10;
+}
+
+.mySwiper {
+    width: 100%;
+    height:70vh; /* Adjust based on your design */
+}
+
+.mySwiper .swiper-slide {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.swiper-image {
+    max-width: 900px;
+    max-height: 60vh;
+}
+
+.swiper-pagination {
+    margin-top: 20px;
 }

@@ -28,9 +28,23 @@
         <div class="gradient-header__spacer"></div>
         <div class="gradient-gradient">
             <div class="gradient-section">
-                <?php if (is_active_sidebar('gradient-carousel-section')) : ?>
-                    <?php dynamic_sidebar('gradient-carousel-section'); ?>
-                <?php endif; ?>
+                <div class="swiper mySwiper">
+                    <div class="swiper-wrapper">
+                        <?php for ($i = 1; $i <= 5; $i++) : ?>
+                            <?php $image_url = get_theme_mod("carousel_image_{$i}"); ?>
+                            <?php if ($image_url) : ?>
+                                <div class="swiper-slide">
+                                    <img class="swiper-image" src="<?php echo esc_url($image_url); ?>" alt="Carousel Image <?php echo $i; ?>">
+                                </div>
+                            <?php endif; ?>
+                        <?php endfor; ?>
+                    </div>
+                    <div class="swiper-button-prev"></div>
+                    <div class="swiper-button-next"></div>
+                    <!-- <div class="swiper-scrollbar"></div> -->
+                    <div class="swiper-pagination"></div>
+
+                </div>
             </div>
 
 
@@ -48,31 +62,19 @@
                 <div class="gradient-footer__social">
                     <h4 class="gradient-footer__title">follow us</h4>
                     <ul class="gradient-footer__social-icons__container">
-                        <li class="gradient-footer__social-icons">
-                            <?php echo file_get_contents(plugin_dir_path(__DIR__) . 'lasso/assets/images/social/facebook.svg'); ?>
-                        </li>
-                        <li class="gradient-footer__social-icons">
-                            <?php echo file_get_contents(plugin_dir_path(__DIR__) . 'lasso/assets/images/social/instagram.svg'); ?>
-                        </li>
-                        <li class="gradient-footer__social-icons">
-                            <?php echo file_get_contents(plugin_dir_path(__DIR__) . 'lasso/assets/images/social/threads.svg'); ?>
-                        </li>
-                        <li class="gradient-footer__social-icons">
-                            <?php echo file_get_contents(plugin_dir_path(__DIR__) . 'lasso/assets/images/social/x.svg'); ?>
-                        </li>
-                        <li class="gradient-footer__social-icons">
-                            <?php echo file_get_contents(plugin_dir_path(__DIR__) . 'lasso/assets/images/social/linkedin.svg'); ?>
-                        </li>
-                        <li class="gradient-footer__social-icons">
-                            <?php echo file_get_contents(plugin_dir_path(__DIR__) . 'lasso/assets/images/social/twitter.svg'); ?>
-                        </li>
-                        <li class="gradient-footer__social-icons">
-                            <?php echo file_get_contents(plugin_dir_path(__DIR__) . 'lasso/assets/images/social/youtube.svg'); ?>
-                        </li>
-                        
+                        <?php
+                        $social_sites = array('Facebook' => 'facebook', 'Twitter' => 'twitter', 'Instagram' => 'instagram'); // Map human-readable names to Dashicon slugs
+                        foreach ($social_sites as $site_name => $dashicon_slug) {
+                            $url = get_theme_mod("social_media_{$site_name}");
+                            if ($url) {
+                                echo '<li class="gradient-footer__social-icons">';
+                                echo "<a href='{$url}' target='_blank'><span class='dashicons dashicons-{$dashicon_slug}'></span></a>";
+                                echo '</li>';
+                            }
+                        }
+                        ?>
                     </ul>
                 </div>
-
             </footer>
         </div>
     </div>
