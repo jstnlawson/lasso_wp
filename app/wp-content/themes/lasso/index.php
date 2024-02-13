@@ -8,7 +8,7 @@
 </head>
 
 <body>
-    <div id="wpgt">
+    <div id="wpgt" class="wpgt">
         <div class="gradient-header">
             <header>
                 <div class="gradient-header__title">
@@ -27,14 +27,19 @@
         </div>
         <div class="gradient-header__spacer"></div>
         <div class="gradient-gradient">
-            <div class="gradient-section">
+            <div class="gradient-section__one">
                 <div class="swiper mySwiper">
                     <div class="swiper-wrapper">
+                        <div class="swiper-slide__action-call">
+                            <h1 class="swiper-slide__action-call--title">hand crafted furniture made by hand and built to last</h1>
+                            <span class="swiper-slide__action-call--sub-title">ready to order?</span>
+                            <button class="btn swiper-btn" >let's get started</button>
+                        </div>
                         <?php for ($i = 1; $i <= 5; $i++) : ?>
                             <?php $image_url = get_theme_mod("carousel_image_{$i}"); ?>
                             <?php if ($image_url) : ?>
-                                <div class="swiper-slide">
-                                    <img class="swiper-image" src="<?php echo esc_url($image_url); ?>" alt="Carousel Image <?php echo $i; ?>">
+                                <div class="swiper-slide">                            
+                                        <img class="swiper-slide__image" src="<?php echo esc_url($image_url); ?>" alt="Carousel Image <?php echo $i; ?>">                          
                                 </div>
                             <?php endif; ?>
                         <?php endfor; ?>
@@ -42,8 +47,26 @@
                     <div class="swiper-button-prev"></div>
                     <div class="swiper-button-next"></div>
                     <!-- <div class="swiper-scrollbar"></div> -->
-                    <div class="swiper-pagination"></div>
+                    <!-- <div class="swiper-pagination"></div> -->
+                </div>
+            </div>
 
+            <div class="gradient-about__teaser">
+                <div class="gradient-about__teaser--head">
+                    <div class="gradient-about__teaser--logo">l</div>
+                    <div class="gradient-about__teaser--text">
+                        <p>
+                            At Lasso, we believe in the power of hand-crafted furniture.
+                            Our pieces are made by hand and built to last. We believe in
+                            the power of hand-crafted furniture. Our pieces are made by
+                            hand and built to last. We believe in the power of
+                            hand-crafted furniture. Our pieces are made by hand and built
+                            to last.
+                        </p>
+                    </div>
+                </div>
+                <div class="gradient-about__teaser--foot">
+                    <button class="btn about-btn">learn more</button>
                 </div>
             </div>
 

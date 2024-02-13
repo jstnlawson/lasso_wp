@@ -1,11 +1,35 @@
+:root {
+    --swiper-navigation-color: #fefefe;
+    --swiper-pagination-color: #fefefe;
+    --swiper-theme-color: #fefefe;
+    --swiper-pagination-fraction-color: #fefefe;
+    --swiper-pagination-bullet-inactive: #fefefe;
+}
+
+
 body {
     font-family: 'Open Sans', sans-serif;
     color: #404040;
     margin: 0;
     padding: 0;
+
 }
 
-h1, h2, h3, h4, p, ul, li, a {
+html,
+body {
+    height: 100vh;
+    width: 100vw;
+}
+
+
+h1,
+h2,
+h3,
+h4,
+p,
+ul,
+li,
+a {
     margin: 0;
     padding: 0;
     list-style-type: none;
@@ -18,8 +42,15 @@ h1, h2, h3, h4, p, ul, li, a {
     color: inherit; 
 } */
 
+/* .wpgt {
+   height: 1000px;
+} */
+
 .gradient-gradient {
-    display: grid;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
     background: linear-gradient(to bottom, #f5e5e5, #b85954);
     /* background: linear-gradient(to bottom, #e5f5ef, #54b89c);
     background: linear-gradient(to bottom, #dffdff, #4bb0b7); */
@@ -38,30 +69,34 @@ h1, h2, h3, h4, p, ul, li, a {
     flex-direction: column;
     justify-content: space-between;
     align-items: center;
-    background: linear-gradient(to bottom, white, #f5e5e5); 
+    background: linear-gradient(to bottom, white, #f5e5e5);
     /* background: linear-gradient(to bottom, white, #e5f5ef);  
     background: linear-gradient(to bottom, white, #dffdff); */
     width: 100%;
     height: 15vh;
     padding: 3vh 0 0 0;
-    box-sizing: border-box; /* Ensures padding is included in height calculation */
+    box-sizing: border-box;
+    /* Ensures padding is included in height calculation */
+    z-index: 1000;
 }
 
 .gradient-header__spacer {
-    
+
     width: 100%;
     height: 15vh;
-    background: linear-gradient(to bottom, white, #f5e5e5); 
+    background: linear-gradient(to bottom, white, #f5e5e5);
     /* background: linear-gradient(to bottom, white, #e5f5ef);
     background: linear-gradient(to bottom, white, #dffdff); */
-    background-color: transparent; 
+    background-color: transparent;
 }
 
 .gradient-header__title {
     text-align: center;
     display: flex;
-    align-items: center; /* Centers title vertically */
-    justify-content: center; /* Centers title horizontally */
+    align-items: center;
+    /* Centers title vertically */
+    justify-content: center;
+    /* Centers title horizontally */
     font-family: cursive;
     font-size: 2rem;
     letter-spacing: 3px;
@@ -79,11 +114,13 @@ h1, h2, h3, h4, p, ul, li, a {
     margin: 0;
     list-style-type: none;
     display: flex;
-    justify-content: center; /* Center nav items horizontally */
+    justify-content: center;
+    /* Center nav items horizontally */
 }
 
 .gradient-nav nav ul li {
-    padding: 0 10px; /* Add horizontal spacing between nav items */
+    padding: 0 10px;
+    /* Add horizontal spacing between nav items */
 }
 
 /*----------------------------------------------------------------------------------
@@ -107,14 +144,14 @@ h1, h2, h3, h4, p, ul, li, a {
     justify-content: space-between;
     align-items: start;
     color: #fefefe;
-    background-color: transparent;  
+    background-color: transparent;
     width: 100%;
     height: fit-content;
 }
 
-.gradient-footer div { 
+.gradient-footer div {
     padding: 0 80px;
- }
+}
 
 .gradient-footer__company {
     display: flex;
@@ -150,7 +187,7 @@ h1, h2, h3, h4, p, ul, li, a {
     font-size: 1rem;
     font-weight: 500;
     background-color: transparent;
-    margin: 15px 0 15px 0; 
+    margin: 15px 0 15px 0;
 }
 
 .gradient-footer__social-icons__container {
@@ -174,7 +211,8 @@ h1, h2, h3, h4, p, ul, li, a {
     max-width: 100%;
     max-height: 100%;
     /* Or any specific size you want */
-    display: block; /* This can help with sizing and prevent unwanted whitespace */
+    display: block;
+    /* This can help with sizing and prevent unwanted whitespace */
 }
 
 /*----------------------------------------------------------------------------------
@@ -195,6 +233,7 @@ h1, h2, h3, h4, p, ul, li, a {
     display: flex;
     align-items: center;
     justify-content: center;
+    display: none;
 }
 
 .mySwiper .swiper-button-prev {
@@ -208,22 +247,107 @@ h1, h2, h3, h4, p, ul, li, a {
 }
 
 .mySwiper {
-    width: 100%;
-    height:70vh; /* Adjust based on your design */
+    width: 100vw;
+    height: 60vh;
+    /* Adjust based on your design */
 }
+
+
 
 .mySwiper .swiper-slide {
     display: flex;
-    justify-content: center;
+    justify-content: end;
     align-items: center;
     text-align: center;
 }
 
-.swiper-image {
-    max-width: 900px;
-    max-height: 60vh;
+
+.swiper-slide__image {
+    width: 50vw;
+    height: 40vw;
+    margin-right: 10vw;
+    -webkit-mask-image: radial-gradient(circle at center, black 55%, transparent);
+    mask-image: radial-gradient(circle at center, black 55%, transparent); 
+    /* -webkit-mask-image: linear-gradient(to right, transparent, black 25%, black 75%, transparent);
+    mask-image: linear-gradient(to right, transparent, black 25%, black 75%, transparent);  */
+    /* -webkit-mask-image: linear-gradient(to bottom, transparent, black 25%, black 75%, transparent);
+    mask-image: linear-gradient(to bottom, transparent, black 25%, black 75%, transparent);  */
 }
 
-.swiper-pagination {
-    margin-top: 20px;
+
+
+.swiper-slide__action-call {
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    align-items: start;
+    position: absolute;
+    top: 30%;
+    left: 4%;
+    text-wrap: wrap;
+    gap: 10px;
+    font-size: 2em;
+    width: 30vw;
+    height: fit-content;
+    padding: 0 20px;
+    margin-right: 5vw;
+    /* border-radius: 10px; */
+    background-color: transparent;
+}
+
+.swiper-slide__action-call--title {
+    font-size: 2.5rem;
+}
+
+.swiper-slide__action-call--sub-title {
+    font-size: 1.25rem;
+}
+
+
+/*----------------------------------------------------------------------------------
+    About Section  
+-----------------------------------------------------------------------------------*/
+
+.gradient-about__teaser {
+
+    width: 90%;
+    gap: 10px;
+    background-color: #fefefe;
+    padding: 80px 40px;
+}
+
+.gradient-about__teaser--head {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.gradient-about__teaser--logo {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+    font-family: cursive;
+    font-size: 7rem;
+    margin-right: 40px;
+}
+
+.gradient-about__teaser--text {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 30px 10px;
+    margin-bottom: 30px;
+    border-top: solid 1px #909090;
+    border-bottom: solid 1px #909090;
+    font-size: 1.25rem;
+}
+
+.gradient-about__teaser--foot {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    font-size: 1rem;
 }
