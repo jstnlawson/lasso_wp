@@ -41,21 +41,6 @@ function gradient_enqueue_swiper_assets() {
 add_action('wp_enqueue_scripts', 'gradient_enqueue_swiper_assets');
 
 
-// function gradient_theme_widgets_init()
-// {
-//     register_sidebar(array(
-//         'name'          => esc_html__('gradient Carousel Section', 'gradient'),
-//         'id'            => 'gradient-carousel-section',
-//         'description'   => esc_html__('Add widgets here.', 'gradient'),
-//         'before_widget' => '<section id="%1$s" class="widget %2$s">',
-//         'after_widget'  => '</section>',
-//         'before_title'  => '<h2 class="widget-title">',
-//         'after_title'   => '</h2>',
-//     ));
-// }
-
-// add_action('widgets_init', 'gradient_theme_widgets_init');
-
 
 function gradient_customize_register($wp_customize)
 {
@@ -85,7 +70,9 @@ function gradient_customize_register($wp_customize)
 
 add_action('customize_register', 'gradient_customize_register');
 
-function gradient_customize_register_carousel($wp_customize) {
+
+
+function register_splash_carousel($wp_customize) {
     // Add a new section for the Carousel
     $wp_customize->add_section('gradient_carousel_settings', array(
         'title'    => __('Carousel Settings', 'gradient'),
@@ -105,10 +92,43 @@ function gradient_customize_register_carousel($wp_customize) {
             'settings' => "carousel_image_{$i}",
         )));
     }
-
-    // Add settings for Carousel Text or other content as needed
-    // Repeat the process similar to the image settings above for any additional content types
 }
 
-add_action('customize_register', 'gradient_customize_register_carousel');
+add_action('customize_register', 'register_splash_carousel');
+
+
+
+function register_review_carousel($wp_customize) {
+
+    $wp_customize->add_section('gradient_review_settings', array(
+        'title'    => __('Review Settings', 'gradient'),
+        'priority' => 30,
+    ));
+
+    for ($i = 1; $i <= 5; $i++) {
+        $wp_customize->add_setting("review_text_{$i}", array(
+            'default'   => '',
+            'transport' => 'refresh',
+        ));
+
+        $wp_customize->add_control("review_text_{$i}", array(
+            'label'    => sprintf(__('Review Text %d', 'gradient'), $i),
+            'section'  => 'gradient_review_settings',
+            'type'     => 'textarea',
+        ));
+
+        $wp_customize->add_setting("review_author_{$i}", array(
+            'default'   => '',
+            'transport' => 'refresh',
+        ));
+
+        $wp_customize->add_control("review_author_{$i}", array(
+            'label'    => sprintf(__('Review Author %d', 'gradient'), $i),
+            'section'  => 'gradient_review_settings',
+            'type'     => 'text',
+        ));
+    }
+}
+
+add_action('customize_register', 'register_review_carousel');
 

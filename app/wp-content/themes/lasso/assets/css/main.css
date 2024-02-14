@@ -1,9 +1,9 @@
 :root {
-    --swiper-navigation-color: #fefefe;
-    --swiper-pagination-color: #fefefe;
-    --swiper-theme-color: #fefefe;
-    --swiper-pagination-fraction-color: #fefefe;
-    --swiper-pagination-bullet-inactive: #fefefe;
+    --swiper-navigation-color: #404040;
+    --swiper-pagination-color: #404040;
+    --swiper-theme-color: #404040;
+    --swiper-pagination-fraction-color: #404040;
+    --swiper-pagination-bullet-inactive: #404040;
 }
 
 
@@ -37,6 +37,17 @@ a {
     color: inherit;
 }
 
+button {
+    padding: 0;
+    margin: 0;
+    border: none;
+    background: none;
+    font: inherit;
+    color: inherit;
+    cursor: pointer;
+    outline: none;
+}
+
 /* nav a {
     text-decoration: none;
     color: inherit; 
@@ -55,6 +66,7 @@ a {
     /* background: linear-gradient(to bottom, #e5f5ef, #54b89c);
     background: linear-gradient(to bottom, #dffdff, #4bb0b7); */
     padding: 20px;
+    gap:40px;
 }
 
 /*----------------------------------------------------------------------------------
@@ -127,13 +139,12 @@ a {
     Section
 -----------------------------------------------------------------------------------*/
 
-.gradient-section {
+/* .gradient-section {
     display: grid;
     justify-content: center;
-    /* align-content: center; */
     gap: 10px;
     background-color: transparent;
-}
+} */
 
 /*----------------------------------------------------------------------------------
     Footer
@@ -216,42 +227,13 @@ a {
 }
 
 /*----------------------------------------------------------------------------------
-    Swiper
+    Splash Swiper
 -----------------------------------------------------------------------------------*/
-
-.mySwiper .swiper-button-prev,
-.mySwiper .swiper-button-next {
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    color: #fff;
-    text-align: center;
-    background: transparent;
-    width: 30px;
-    height: 30px;
-    border-radius: 15px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    display: none;
-}
-
-.mySwiper .swiper-button-prev {
-    left: 10px;
-    z-index: 10;
-}
-
-.mySwiper .swiper-button-next {
-    right: 10px;
-    z-index: 10;
-}
 
 .mySwiper {
     width: 100vw;
     height: 60vh;
-    /* Adjust based on your design */
 }
-
 
 
 .mySwiper .swiper-slide {
@@ -261,11 +243,10 @@ a {
     text-align: center;
 }
 
-
 .swiper-slide__image {
     width: 50vw;
     height: 40vw;
-    margin-right: 10vw;
+    margin-right: 7vw;
     -webkit-mask-image: radial-gradient(circle at center, black 55%, transparent);
     mask-image: radial-gradient(circle at center, black 55%, transparent); 
     /* -webkit-mask-image: linear-gradient(to right, transparent, black 25%, black 75%, transparent);
@@ -282,10 +263,10 @@ a {
     justify-content: start;
     align-items: start;
     position: absolute;
-    top: 30%;
+    top: 20%;
     left: 4%;
     text-wrap: wrap;
-    gap: 10px;
+    gap: 20px;
     font-size: 2em;
     width: 30vw;
     height: fit-content;
@@ -303,51 +284,186 @@ a {
     font-size: 1.25rem;
 }
 
+/*----------------------------------------------------------------------------------
+    Review Swiper    
+-----------------------------------------------------------------------------------*/
+
+.gradient-reviews {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: transparent;
+    height: 40vh;
+    gap: 20px;
+}
+
+.reviewSwiper .swiper-button-prev,
+.reviewSwiper .swiper-button-next {
+    /* position: absolute;
+    top: 50%;
+    transform: translateY(-50%); */
+    color: #595959;
+    /* text-align: center; */
+    background: transparent;
+    /* width: 30px;
+    height: 30px;
+    border-radius: 15px; */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* .reviewSwiper .swiper-button-prev {
+    left: 10px;
+    z-index: 10;
+} */
+
+/* .reviewSwiper .swiper-button-next {
+    right: 10px;
+    z-index: 10;
+} */
+
+.reviewSwiper {
+    width: 100vw;
+    height: 20vh;
+    /* margin: 40px 0; */
+}
+
+
+.reviewSwiper .swiper-slide {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    background-color: transparent;
+}
+
+.gradient-reviews__display--text {
+    font-size: 1.75rem;
+    width: 80vw;
+    background-color: transparent;
+}
+
+.gradient-reviews__display--author {
+    font-size: 1.25rem;
+    background-color: transparent;
+    margin-top: 20px;
+}
 
 /*----------------------------------------------------------------------------------
     About Section  
 -----------------------------------------------------------------------------------*/
 
 .gradient-about__teaser {
-
-    width: 90%;
+    height: 40vh;
+    width: 80vw;
     gap: 10px;
-    background-color: #fefefe;
-    padding: 80px 40px;
+    /* background: linear-gradient(to right, white, white, #f5c9c6); */
+    /* background: transparent; */
+    background: #fbe7e6;
+    /* border: #404040 2px solid; */
+    border-radius: 30px;
+    /* padding: 80px 40px; */
 }
 
 .gradient-about__teaser--head {
     display: flex;
-    justify-content: center;
+    justify-content: space-between;
     align-items: center;
+    gap: 20px;
+}
+
+.gradient-about__teaser--photo-container {
+    width: 40vw;
+    height: 40vh;
 
 }
 
-.gradient-about__teaser--logo {
+.gradient-about__teaser--photo {
+    width: 100%;
+    height: 100%;
+    border-radius: 30px 0 0 30px;
+    object-fit: cover;
+ 
+}
+
+.gradient-about__teaser--info {
     display: flex;
-    justify-content: center;
-    align-items: center;
-    padding: 10px;
-    font-family: cursive;
-    font-size: 7rem;
-    margin-right: 40px;
+    flex-direction: column;
+    justify-content: start;
+    align-items: start;
+    background-color: transparent;
+    padding: 30px 20px;
+    gap: 20px;
+    width: 35vw;
+    text-wrap: wrap;
 }
 
 .gradient-about__teaser--text {
     display: flex;
     justify-content: center;
     align-items: center;
-    padding: 30px 10px;
+   
     margin-bottom: 30px;
-    border-top: solid 1px #909090;
-    border-bottom: solid 1px #909090;
     font-size: 1.25rem;
 }
 
 .gradient-about__teaser--foot {
     display: flex;
-    justify-content: center;
+    justify-content: start;
     align-items: center;
 
     font-size: 1rem;
 }
+
+/*----------------------------------------------------------------------------------
+    Buttons
+-----------------------------------------------------------------------------------*/
+
+/* .btn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px 20px;
+    border-radius: 10px;
+    background: linear-gradient(to bottom, #f5e5e5, #b77f7c);
+    color: #404040;
+    font-size: 1rem;
+    font-weight: 500;
+    cursor: pointer;
+}
+
+.btn:hover {
+    background: linear-gradient(to bottom, #f5e5e5, #b18180);
+    background: linear-gradient(to bottom, #f0dcdc, #ab726f);
+    cursor: pointer;
+    transform: scale(1.025);
+} */
+
+.btn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 15px 20px;
+    height: 50px;
+    border-radius: 25px;
+    border: #404040 2px solid;
+    background: transparent;
+    color: #404040;
+    font-size: 1rem;
+    font-weight: 500;
+    cursor: pointer;
+    text-transform: capitalize;
+}
+
+.btn:hover {
+    transform: scale(1.025);
+    background: rgba(0, 0, 0, 0.025);
+}
+.btn:active {
+    transform: scale(0.975);
+}
+
+.swiper-btn { z-index: 10; }
