@@ -87,8 +87,8 @@
                     <?php $about_teaser_photo_alt = get_theme_mod('about_teaser_photo_alt'); ?>
                     <?php $about_teaser_title = get_theme_mod('about_teaser_title'); ?>
                     <?php $about_teaser_text = get_theme_mod('about_teaser_text'); ?>
-                    <?php $about_teaser_button_text = get_theme_mod('about_teaser_button'); ?>
-                    <?php if ($about_teaser_photo && $about_teaser_title && $about_teaser_text && $about_teaser_button) : ?>
+                    <?php $about_teaser_button_text = get_theme_mod('about_teaser_button_text'); ?>
+                    <?php if ($about_teaser_photo && $about_teaser_title && $about_teaser_text && $about_teaser_button_text) : ?>
                         <div class="gradient-about__teaser--photo-container">
                             <img class="gradient-about__teaser--photo" src="<?php echo esc_url($about_teaser_photo); ?>" alt="<?php esc_html($about_teaser_photo_alt); ?> ">
                         </div>
@@ -101,7 +101,7 @@
                             </div>
 
                             <div class="gradient-about__teaser--foot">
-                                <a href="" class="btn about-btn"><?php echo esc_html($about_teaser_button_text) ?></a>
+                                <button class="btn about-btn"><?php echo esc_html($about_teaser_button_text) ?></button>
                             </div>
                         </div>
                     <?php endif; ?>

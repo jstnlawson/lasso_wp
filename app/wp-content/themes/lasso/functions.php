@@ -132,3 +132,67 @@ function register_review_carousel($wp_customize) {
 
 add_action('customize_register', 'register_review_carousel');
 
+function register_about_teaser ($wp_customize) {
+
+    $wp_customize->add_section('gradient_about_teaser', array(
+        'title'    => __('About Teaser Settings', 'gradient'),
+        'priority' => 30,
+    ));
+
+    $wp_customize->add_setting('about_teaser_photo', array(
+        'default'   => '',
+        'transport' => 'refresh',
+    ));
+
+    $wp_customize->add_control(new WP_Customize_Image_Control($wp_customize, 'about_teaser_photo', array(
+        'label'    => __('About Teaser Photo', 'gradient'),
+        'section'  => 'gradient_about_teaser',
+        'settings' => 'about_teaser_photo',
+    )));
+
+    $wp_customize->add_setting('about_teaser_photo_alt', array(
+        'default'   => '',
+        'transport' => 'refresh',
+    ));
+
+    $wp_customize->add_control('about_teaser_photo_alt', array(
+        'label'    => __('About Teaser Photo Alt Text', 'gradient'),
+        'section'  => 'gradient_about_teaser',
+        'type'     => 'text',
+    ));
+
+    $wp_customize->add_setting('about_teaser_title', array(
+        'default'   => '',
+        'transport' => 'refresh',
+    ));
+
+    $wp_customize->add_control('about_teaser_title', array(
+        'label'    => __('About Teaser Title', 'gradient'),
+        'section'  => 'gradient_about_teaser',
+        'type'     => 'text',
+    ));
+
+    $wp_customize->add_setting('about_teaser_text', array(
+        'default'   => '',
+        'transport' => 'refresh',
+    ));
+
+    $wp_customize->add_control('about_teaser_text', array(
+        'label'    => __('About Teaser Text', 'gradient'),
+        'section'  => 'gradient_about_teaser',
+        'type'     => 'textarea',
+    ));
+
+    $wp_customize->add_setting('about_teaser_button_text', array(
+        'default'   => '',
+        'transport' => 'refresh',
+    ));
+
+    $wp_customize->add_control('about_teaser_button_text', array(
+        'label'    => __('About Teaser Button Text', 'gradient'),
+        'section'  => 'gradient_about_teaser',
+        'type'     => 'text',
+    ));
+}
+
+add_action('customize_register', 'register_about_teaser');
