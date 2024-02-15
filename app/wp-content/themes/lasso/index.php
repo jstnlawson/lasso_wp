@@ -32,8 +32,8 @@
                 <div class="swiper mySwiper">
                     <div class="swiper-wrapper">
                         <div class="swiper-slide__action-call">
-                            <h1 class="swiper-slide__action-call--title">hand crafted furniture made by hand and built to last</h1>
-                            <span class="swiper-slide__action-call--sub-title">ready to order?</span>
+                            <h1 class="swiper-slide__action-call--title section__title">hand crafted furniture made by hand and built to last</h1>
+                            <span class="swiper-slide__action-call--sub-title section__sub-title">ready to order?</span>
                             <button class="btn swiper-btn">let's get started</button>
                         </div>
                         <?php for ($i = 1; $i <= 5; $i++) : ?>
@@ -93,8 +93,8 @@
                             <img class="gradient-about__teaser--photo" src="<?php echo esc_url($about_teaser_photo); ?>" alt="<?php esc_html($about_teaser_photo_alt); ?> ">
                         </div>
                         <div class="gradient-about__teaser--info">
-                            <h1 class="gradient-about__teaser--title"><?php echo esc_html($about_teaser_title); ?></h1>
-                            <div class="gradient-about__teaser--text">
+                            <h1 class="section__title gradient-about__teaser--title"><?php echo esc_html($about_teaser_title); ?></h1>
+                            <div class="section__sub-title gradient-about__teaser--text">
                                 <p>
                                     <?php echo esc_html($about_teaser_text); ?>
                                 </p>
@@ -106,6 +106,30 @@
                         </div>
                     <?php endif; ?>
                 </div>
+            </div>
+
+            <div class="gradient-products__teaser">
+                <div class="gradient-products__teaser-head">
+                    <div class="gradient-products__teaser-info">
+                        <h1 class="section__title gradient-products__teaser--title">products</h1>
+                        <div class="section__sub-title gradient-products__teaser--text">
+                            <p>hand crafted furniture made by hand and built to last</p>
+                        </div>
+                        <button class="btn products-btn">check it out</button>
+                    </div>
+                    <div class="gradient-products__teaser-image--container">
+                        <img class="gradient-products__teaser-image" src="<?php echo get_template_directory_uri(); ?>/assets/images/shelf.jpeg" alt="shelf">
+                    </div>
+                </div>
+                <div class="gradient-products__teaser-foot">
+                    <div class="gradient-products__teaser-image--container">
+                        <img class="gradient-products__teaser-image" src="<?php echo get_template_directory_uri(); ?>/assets/images/shelf.jpeg" alt="shelf">
+                    </div>
+                    <div class="gradient-products__teaser-image--container">
+                        <img class="gradient-products__teaser-image" src="<?php echo get_template_directory_uri(); ?>/assets/images/shelf.jpeg" alt="shelf">
+                    </div>
+                </div>
+
             </div>
 
 

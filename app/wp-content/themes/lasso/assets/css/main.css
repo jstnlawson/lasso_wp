@@ -69,6 +69,14 @@ button {
     gap:40px;
 }
 
+.section__title {
+    font-size: 2.5rem;
+}
+
+.section__sub-title {
+    font-size: 1.25rem;
+}
+
 /*----------------------------------------------------------------------------------
     Header
 -----------------------------------------------------------------------------------*/
@@ -280,14 +288,6 @@ button {
     background-color: transparent;
 }
 
-.swiper-slide__action-call--title {
-    font-size: 2.5rem;
-}
-
-.swiper-slide__action-call--sub-title {
-    font-size: 1.25rem;
-}
-
 /*----------------------------------------------------------------------------------
     Review Swiper    
 -----------------------------------------------------------------------------------*/
@@ -357,7 +357,7 @@ button {
 }
 
 /*----------------------------------------------------------------------------------
-    About Section  
+    About Teaser Section  
 -----------------------------------------------------------------------------------*/
 
 .gradient-about__teaser {
@@ -403,7 +403,8 @@ button {
     justify-content: start;
     align-items: start;
     background-color: transparent;
-    padding: 30px 20px;
+    /* padding: 30px 20px; */
+    padding: 30px 30px 30px 10px;
     gap: 20px;
     width: 50%;
     text-wrap: wrap;
@@ -424,6 +425,43 @@ button {
     align-items: center;
 
     font-size: 1rem;
+}
+
+/*----------------------------------------------------------------------------------
+    Product Teaser Section
+-----------------------------------------------------------------------------------*/
+
+.gradient-products__teaser {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    height: 90vh;
+    width: 80vw;
+    background: transparent;
+    color: #404040;
+    padding: 20px;
+}
+
+.gradient-products__teaser-head, .gradient-products__teaser-foot {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+    width: 100%;
+    background: transparent;
+}
+
+.gradient-products__teaser-image--container {
+    height: 30vh;
+}
+
+.gradient-products__teaser-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 30px;
 }
 
 /*----------------------------------------------------------------------------------
