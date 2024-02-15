@@ -83,27 +83,29 @@
 
             <div class="gradient-about__teaser">
                 <div class="gradient-about__teaser--head">
-                    <div class="gradient-about__teaser--photo-container">
-                        <img class="gradient-about__teaser--photo" src="<?php echo get_template_directory_uri(); ?>/assets/images/shelf.jpeg" alt="Teaser Photo">
-                    </div>
+                    <?php $about_teaser_photo = get_theme_mod('about_teaser_photo'); ?>
+                    <?php $about_teaser_photo_alt = get_theme_mod('about_teaser_photo_alt'); ?>
+                    <?php $about_teaser_title = get_theme_mod('about_teaser_title'); ?>
+                    <?php $about_teaser_text = get_theme_mod('about_teaser_text'); ?>
+                    <?php $about_teaser_button_text = get_theme_mod('about_teaser_button'); ?>
+                    <?php if ($about_teaser_photo && $about_teaser_title && $about_teaser_text && $about_teaser_button) : ?>
+                        <div class="gradient-about__teaser--photo-container">
+                            <img class="gradient-about__teaser--photo" src="<?php echo esc_url($about_teaser_photo); ?>" alt="<?php esc_html($about_teaser_photo_alt); ?> ">
+                        </div>
+                        <div class="gradient-about__teaser--info">
+                            <h1 class="gradient-about__teaser--title"><?php echo esc_html($about_teaser_title); ?></h1>
+                            <div class="gradient-about__teaser--text">
+                                <p>
+                                    <?php echo esc_html($about_teaser_text); ?>
+                                </p>
+                            </div>
 
-                    <div class="gradient-about__teaser--info">
-                        <h1 class="gradient-about__teaser--title">this is what we're about</h1>
-                        <div class="gradient-about__teaser--text">
-                            <p>
-                                At Lasso, we believe in the power of hand-crafted furniture.
-                                Our pieces are made by hand and built to last. We are proud to
-                                offer a wide range of products that are ready to order, and we
-                                also offer custom furniture design services.
-                            </p>
+                            <div class="gradient-about__teaser--foot">
+                                <a href="" class="btn about-btn"><?php echo esc_html($about_teaser_button_text) ?></a>
+                            </div>
                         </div>
-                        <div class="gradient-about__teaser--foot">
-                            <button class="btn about-btn">learn more</button>
-                        </div>
-                    </div>
-                    
+                    <?php endif; ?>
                 </div>
-
             </div>
 
 
