@@ -431,6 +431,7 @@ button {
 
 .gradient-products__teaser-image--container {
     width: 30vw;
+    
 }
 
 .gradient-products__teaser-image {
@@ -438,6 +439,7 @@ button {
     height: 100%;
     object-fit: cover;
     border-radius: 30px;
+    max-height: 35vh;
 }
 
 .gradient-products__teaser--title, .gradient-products__teaser--text, .products-btn {

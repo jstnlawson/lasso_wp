@@ -196,3 +196,80 @@ function register_about_teaser ($wp_customize) {
 }
 
 add_action('customize_register', 'register_about_teaser');
+
+function register_product_teaser ($wp_customize) {
+
+    $wp_customize->add_section('gradient_product_teaser', array(
+        'title'    => __('Product Teaser Settings', 'gradient'),
+        'priority' => 30,
+    ));
+
+    $wp_customize->add_setting('products_teaser_title', array(
+        'default'   => '',
+        'transport' => 'refresh',
+    ));
+
+    $wp_customize->add_control('products_teaser_title', array(
+        'label'    => __('Product Teaser Title', 'gradient'),
+        'section'  => 'gradient_product_teaser',
+        'type'     => 'text',
+    ));
+
+    $wp_customize->add_setting('products_teaser_text', array(
+        'default'   => '',
+        'transport' => 'refresh',
+    ));
+
+    $wp_customize->add_control('products_teaser_text', array(
+        'label'    => __('Product Teaser Text', 'gradient'),
+        'section'  => 'gradient_product_teaser',
+        'type'     => 'textarea',
+    ));
+
+    $wp_customize->add_setting('products_teaser_photo_one', array(
+        'default'   => '',
+        'transport' => 'refresh',
+    ));
+
+    $wp_customize->add_control(new WP_Customize_Image_Control($wp_customize, 'products_teaser_photo_one', array(
+        'label'    => __('Product Teaser Photo One', 'gradient'),
+        'section'  => 'gradient_product_teaser',
+        'settings' => 'products_teaser_photo_one',
+    )));
+
+    $wp_customize->add_setting('products_teaser_photo_two', array(
+        'default'   => '',
+        'transport' => 'refresh',
+    ));
+
+    $wp_customize->add_control(new WP_Customize_Image_Control($wp_customize, 'products_teaser_photo_two', array(
+        'label'    => __('Product Teaser Photo Two', 'gradient'),
+        'section'  => 'gradient_product_teaser',
+        'settings' => 'products_teaser_photo_two',
+    )));
+
+    $wp_customize->add_setting('products_teaser_photo_three', array(
+        'default'   => '',
+        'transport' => 'refresh',
+    ));
+
+    $wp_customize->add_control(new WP_Customize_Image_Control($wp_customize, 'products_teaser_photo_three', array(
+        'label'    => __('Product Teaser Photo Three', 'gradient'),
+        'section'  => 'gradient_product_teaser',
+        'settings' => 'products_teaser_photo_three',
+    )));
+
+    $wp_customize->add_setting('products_teaser_button_text', array(
+        'default'   => '',
+        'transport' => 'refresh',
+    ));
+
+    $wp_customize->add_control('products_teaser_button_text', array(
+        'label'    => __('Product Teaser Button Text', 'gradient'),
+        'section'  => 'gradient_product_teaser',
+        'type'     => 'text',
+    ));
+
+}
+
+add_action('customize_register', 'register_product_teaser');
