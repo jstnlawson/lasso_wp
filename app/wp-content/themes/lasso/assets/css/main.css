@@ -66,16 +66,77 @@ button {
     /* background: linear-gradient(to bottom, #e5f5ef, #54b89c);
     background: linear-gradient(to bottom, #dffdff, #4bb0b7); */
     padding: 20px;
-    gap:40px;
+    gap:120px;
 }
 
 .section__title {
     font-size: 2.5rem;
+    margin-bottom: 20px;
 }
 
 .section__sub-title {
     font-size: 1.25rem;
+    margin-bottom: 30px;
+    text-wrap: balance;
 }
+
+/*----------------------------------------------------------------------------------
+    Buttons
+-----------------------------------------------------------------------------------*/
+
+/* .btn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px 20px;
+    border-radius: 10px;
+    background: linear-gradient(to bottom, #f5e5e5, #b77f7c);
+    color: #404040;
+    font-size: 1rem;
+    font-weight: 500;
+    cursor: pointer;
+}
+
+.btn:hover {
+    background: linear-gradient(to bottom, #f5e5e5, #b18180);
+    background: linear-gradient(to bottom, #f0dcdc, #ab726f);
+    cursor: pointer;
+    transform: scale(1.025);
+} */
+
+.btn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 15px 20px;
+    height: 50px;
+    border-radius: 25px;
+    border: #404040 2px solid;
+    background: transparent;
+    color: #404040;
+    font-size: 1rem;
+    font-weight: 500;
+    cursor: pointer;
+    text-transform: capitalize;
+}
+
+.btn:hover {
+    transform: scale(1.025);
+    background: rgba(0, 0, 0, 0.035);
+}
+.btn:active {
+    transform: scale(0.975);
+}
+
+.products-btn {
+    background: linear-gradient(to right, transparent, rgba(255, 230, 104, 0.243));
+}
+
+.products-btn:hover {
+    background: linear-gradient(to right, rgba(255, 230, 104, 0.243), transparent);
+}
+
+.swiper-btn { z-index: 10; }
 
 /*----------------------------------------------------------------------------------
     Header
@@ -155,86 +216,6 @@ button {
 } */
 
 /*----------------------------------------------------------------------------------
-    Footer
------------------------------------------------------------------------------------*/
-
-.gradient-footer {
-    display: flex;
-    justify-content: space-between;
-    align-items: start;
-    color: #fcf6f6;
-    background-color: transparent;
-    width: 100%;
-    height: fit-content;
-}
-
-.gradient-footer div {
-    padding: 0 80px;
-}
-
-.gradient-footer__company {
-    display: flex;
-    align-items: baseline;
-    justify-content: center;
-    background-color: transparent;
-}
-
-.gradient-footer__company--logo {
-    font-family: cursive;
-    font-size: 4rem;
-    background-color: transparent;
-    margin-right: 10px;
-}
-
-.gradient-footer__company--est {
-    font-size: .75rem;
-    background-color: transparent;
-}
-
-.gradient-footer__contact {
-    display: flex;
-    flex-direction: column;
-    background-color: transparent;
-}
-
-.gradient-footer__contact li {
-    font-size: .75rem;
-    background-color: transparent;
-}
-
-.gradient-footer__title {
-    font-size: 1rem;
-    font-weight: 500;
-    background-color: transparent;
-    margin: 15px 0 15px 0;
-}
-
-.gradient-footer__social-icons__container {
-    display: flex;
-    /* align-items: center; */
-    background-color: transparent;
-    max-height: 30px;
-    gap: 10px;
-}
-
-.gradient-footer__social--icons {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background-color: transparent;
-    max-width: 30px;
-    /* max-height: 30px; */
-}
-
-.gradient-footer__social--icons svg {
-    max-width: 100%;
-    max-height: 100%;
-    /* Or any specific size you want */
-    display: block;
-    /* This can help with sizing and prevent unwanted whitespace */
-}
-
-/*----------------------------------------------------------------------------------
     Splash Swiper
 -----------------------------------------------------------------------------------*/
 
@@ -244,7 +225,7 @@ button {
 
 .mySwiper {
     width: 100vw;
-    height: 60vh;
+    height: fit-content;
 }
 
 
@@ -277,8 +258,8 @@ button {
     position: absolute;
     top: 20%;
     left: 4%;
-    text-wrap: wrap;
-    gap: 20px;
+    text-wrap: balance;
+    /* gap: 20px; */
     font-size: 2em;
     width: 30vw;
     height: fit-content;
@@ -361,32 +342,20 @@ button {
 -----------------------------------------------------------------------------------*/
 
 .gradient-about__teaser {
-    height: 50vh;
-    width: 80vw;
-    gap: 10px;
-    /* background: linear-gradient(to right, white, white, #f5c9c6); */
-    /* background: transparent; */
-    background: #fcf6f6;
-    color: #404040;
-    /* border: #404040 2px solid; */
-    border-radius: 30px;
-    /* padding: 80px 40px; */
-}
-
-.gradient-about__teaser--head {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    gap: 20px;
-    height: 100%;
+    height: fit-content;
+    /* height: 50vh; */
+    width: 80vw;
+    background: #fcf6f6;
+    color: #404040;
+    border-radius: 30px;
 }
 
-.gradient-about__teaser--photo-container {
-    
+.gradient-about__teaser--photo-container { 
     height: 50vh;
-    
-   
-
+   width: 45vw;  
 }
 
 .gradient-about__teaser--photo {
@@ -403,11 +372,11 @@ button {
     justify-content: start;
     align-items: start;
     background-color: transparent;
-    /* padding: 30px 20px; */
-    padding: 30px 30px 30px 10px;
-    gap: 20px;
-    width: 50%;
-    text-wrap: wrap;
+    padding: 20px;
+    width: calc(35vw - 40px);
+    height: calc(50vh -40px);
+    text-wrap: balance;
+    /* background: #fcf6f6; */
 }
 
 .gradient-about__teaser--text {
@@ -415,17 +384,17 @@ button {
     justify-content: center;
     align-items: center;
    
-    margin-bottom: 30px;
+    /* margin-bottom: 30px; */
     font-size: 1.25rem;
 }
 
-.gradient-about__teaser--foot {
+/* .gradient-about__teaser--foot {
     display: flex;
     justify-content: start;
     align-items: center;
 
     font-size: 1rem;
-}
+} */
 
 /*----------------------------------------------------------------------------------
     Product Teaser Section
@@ -437,11 +406,13 @@ button {
     justify-content: center;
     align-items: center;
     gap: 20px;
-    height: 90vh;
-    width: 80vw;
+    height: fit-content;
+    width: calc(60vw + 20px);
     background: transparent;
     color: #404040;
     padding: 20px;
+    border: solid 2px #fcf6f6;
+    border-radius: 50px;
 }
 
 .gradient-products__teaser-head, .gradient-products__teaser-foot {
@@ -453,8 +424,13 @@ button {
     background: transparent;
 }
 
+.gradient-products__teaser-info {
+    width: calc(30vw - 20px);
+    margin-left: 20px
+}
+
 .gradient-products__teaser-image--container {
-    height: 30vh;
+    width: 30vw;
 }
 
 .gradient-products__teaser-image {
@@ -464,57 +440,87 @@ button {
     border-radius: 30px;
 }
 
+.gradient-products__teaser--title, .gradient-products__teaser--text, .products-btn {
+    color: #fcf6f6;
+    border-color: #fcf6f6;
+}
+
 /*----------------------------------------------------------------------------------
-    Buttons
+    Footer
 -----------------------------------------------------------------------------------*/
 
-/* .btn {
+.gradient-footer {
     display: flex;
-    justify-content: center;
-    align-items: center;
-    padding: 10px 20px;
-    border-radius: 10px;
-    background: linear-gradient(to bottom, #f5e5e5, #b77f7c);
-    color: #404040;
-    font-size: 1rem;
-    font-weight: 500;
-    cursor: pointer;
-}
-
-.btn:hover {
-    background: linear-gradient(to bottom, #f5e5e5, #b18180);
-    background: linear-gradient(to bottom, #f0dcdc, #ab726f);
-    cursor: pointer;
-    transform: scale(1.025);
-} */
-
-.btn {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding: 15px 20px;
-    height: 50px;
-    border-radius: 25px;
-    border: #404040 2px solid;
-    background: transparent;
-    color: #404040;
-    font-size: 1rem;
-    font-weight: 500;
-    cursor: pointer;
-    text-transform: capitalize;
-}
-
-.btn:hover {
-    transform: scale(1.025);
-    background: rgba(0, 0, 0, 0.035);
-}
-.btn:active {
-    transform: scale(0.975);
-}
-
-/* .about-btn {
+    justify-content: space-between;
+    align-items: start;
     color: #fcf6f6;
-    border-color: #f5e5e5;
-} */
+    background-color: transparent;
+    width: 100%;
+    height: fit-content;
+}
 
-.swiper-btn { z-index: 10; }
+.gradient-footer div {
+    padding: 0 80px;
+}
+
+.gradient-footer__company {
+    display: flex;
+    align-items: baseline;
+    justify-content: center;
+    background-color: transparent;
+}
+
+.gradient-footer__company--logo {
+    font-family: cursive;
+    font-size: 4rem;
+    background-color: transparent;
+    margin-right: 10px;
+}
+
+.gradient-footer__company--est {
+    font-size: .75rem;
+    background-color: transparent;
+}
+
+.gradient-footer__contact {
+    display: flex;
+    flex-direction: column;
+    background-color: transparent;
+}
+
+.gradient-footer__contact li {
+    font-size: .75rem;
+    background-color: transparent;
+}
+
+.gradient-footer__title {
+    font-size: 1rem;
+    font-weight: 500;
+    background-color: transparent;
+    margin: 15px 0 15px 0;
+}
+
+.gradient-footer__social-icons__container {
+    display: flex;
+    /* align-items: center; */
+    background-color: transparent;
+    max-height: 30px;
+    gap: 10px;
+}
+
+.gradient-footer__social--icons {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: transparent;
+    max-width: 30px;
+    /* max-height: 30px; */
+}
+
+.gradient-footer__social--icons svg {
+    max-width: 100%;
+    max-height: 100%;
+    /* Or any specific size you want */
+    display: block;
+    /* This can help with sizing and prevent unwanted whitespace */
+}

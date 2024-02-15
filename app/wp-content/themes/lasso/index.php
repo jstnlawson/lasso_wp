@@ -82,7 +82,6 @@
             </div>
 
             <div class="gradient-about__teaser">
-                <div class="gradient-about__teaser--head">
                     <?php $about_teaser_photo = get_theme_mod('about_teaser_photo'); ?>
                     <?php $about_teaser_photo_alt = get_theme_mod('about_teaser_photo_alt'); ?>
                     <?php $about_teaser_title = get_theme_mod('about_teaser_title'); ?>
@@ -105,7 +104,6 @@
                             </div>
                         </div>
                     <?php endif; ?>
-                </div>
             </div>
 
             <div class="gradient-products__teaser">
