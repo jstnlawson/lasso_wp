@@ -128,13 +128,13 @@ button {
     transform: scale(0.975);
 }
 
-.products-btn {
+/* .products-btn {
     background: linear-gradient(to right, transparent, rgba(255, 230, 104, 0.243));
 }
 
 .products-btn:hover {
     background: linear-gradient(to right, rgba(255, 230, 104, 0.243), transparent);
-}
+} */
 
 .swiper-btn { z-index: 10; }
 
@@ -285,7 +285,7 @@ button {
 
 .reviewSwiper .swiper-button-prev,
 .reviewSwiper .swiper-button-next {
-    /* position: absolute;
+    /* position: relative;
     top: 50%;
     transform: translateY(-50%); */
     color: #595959;
@@ -349,7 +349,9 @@ button {
     /* height: 50vh; */
     width: 80vw;
     background: #fcf6f6;
+    background: linear-gradient(to right, rgb(246, 227, 132), transparent);
     color: #404040;
+    color: #fcf6f6;
     border-radius: 30px;
 }
 
@@ -408,10 +410,13 @@ button {
     gap: 20px;
     height: fit-content;
     width: calc(60vw + 20px);
-    background: transparent;
+    /* background: transparent; */
+    background: linear-gradient(to right, transparent,  rgba(246, 227, 132, 0.137), rgba(246, 227, 132, 0.247),  rgb(246, 227, 132));
+
     color: #404040;
     padding: 20px;
-    border: solid 2px #fcf6f6;
+    /* border: solid 2px #fcf6f6; */
+    /* border: solid 2px rgb(246, 227, 132); */
     border-radius: 50px;
 }
 
@@ -446,6 +451,81 @@ button {
     color: #fcf6f6;
     border-color: #fcf6f6;
 }
+
+/*----------------------------------------------------------------------------------
+    Custom Teaser Section 
+-----------------------------------------------------------------------------------*/
+
+.gradient-custom__teaser {
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    width: 90vw;
+
+}
+
+.gradient-custom__photo-container--one {
+    position: inherit;
+    top: 0;
+    left: 0;
+    width: 70vw;
+    height: 65vh;
+    border-radius: 30px;
+    /* border: solid 2px #fcf6f6; */
+}
+
+.gradient-custom__photo--one, .gradient-custom__photo--two {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 30px;
+}
+
+.gradient-custom__photo-container--two {
+    position: absolute;
+    bottom: -5vw;
+    right: 0;
+    width: 30vw;
+    height: 65vh;
+    border-radius: 30px;
+    /* border: solid 2px #fcf6f6; */
+}
+
+.photo-cover--yellow {
+    position: inherit;
+    height: 100%;
+    width: 100%;
+    border-radius: 30px;
+    background: linear-gradient(to right, transparent, rgba(246, 227, 132, 0.102), rgba(246, 227, 132, 0.5));
+    /* background: linear-gradient(to right, rgba(246, 132, 132, 0.4), rgba(246, 227, 132, 0.5)); */
+}
+
+.photo-cover--pink {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    border-radius: 30px;
+    background:  rgba(246, 132, 132, 0.309);
+    background: linear-gradient(to right, transparent, rgba(246, 132, 132, 0.4));
+    /* background: linear-gradient(to right, rgba(246, 132, 132, 0.5), rgba(246, 227, 132, 0.5)); */
+}
+
+.gradient-custom__info {
+    position: absolute;
+    top: 10vw;
+    left: 25vw;
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    align-items: start;
+    width: 35vw;
+    height: fit-content;
+    padding: 50px;
+    background: #fcf6f6;
+    border-radius: 30px;
+    z-index: 10;
+}
+
 
 /*----------------------------------------------------------------------------------
     Footer
