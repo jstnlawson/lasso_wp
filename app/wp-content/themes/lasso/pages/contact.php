@@ -1,7 +1,7 @@
 <?php
 
 /*
-Template Name: Products
+Template Name: Contact
 */
 get_header(); ?>
 
