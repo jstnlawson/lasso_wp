@@ -28,66 +28,96 @@
         <div class="gradient-header__spacer"></div>
         <div class="gradient-gradient">
 
-            <div class="gradient-splash">
-                <div class="swiper mySwiper">
-                    <div class="swiper-wrapper">
-                        <div class="swiper-slide__action-call">
-                            <h1 class="swiper-slide__action-call--title section__title">hand crafted furniture made by hand and built to last</h1>
-                            <span class="swiper-slide__action-call--sub-title section__sub-title">ready to order?</span>
-                            <button class="btn swiper-btn">let's get started</button>
+            <?php
+            $hasImages = false;
+            for ($i = 1; $i <= 5; $i++) {
+                if (get_theme_mod("carousel_image_{$i}")) {
+                    $hasImages = true;
+                    break;
+                }
+            }
+            if ($hasImages) : ?>
+                <div class="gradient-splash">
+                    <div class="swiper mySwiper">
+                        <div class="swiper-wrapper">
+                            <div class="swiper-slide__action-call">
+                                <h1 class="swiper-slide__action-call--title section__title">hand crafted furniture made by hand and built to last</h1>
+                                <span class="swiper-slide__action-call--sub-title section__sub-title">ready to order?</span>
+                                <button class="btn swiper-btn">let's get started</button>
+                            </div>
+                            <?php for ($i = 1; $i <= 5; $i++) : ?>
+                                <?php $image_url = get_theme_mod("carousel_image_{$i}"); ?>
+                                <?php if ($image_url) : ?>
+                                    <div class="swiper-slide">
+                                        <img class="swiper-slide__image" src="<?php echo esc_url($image_url); ?>" alt="Carousel Image <?php echo $i; ?>">
+                                    </div>
+                                <?php endif; ?>
+                            <?php endfor; ?>
                         </div>
-                        <?php for ($i = 1; $i <= 5; $i++) : ?>
-                            <?php $image_url = get_theme_mod("carousel_image_{$i}"); ?>
-                            <?php if ($image_url) : ?>
-                                <div class="swiper-slide">
-                                    <img class="swiper-slide__image" src="<?php echo esc_url($image_url); ?>" alt="Carousel Image <?php echo $i; ?>">
-                                </div>
-                            <?php endif; ?>
-                        <?php endfor; ?>
                     </div>
                 </div>
-            </div>
+            <?php endif; ?>
 
-            <div class="gradient-reviews">
-                <div class="swiper reviewSwiper">
-                    <div class="swiper-wrapper">
 
-                        <?php for ($i = 1; $i <= 5; $i++) : ?>
-                            <?php $review_text = get_theme_mod("review_text_{$i}"); ?>
-                            <?php $review_author = get_theme_mod("review_author_{$i}"); ?>
-                            <?php if ($review_text && $review_author) : ?>
-                                <div class="swiper-slide">
-                                    <div class="gradient-reviews__display">
-                                        <div class="gradient-reviews__display--text">
-                                            <p>
-                                                "<?php echo esc_html($review_text); ?>"
-                                            </p>
-                                        </div>
-                                        <div class="gradient-reviews__display--author">
-                                            <p>
-                                                - <?php echo esc_html($review_author); ?>
-                                            </p>
+            <?php
+            $showControls = false;
+            $reviewsExist = false;
+            for ($i = 1; $i <= 5; $i++) {
+                $review_text = get_theme_mod("review_text_{$i}");
+                $review_author = get_theme_mod("review_author_{$i}");
+                if ($review_text && $review_author) {
+                    $reviewsExist = true;
+                    break; 
+                }
+            }
+            if ($reviewsExist) : ?>
+                <div class="gradient-reviews">
+                    <div class="swiper reviewSwiper">
+                        <div class="swiper-wrapper">
+                            <?php for ($i = 1; $i <= 5; $i++) : ?>
+                                <?php
+                                $review_text = get_theme_mod("review_text_{$i}");
+                                $review_author = get_theme_mod("review_author_{$i}");
+                                if ($review_text && $review_author) :
+                                    $showControls = true; 
+                                ?>
+                                    <div class="swiper-slide">
+                                        <div class="gradient-reviews__display">
+                                            <div class="gradient-reviews__display--text">
+                                                <p>
+                                                    "<?php echo esc_html($review_text); ?>"
+                                                </p>
+                                            </div>
+                                            <div class="gradient-reviews__display--author">
+                                                <p>
+                                                    - <?php echo esc_html($review_author); ?>
+                                                </p>
+                                            </div>
                                         </div>
                                     </div>
-                                </div>
-                            <?php endif; ?>
-                        <?php endfor; ?>
+                                <?php endif; ?>
+                            <?php endfor; ?>
+                        </div>
+                        <?php if ($showControls) : ?>
+                            <div class="swiper-button-prev"></div>
+                            <div class="swiper-button-next"></div>
+                            <!-- <div class="swiper-scrollbar"></div> -->
+                            <div class="swiper-pagination"></div>
+                        <?php endif; ?>
 
                     </div>
-                    <div class="swiper-button-prev"></div>
-                    <div class="swiper-button-next"></div>
-                    <!-- <div class="swiper-scrollbar"></div> -->
-                    <div class="swiper-pagination"></div>
                 </div>
-            </div>
+            <?php endif; ?>
 
-            <div class="gradient-about__teaser">
-                <?php $about_teaser_photo = get_theme_mod('about_teaser_photo'); ?>
-                <?php $about_teaser_photo_alt = get_theme_mod('about_teaser_photo_alt'); ?>
-                <?php $about_teaser_title = get_theme_mod('about_teaser_title'); ?>
-                <?php $about_teaser_text = get_theme_mod('about_teaser_text'); ?>
-                <?php $about_teaser_button_text = get_theme_mod('about_teaser_button_text'); ?>
-                <?php if ($about_teaser_photo && $about_teaser_title && $about_teaser_text && $about_teaser_button_text) : ?>
+            <?php
+            $about_teaser_photo       = get_theme_mod('about_teaser_photo');
+            $about_teaser_photo_alt   = get_theme_mod('about_teaser_photo_alt');
+            $about_teaser_title       = get_theme_mod('about_teaser_title');
+            $about_teaser_text        = get_theme_mod('about_teaser_text');
+            $about_teaser_button_text = get_theme_mod('about_teaser_button_text');
+            if ($about_teaser_photo && $about_teaser_title && $about_teaser_text && $about_teaser_button_text) :
+            ?>
+                <div class="gradient-about__teaser">
                     <div class="gradient-about__teaser--photo-container">
                         <img class="gradient-about__teaser--photo" src="<?php echo esc_url($about_teaser_photo); ?>" alt="<?php esc_html($about_teaser_photo_alt); ?> ">
                     </div>
@@ -103,8 +133,8 @@
                             <button class="btn about-btn"><?php echo esc_html($about_teaser_button_text) ?></button>
                         </div>
                     </div>
-                <?php endif; ?>
-            </div>
+                </div>
+            <?php endif; ?>
 
             <?php
             $products_teaser_title       = get_theme_mod('products_teaser_title');
@@ -151,14 +181,14 @@
                         <img class="gradient-custom__photo--one" src="<?php echo esc_url($custom_teaser_photo_one); ?>" alt="custom photo">
                     </div>
                     <div class="gradient-custom__info">
-                    <div class="gradient-custom__teaser--text-container">
-                        <h1 class="section__title gradient-custom__teaser--title"><?php echo esc_html($custom_teaser_title); ?></h1>
-                        
+                        <div class="gradient-custom__teaser--text-container">
+                            <h1 class="section__title gradient-custom__teaser--title"><?php echo esc_html($custom_teaser_title); ?></h1>
+
                             <div class="section__sub-title gradient-custom__teaser--text">
                                 <p><?php echo esc_html($custom_teaser_text); ?></p>
                             </div>
-                        
-                        <button class="btn custom-btn"><?php echo esc_html($custom_teaser_button_text); ?></button>
+
+                            <button class="btn custom-btn"><?php echo esc_html($custom_teaser_button_text); ?></button>
                         </div>
                     </div>
                     <div class="gradient-custom__photo-container--two">

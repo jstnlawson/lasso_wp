@@ -534,14 +534,11 @@ button {
     padding: 30px;
     background: #fcf6f6;
     background: linear-gradient(to right, rgb(246, 227, 132), #b88354, #c4605b, #b85954, #b85488, rgb(151, 132, 246));
-
     border-radius: 60px;
     z-index: 10;
 }
 
 .gradient-custom__teaser--text-container {
-    /* width: 100%;
-    height: 95%; */
     padding: 30px;
     background: #fcf6f6;
     border-radius: 30px;
