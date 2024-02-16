@@ -8,42 +8,77 @@
 </head>
 
 <body>
+
     <div id="wpgt" class="wpgt">
-        <div class="gradient-header">
-            <header>
-                <div class="gradient-header__title">
-                    <h1>lasso</h1>
-                </div>
-                <div class='gradient-nav'>
-                    <nav>
-                        <ul>
-                            <li><a href="#">products</a></li>
-                            <li><a href="#">in stock</a></li>
-                            <li><a href="#">custom</a></li>
-                        </ul>
-                    </nav>
-                </div>
-            </header>
-        </div>
+        <?php
+        $header_title = get_theme_mod('header_title');
+        // Check if any of the specific page links have been set
+        $about_page_link    = get_theme_mod('about_page_link');
+        $products_page_link = get_theme_mod('products_page_link');
+        $custom_page_link   = get_theme_mod('custom_page_link');
+
+        // Determine if we should show the navigation based on whether any page links are set
+        $hasPageLinks = $about_page_link || $products_page_link || $custom_page_link;
+
+        if ($header_title && $hasPageLinks) : ?>
+            <div class="gradient-header">
+                <header>
+                    <div class="gradient-header__title">
+                        <h1><?php echo esc_html($header_title); ?></h1>
+                    </div>
+                    <div class='gradient-nav'>
+                        <nav>
+                            <ul>
+                                <?php if ($about_page_link) : ?>
+                                    <li>
+                                        <a href="<?php echo esc_url(get_permalink($about_page_link)); ?>">
+                                            <?php echo esc_html(get_the_title($about_page_link)); ?>
+                                        </a>
+                                    </li>
+                                <?php endif; ?>
+                                <?php if ($products_page_link) : ?>
+                                    <li>
+                                        <a href="<?php echo esc_url(get_permalink($products_page_link)); ?>">
+                                            <?php echo esc_html(get_the_title($products_page_link)); ?>
+                                        </a>
+                                    </li>
+                                <?php endif; ?>
+                                <?php if ($custom_page_link) : ?>
+                                    <li>
+                                        <a href="<?php echo esc_url(get_permalink($custom_page_link)); ?>">
+                                            <?php echo esc_html(get_the_title($custom_page_link)); ?>
+                                        </a>
+                                    </li>
+                                <?php endif; ?>
+                            </ul>
+                        </nav>
+                    </div>
+                </header>
+            </div>
+        <?php endif; ?>
+
         <div class="gradient-header__spacer"></div>
         <div class="gradient-gradient">
 
             <?php
             $hasImages = false;
+            $splash_title       = get_theme_mod('splash_title');
+            $splash_text        = get_theme_mod('splash_text');
+            $splash_button_text = get_theme_mod('splash_button_text');
             for ($i = 1; $i <= 5; $i++) {
                 if (get_theme_mod("carousel_image_{$i}")) {
                     $hasImages = true;
                     break;
                 }
             }
-            if ($hasImages) : ?>
+            if ($hasImages && $splash_title && $splash_text && $splash_button_text) : ?>
                 <div class="gradient-splash">
                     <div class="swiper mySwiper">
                         <div class="swiper-wrapper">
                             <div class="swiper-slide__action-call">
-                                <h1 class="swiper-slide__action-call--title section__title">hand crafted furniture made by hand and built to last</h1>
-                                <span class="swiper-slide__action-call--sub-title section__sub-title">ready to order?</span>
-                                <button class="btn swiper-btn">let's get started</button>
+                                <h1 class="swiper-slide__action-call--title section__title"><?php echo esc_html($splash_title) ?></h1>
+                                <span class="swiper-slide__action-call--sub-title section__sub-title"><?php echo esc_html($splash_text) ?></span>
+                                <button class="btn swiper-btn"><?php echo esc_html($splash_button_text) ?></button>
                             </div>
                             <?php for ($i = 1; $i <= 5; $i++) : ?>
                                 <?php $image_url = get_theme_mod("carousel_image_{$i}"); ?>
@@ -63,11 +98,11 @@
             $showControls = false;
             $reviewsExist = false;
             for ($i = 1; $i <= 5; $i++) {
-                $review_text = get_theme_mod("review_text_{$i}");
+                $review_text   = get_theme_mod("review_text_{$i}");
                 $review_author = get_theme_mod("review_author_{$i}");
                 if ($review_text && $review_author) {
                     $reviewsExist = true;
-                    break; 
+                    break;
                 }
             }
             if ($reviewsExist) : ?>
@@ -79,7 +114,7 @@
                                 $review_text = get_theme_mod("review_text_{$i}");
                                 $review_author = get_theme_mod("review_author_{$i}");
                                 if ($review_text && $review_author) :
-                                    $showControls = true; 
+                                    $showControls = true;
                                 ?>
                                     <div class="swiper-slide">
                                         <div class="gradient-reviews__display">
@@ -199,21 +234,38 @@
             <?php endif; ?>
 
             <footer class="gradient-footer">
+                <?php
+                $company_logo = get_theme_mod('company_logo');
+                $company_name = get_theme_mod('company_name');
+                if ($company_logo || $company_name) : ?>
                 <div class="gradient-footer__company">
-                    <span class="gradient-footer__company--logo">l</span>
-                    <p class="gradient-footer__company--est">&copy; 2024 lasso inc</p>
+                    <span class="gradient-footer__company--logo">
+                        <img src="<?php echo esc_url($company_logo); ?>" alt="company logo">
+                    </span>
+                    <p class="gradient-footer__company--est">
+                        <?php echo esc_html($company_name); ?>
+                    </p>
                 </div>
+                <?php endif; ?>
+                <?php
+                $company_email   = get_theme_mod('company_email');
+                $company_address = get_theme_mod('company_address');
+                $company_phone   = get_theme_mod('company_phone');
+                if ($company_email || $company_address || $company_phone) : ?>
                 <div class="gradient-footer__contact">
                     <h4 class="gradient-footer__title">contact</h4>
                     <ul>
-                        <li>lasso@lasso.com</li>
+                        <li><?php echo esc_html($company_email) ?></li>
+                        <li><?php echo esc_html($company_address) ?></li>
+                        <li><?php echo esc_html($company_phone) ?></li>
                     </ul>
                 </div>
+                <?php endif; ?>
                 <div class="gradient-footer__social">
                     <h4 class="gradient-footer__title">follow us</h4>
                     <ul class="gradient-footer__social-icons__container">
                         <?php
-                        $social_sites = array('Facebook' => 'facebook', 'Twitter' => 'twitter', 'Instagram' => 'instagram'); // Map human-readable names to Dashicon slugs
+                        $social_sites = array('Facebook' => 'facebook', 'Twitter' => 'twitter', 'Instagram' => 'instagram');
                         foreach ($social_sites as $site_name => $dashicon_slug) {
                             $url = get_theme_mod("social_media_{$site_name}");
                             if ($url) {

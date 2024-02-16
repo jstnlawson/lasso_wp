@@ -40,6 +40,61 @@ function gradient_enqueue_swiper_assets() {
 }
 add_action('wp_enqueue_scripts', 'gradient_enqueue_swiper_assets');
 
+function register_header($wp_customize)
+{
+
+    $wp_customize->add_section('gradient_header', array(
+        'title'    => __('Header Settings', 'gradient'),
+        'priority' => 30,
+    ));
+
+    $wp_customize->add_setting('header_title', array(
+        'default'   => '',
+        'transport' => 'refresh',
+    ));
+
+    $wp_customize->add_control('header_title', array(
+        'label'    => __('Header Title', 'gradient'),
+        'section'  => 'gradient_header',
+        'type'     => 'text',
+    ));
+
+     // About Page Link
+     $wp_customize->add_setting('about_page_link', array(
+        'default'   => '',
+        'transport' => 'refresh',
+    ));
+    $wp_customize->add_control('about_page_link', array(
+        'label'    => __('About Page Link', 'gradient'),
+        'section'  => 'gradient_header',
+        'type'     => 'dropdown-pages',
+    ));
+
+    // Products Page Link
+    $wp_customize->add_setting('products_page_link', array(
+        'default'   => '',
+        'transport' => 'refresh',
+    ));
+    $wp_customize->add_control('products_page_link', array(
+        'label'    => __('Products Page Link', 'gradient'),
+        'section'  => 'gradient_header',
+        'type'     => 'dropdown-pages',
+    ));
+
+    // Custom Page Link
+    $wp_customize->add_setting('custom_page_link', array(
+        'default'   => '',
+        'transport' => 'refresh',
+    ));
+    $wp_customize->add_control('custom_page_link', array(
+        'label'    => __('Custom Page Link', 'gradient'),
+        'section'  => 'gradient_header',
+        'type'     => 'dropdown-pages',
+    ));
+}
+
+add_action('customize_register', 'register_header');
+
 
 
 function gradient_customize_register($wp_customize)
@@ -73,14 +128,49 @@ add_action('customize_register', 'gradient_customize_register');
 
 
 function register_splash_carousel($wp_customize) {
-    // Add a new section for the Carousel
+    $splash_title       = get_theme_mod('splash_title');
+            $splash_text        = get_theme_mod('splash_text');
+            $splash_button_text = get_theme_mod('splash_button_text');
+
     $wp_customize->add_section('gradient_carousel_settings', array(
         'title'    => __('Carousel Settings', 'gradient'),
         'priority' => 30,
     ));
 
-    // Add settings for Carousel Images
-    for ($i = 1; $i <= 5; $i++) { // Example for 5 images, adjust the number as needed
+    $wp_customize->add_setting('splash_title', array(
+        'default'   => '',
+        'transport' => 'refresh',
+    ));
+
+    $wp_customize->add_control('splash_title', array(
+        'label'    => __('Splash Title', 'gradient'),
+        'section'  => 'gradient_carousel_settings',
+        'type'     => 'text',
+    ));
+
+    $wp_customize->add_setting('splash_text', array(
+        'default'   => '',
+        'transport' => 'refresh',
+    ));
+
+    $wp_customize->add_control('splash_text', array(
+        'label'    => __('Splash Text', 'gradient'),
+        'section'  => 'gradient_carousel_settings',
+        'type'     => 'textarea',
+    ));
+
+    $wp_customize->add_setting('splash_button_text', array(
+        'default'   => '',
+        'transport' => 'refresh',
+    ));
+
+    $wp_customize->add_control('splash_button_text', array(
+        'label'    => __('Splash Button Text', 'gradient'),
+        'section'  => 'gradient_carousel_settings',
+        'type'     => 'text',
+    ));
+
+    for ($i = 1; $i <= 5; $i++) { 
         $wp_customize->add_setting("carousel_image_{$i}", array(
             'default'   => '',
             'transport' => 'refresh',
