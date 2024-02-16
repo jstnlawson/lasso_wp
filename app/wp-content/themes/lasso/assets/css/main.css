@@ -66,7 +66,7 @@ button {
     /* background: linear-gradient(to bottom, #e5f5ef, #54b89c);
     background: linear-gradient(to bottom, #dffdff, #4bb0b7); */
     padding: 20px;
-    gap:120px;
+    gap:240px;
 }
 
 .section__title {
@@ -240,6 +240,7 @@ button {
     width: 50vw;
     height: 40vw;
     margin-right: 7vw;
+    object-fit: cover;
     -webkit-mask-image: radial-gradient(circle at center, black 55%, transparent);
     mask-image: radial-gradient(circle at center, black 55%, transparent); 
     /* -webkit-mask-image: linear-gradient(to right, transparent, black 25%, black 75%, transparent);
@@ -326,7 +327,7 @@ button {
 }
 
 .gradient-reviews__display--text {
-    font-size: 1.75rem;
+    font-size: 2rem;
     width: 80vw;
     background-color: transparent;
 }
@@ -349,9 +350,9 @@ button {
     /* height: 50vh; */
     width: 80vw;
     background: #fcf6f6;
-    background: linear-gradient(to right, rgb(246, 227, 132), transparent);
+    background: linear-gradient(to right, rgb(246, 227, 132), rgba(246, 227, 132, 0.347), transparent);
     color: #404040;
-    color: #fcf6f6;
+    /* color: #fcf6f6; */
     border-radius: 30px;
 }
 
@@ -411,7 +412,11 @@ button {
     height: fit-content;
     width: calc(60vw + 20px);
     /* background: transparent; */
-    background: linear-gradient(to right, transparent,  rgba(246, 227, 132, 0.137), rgba(246, 227, 132, 0.247),  rgb(246, 227, 132));
+    background: linear-gradient(to right, transparent,  rgba(246, 227, 132, 0.137), rgba(246, 227, 132, 0.247), rgba(246, 227, 132, 0.405),  rgb(246, 227, 132));
+    /* background: linear-gradient(to right, rgb(246, 227, 132), rgba(246, 227, 132, 0.247), rgba(246, 227, 132, 0.137), transparent); */
+    background: linear-gradient(to right, transparent, rgb(246, 227, 132));
+
+
 
     color: #404040;
     padding: 20px;
@@ -447,10 +452,10 @@ button {
     max-height: 35vh;
 }
 
-.gradient-products__teaser--title, .gradient-products__teaser--text, .products-btn {
+/* .gradient-products__teaser--title, .gradient-products__teaser--text, .products-btn {
     color: #fcf6f6;
     border-color: #fcf6f6;
-}
+} */
 
 /*----------------------------------------------------------------------------------
     Custom Teaser Section 
@@ -498,6 +503,7 @@ button {
     border-radius: 30px;
     background: linear-gradient(to right, transparent, rgba(246, 227, 132, 0.102), rgba(246, 227, 132, 0.5));
     /* background: linear-gradient(to right, rgba(246, 132, 132, 0.4), rgba(246, 227, 132, 0.5)); */
+    background: rgba(246, 227, 132, 0.4);
 }
 
 .photo-cover--pink {
@@ -505,10 +511,15 @@ button {
     height: 100%;
     width: 100%;
     border-radius: 30px;
-    background:  rgba(246, 132, 132, 0.309);
-    background: linear-gradient(to right, transparent, rgba(246, 132, 132, 0.4));
+    /* background:  rgba(246, 132, 132, 0.3); */
+    background:  rgba(132, 197, 246, 0.4);
+    /* background: linear-gradient(to right, transparent, rgba(246, 132, 132, 0.4)); */
     /* background: linear-gradient(to right, rgba(246, 132, 132, 0.5), rgba(246, 227, 132, 0.5)); */
+    /* background: linear-gradient(to right, transparent, rgba(132, 197, 246, 0.56)); */
+
 }
+
+
 
 .gradient-custom__info {
     position: absolute;
@@ -516,14 +527,24 @@ button {
     left: 25vw;
     display: flex;
     flex-direction: column;
-    justify-content: start;
-    align-items: start;
+    justify-content: center;
+    align-items: center;
     width: 35vw;
     height: fit-content;
-    padding: 50px;
+    padding: 30px;
+    background: #fcf6f6;
+    background: linear-gradient(to right, rgb(246, 227, 132), #b88354, #c4605b, #b85954, #b85488, rgb(151, 132, 246));
+
+    border-radius: 60px;
+    z-index: 10;
+}
+
+.gradient-custom__teaser--text-container {
+    /* width: 100%;
+    height: 95%; */
+    padding: 30px;
     background: #fcf6f6;
     border-radius: 30px;
-    z-index: 10;
 }
 
 

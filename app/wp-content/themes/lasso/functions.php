@@ -273,3 +273,68 @@ function register_product_teaser ($wp_customize) {
 }
 
 add_action('customize_register', 'register_product_teaser');
+
+function register_custom_teaser ($wp_customize) {
+
+    $wp_customize->add_section('gradient_custom_teaser', array(
+        'title'    => __('custom Teaser Settings', 'gradient'),
+        'priority' => 30,
+    ));
+
+    $wp_customize->add_setting('custom_teaser_title', array(
+        'default'   => '',
+        'transport' => 'refresh',
+    ));
+
+    $wp_customize->add_control('custom_teaser_title', array(
+        'label'    => __('custom Teaser Title', 'gradient'),
+        'section'  => 'gradient_custom_teaser',
+        'type'     => 'text',
+    ));
+
+    $wp_customize->add_setting('custom_teaser_text', array(
+        'default'   => '',
+        'transport' => 'refresh',
+    ));
+
+    $wp_customize->add_control('custom_teaser_text', array(
+        'label'    => __('custom Teaser Text', 'gradient'),
+        'section'  => 'gradient_custom_teaser',
+        'type'     => 'textarea',
+    ));
+
+    $wp_customize->add_setting('custom_teaser_button_text', array(
+        'default'   => '',
+        'transport' => 'refresh',
+    ));
+
+    $wp_customize->add_control('custom_teaser_button_text', array(
+        'label'    => __('custom Teaser Button Text', 'gradient'),
+        'section'  => 'gradient_custom_teaser',
+        'type'     => 'text',
+    ));
+
+    $wp_customize->add_setting('custom_teaser_photo_one', array(
+        'default'   => '',
+        'transport' => 'refresh',
+    ));
+
+    $wp_customize->add_control(new WP_Customize_Image_Control($wp_customize, 'custom_teaser_photo_one', array(
+        'label'    => __('custom Teaser Photo One', 'gradient'),
+        'section'  => 'gradient_custom_teaser',
+        'settings' => 'custom_teaser_photo_one',
+    )));
+
+    $wp_customize->add_setting('custom_teaser_photo_two', array(
+        'default'   => '',
+        'transport' => 'refresh',
+    ));
+
+    $wp_customize->add_control(new WP_Customize_Image_Control($wp_customize, 'custom_teaser_photo_two', array(
+        'label'    => __('custom Teaser Photo Two', 'gradient'),
+        'section'  => 'gradient_custom_teaser',
+        'settings' => 'custom_teaser_photo_two',
+    )));
+}
+
+add_action('customize_register', 'register_custom_teaser');
