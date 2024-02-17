@@ -5,7 +5,13 @@
 
     document.addEventListener('DOMContentLoaded', () => {
         const cards = document.querySelectorAll('.products-card');
-        const swipers = document.querySelectorAll('.cubeSwiper');
+        const productCube = document.querySelectorAll('.cubeSwiper');
+        const splash = document.querySelectorAll('.gradient-splash');
+        const aboutTeaser = document.querySelectorAll('.gradient-about__teaser');
+        const productsTeaser = document.querySelectorAll('.gradient-products__teaser');
+        const contactPhotoOne = document.querySelectorAll('.gradient-custom__photo-container--one');
+        const contactPhotoTwo = document.querySelectorAll('.gradient-custom__photo-container--two');
+        const contactInfo = document.querySelectorAll('.gradient-custom__info');
       
         // Function to calculate and apply the transform for each element
         const applyTransform = (elements, directionMultiplier) => {
@@ -23,10 +29,41 @@
             });
         };
       
+        const adjustOpacityOnScroll = (elements) => {
+            elements.forEach(element => {
+                const rect = element.getBoundingClientRect();
+                const windowHeight = window.innerHeight;
+                const headerHeight = windowHeight * 0.15; // Header takes up 15vh
+                const adjustedWindowHeight = windowHeight - headerHeight;
+                const viewportCenter = adjustedWindowHeight / 2 + headerHeight;
+        
+                const elementCenterToAdjustedViewportCenter = Math.abs(viewportCenter - (rect.top + rect.height / 2));
+                const distanceNormalized = elementCenterToAdjustedViewportCenter / (adjustedWindowHeight / 2);
+        
+                // Dampening factor - Adjust this value to control how quickly opacity decreases
+                // Higher values will keep the opacity at 1 longer as the element moves away from the center
+                const dampeningFactor = 0.25;
+        
+                let opacity = 1 - (distanceNormalized * dampeningFactor);
+        
+                opacity = Math.max(0, Math.min(opacity, 1));
+        
+                element.style.opacity = opacity;
+            });
+        };
+        
+
         // Listen for scroll events and apply transformations
         const handleScroll = () => {
-            applyTransform(cards, -1); // Move cards in one direction
-            applyTransform(swipers, 1); // Move swipers in the opposite direction
+            applyTransform(aboutTeaser, -1); 
+            applyTransform(cards, -1); 
+            applyTransform(productCube, 1);
+            applyTransform(splash, 1); 
+            adjustOpacityOnScroll(splash);
+            adjustOpacityOnScroll(productsTeaser);
+            // adjustOpacityOnScroll(contactInfo);
+            applyTransform(contactPhotoOne, -1);
+            applyTransform(contactPhotoTwo, 1);
         };
     
         // Initial call in case they're already in view

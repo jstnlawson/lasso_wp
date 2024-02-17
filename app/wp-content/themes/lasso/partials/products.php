@@ -13,7 +13,7 @@
                             <div class="section__sub-title gradient-products__teaser--text">
                                 <p><?php echo esc_html($products_teaser_text); ?></p>
                             </div>
-                            <button class="btn products-btn"><?php echo esc_html($products_teaser_button_text); ?></button>
+                            <button class="btn products-teaser-btn"><?php echo esc_html($products_teaser_button_text); ?></button>
                         </div>
                         <div class="gradient-products__teaser-image--container">
                             <img class="gradient-products__teaser-image" src="<?php echo esc_url($products_teaser_photo_one); ?>" alt="shelf">
