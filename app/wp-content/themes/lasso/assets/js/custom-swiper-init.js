@@ -37,3 +37,24 @@ document.addEventListener("DOMContentLoaded", function () {
     },
   });
 });
+
+var cubeSwiper = new Swiper(".cubeSwiper", {
+  effect: "cube",
+  grabCursor: true,
+  loop: true,
+  cubeEffect: {
+    shadow: true,
+    slideShadows: true,
+    shadowOffset: 20,
+    shadowScale: 0.94,
+  },
+  autoplay: {
+    delay: 5000,
+    disableOnInteraction: true,
+  },
+  speed: 3000,
+  pagination: {
+    el: ".swiper-pagination",
+    clickable: true,
+  },
+});

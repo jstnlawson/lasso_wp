@@ -1,3 +1,4 @@
+<div class="home-page">
 <?php
 $hasImages = false;
 $splash_title       = get_theme_mod('splash_title');

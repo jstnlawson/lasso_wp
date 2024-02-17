@@ -4,6 +4,7 @@
     --swiper-theme-color: #404040;
     --swiper-pagination-fraction-color: #404040;
     --swiper-pagination-bullet-inactive: #404040;
+    --swiper-pagination-bullet-horizontal-gap: 10px;
 }
 
 
@@ -66,7 +67,15 @@ button {
     /* background: linear-gradient(to bottom, #e5f5ef, #54b89c);
     background: linear-gradient(to bottom, #dffdff, #4bb0b7); */
     padding: 20px;
-    gap:240px;
+    /* gap:240px; */
+}
+
+.home-page { 
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap:200px; 
 }
 
 .section__title {
@@ -78,6 +87,11 @@ button {
     font-size: 1.25rem;
     margin-bottom: 30px;
     text-wrap: balance;
+}
+
+.page-spacer {
+    height: 1vh;
+    background-color: transparent;
 }
 
 /*----------------------------------------------------------------------------------
@@ -557,6 +571,7 @@ button {
     background-color: transparent;
     width: 100%;
     height: fit-content;
+    margin-top: 200px;
 }
 
 .gradient-footer div {
@@ -624,3 +639,117 @@ button {
     display: block;
     /* This can help with sizing and prevent unwanted whitespace */
 }
+
+/*----------------------------------------------------------------------------------
+   Products
+-----------------------------------------------------------------------------------*/
+
+.products {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    gap: 200px;
+    background-color: transparent;
+    /* height: fit-content; */
+    /* padding: 50px 0; */
+}
+
+.products-card {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 60vw;
+    height: 60vh;
+    background-color: whitesmoke;
+    color: #404040;
+    padding: 50px;
+    border-radius: 25px;
+    background: linear-gradient(to right, transparent, rgb(246, 227, 132));
+    background: linear-gradient(to right, transparent, whitesmoke);
+
+}
+
+.products-card__price {
+    font-size: 2.75rem;
+    color: #545bb8;
+}
+
+.products-card__description {
+    display: flex;
+    align-items: start;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.products-card__title {
+    font-size: 2rem;
+
+}
+
+.products-card__text {
+    font-size: 1.25rem;
+    text-wrap: balance;
+}
+
+.products-btn {
+    color: #f5e5e5;
+    background-color: #545bb8;
+    border: none;
+}
+
+.products-btn:hover {
+    background-color: #464c9a;
+}
+/*----------------------------------------------------------------------------------
+   Cube Swiper (product page)
+-----------------------------------------------------------------------------------*/
+
+/* .cubeSwiper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: transparent;
+    position: absolute;
+} */
+
+.products .swiper {
+    width: 30vw;
+    height: 30vw;
+    object-fit: cover;
+    border-radius: 10px;
+    position: relative;
+    right: -8vw;
+    top: 0;
+}
+
+  .products .swiper-slide {
+    background-position: center;
+    background-size: cover;
+  }
+
+  .products .swiper-slide img {
+    display: block;
+    width: 100%;
+  }
+
+  .products .swiper-pagination {
+    position: relative;
+    margin-top: 25px;
+  }
+
+  /* Initial state: moved out of view */
+.products-card, .cubeSwiper {
+    transition: transform 0.5s ease-out;
+    will-change: transform;
+  }
+  
+  .off-screen-left {
+    transform: translateX(-100%);
+  }
+  
+  .off-screen-right {
+    transform: translateX(100%);
+  }
+  

@@ -27,3 +27,4 @@ if ($custom_teaser_title && $custom_teaser_text && $custom_teaser_button_text &&
         </div>
     </div>
 <?php endif; ?>
+</div>
