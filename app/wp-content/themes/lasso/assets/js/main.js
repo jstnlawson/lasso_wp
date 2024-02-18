@@ -7,6 +7,7 @@
         const cards = document.querySelectorAll('.products-card');
         const productCube = document.querySelectorAll('.cubeSwiper');
         const splash = document.querySelectorAll('.gradient-splash');
+        const splashText = document.querySelectorAll('.swiper-slide__action-call');
         const aboutTeaser = document.querySelectorAll('.gradient-about__teaser');
         const productsTeaser = document.querySelectorAll('.gradient-products__teaser');
         const contactPhotoOne = document.querySelectorAll('.gradient-custom__photo-container--one');
@@ -58,7 +59,8 @@
             applyTransform(aboutTeaser, -1); 
             applyTransform(cards, -1); 
             applyTransform(productCube, 1);
-            applyTransform(splash, 1); 
+            // applyTransform(splash, 1); 
+            applyTransform(splashText, 1);
             adjustOpacityOnScroll(splash);
             adjustOpacityOnScroll(productsTeaser);
             // adjustOpacityOnScroll(contactInfo);

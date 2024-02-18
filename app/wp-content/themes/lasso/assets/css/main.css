@@ -236,7 +236,7 @@ button {
 -----------------------------------------------------------------------------------*/
 
 .gradient-splash {
-    margin-top: 40px;
+    /* margin-top: 40px; */
 }
 
 .mySwiper {
@@ -247,20 +247,21 @@ button {
 
 .mySwiper .swiper-slide {
     display: flex;
-    justify-content: end;
+    justify-content: center;
     align-items: center;
     text-align: center;
 }
 
 .swiper-slide__image {
-    width: 50vw;
-    height: 40vw;
-    margin-right: 7vw;
+    width: 100vw;
+    height: 85vh;
+    /* height: 40vw; */
+    /* margin-right: 7vw; */
     object-fit: cover;
-    -webkit-mask-image: radial-gradient(circle at center, black 55%, transparent);
-    mask-image: radial-gradient(circle at center, black 55%, transparent); 
-    /* -webkit-mask-image: linear-gradient(to right, transparent, black 25%, black 75%, transparent);
-    mask-image: linear-gradient(to right, transparent, black 25%, black 75%, transparent);  */
+    -webkit-mask-image: radial-gradient(circle at center, black 85%, transparent);
+    mask-image: radial-gradient(circle at center, black 85%, transparent); 
+    -webkit-mask-image: linear-gradient(to right, transparent, black 5%, black 85%, transparent);
+    mask-image: linear-gradient(to right, transparent,  black , black , black , black , black , black , transparent); 
     /* -webkit-mask-image: linear-gradient(to bottom, transparent, black 25%, black 75%, transparent);
     mask-image: linear-gradient(to bottom, transparent, black 25%, black 75%, transparent);  */
 }
@@ -274,16 +275,17 @@ button {
     align-items: start;
     position: absolute;
     top: 20%;
-    left: 4%;
+    left: 15%;
     text-wrap: balance;
     /* gap: 20px; */
     font-size: 2em;
     width: 30vw;
     height: fit-content;
-    padding: 0 20px;
-    margin-right: 5vw;
-    /* border-radius: 10px; */
-    background-color: transparent;
+    padding: 50px;
+    /* margin-right: 5vw; */
+    border-radius: 25px;
+    background-color: rgba(255, 255, 255, 0.819);
+    z-index: 5;
 }
 
 /*----------------------------------------------------------------------------------
@@ -457,7 +459,7 @@ button {
 
 .gradient-products__teaser-image--container {
     width: 30vw;
-    
+    height: 30vh;
 }
 
 .gradient-products__teaser-image {
@@ -519,7 +521,7 @@ button {
     border-radius: 30px;
     background: linear-gradient(to right, transparent, rgba(246, 227, 132, 0.102), rgba(246, 227, 132, 0.5));
     /* background: linear-gradient(to right, rgba(246, 132, 132, 0.4), rgba(246, 227, 132, 0.5)); */
-    background: rgba(246, 227, 132, 0.4);
+    background: rgba(246, 227, 132, 0.25);
 }
 
 .photo-cover--pink {

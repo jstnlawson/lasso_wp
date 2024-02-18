@@ -2,30 +2,44 @@
                     <?php
                     $company_logo = get_theme_mod('company_logo');
                     $company_name = get_theme_mod('company_name');
-                    if ($company_logo || $company_name) : ?>
+                    ?>
                     <div class="gradient-footer__company">
-                        <span class="gradient-footer__company--logo">
+                    <?php if (!empty($company_logo)) : ?>
+                        <span>
                             <img src="<?php echo esc_url($company_logo); ?>" alt="company logo">
                         </span>
-                        <p class="gradient-footer__company--est">
+                    <?php endif; ?>
+                    <?php if (!empty($company_name)) : ?>
+                        <p class="gradient-footer__company--logo">
                             <?php echo esc_html($company_name); ?>
                         </p>
-                    </div>
                     <?php endif; ?>
+                    </div>
                     <?php
                     $company_email   = get_theme_mod('company_email');
-                    $company_address = get_theme_mod('company_address');
+                    $company_street_address = get_theme_mod('company_street_address');
+                    $company_city   = get_theme_mod('company_city');
+                    $company_state  = get_theme_mod('company_state');
+                    $company_zip    = get_theme_mod('company_zip');
                     $company_phone   = get_theme_mod('company_phone');
-                    if ($company_email || $company_address || $company_phone) : ?>
+                    ?>
                     <div class="gradient-footer__contact">
                         <h4 class="gradient-footer__title">contact</h4>
                         <ul>
+                            <?php if (!empty($company_email)) : ?>
                             <li><?php echo esc_html($company_email) ?></li>
-                            <li><?php echo esc_html($company_address) ?></li>
+                            <?php endif; ?>
+                            <?php if (!empty($company_street_address)) : ?>
+                            <li><?php echo esc_html($company_street_address) ?></li>
+                            <?php endif; ?>
+                            <?php if ($company_city || $company_state || $company_zip) : ?>
+                            <li><?php echo esc_html($company_city) ?>, <?php echo esc_html($company_state) ?> <?php echo esc_html($company_zip) ?></li>
+                            <?php endif; ?>
+                            <?php if (!empty($company_phone)) : ?>
                             <li><?php echo esc_html($company_phone) ?></li>
+                            <?php endif; ?>
                         </ul>
                     </div>
-                    <?php endif; ?>
                     <div class="gradient-footer__social">
                         <h4 class="gradient-footer__title">follow us</h4>
                         <ul class="gradient-footer__social-icons__container">

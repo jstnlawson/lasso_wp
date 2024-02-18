@@ -97,15 +97,109 @@ add_action('customize_register', 'register_header');
 
 
 
-function gradient_customize_register($wp_customize)
+function footer_customize_register($wp_customize)
 {
-    // Add Social Media Section
-    $wp_customize->add_section('social_media_section', array(
-        'title'    => __('Social Media Links', 'gradient'),
+    // Add Footer Section
+    $wp_customize->add_section('footer-settings-section', array(
+        'title'    => __('Footer Settings', 'gradient'),
         'priority' => 120,
     ));
 
+    //Company Name and Logo
+
+    $wp_customize->add_setting('company_logo', array(
+        'default'   => '',
+        'transport' => 'refresh',
+    ));
+
+    $wp_customize->add_control(new WP_Customize_Image_Control($wp_customize, 'company_logo', array(
+        'label'    => __('Company Logo', 'gradient'),
+        'section'  => 'footer-settings-section',
+        'settings' => 'company_logo',
+    )));
+
+    $wp_customize->add_setting('company_name', array(
+        'default'   => '',
+        'transport' => 'refresh',
+    ));
+
+    $wp_customize->add_control('company_name', array(
+        'label'    => __('Company Name', 'gradient'),
+        'section'  => 'footer-settings-section',
+        'type'     => 'text',
+    ));
+
+    // Company Contact Information
+
+    $wp_customize->add_setting('company_email', array(
+        'default'   => '',
+        'transport' => 'refresh',
+    ));
+
+    $wp_customize->add_control('company_email', array(
+        'label'    => __('Company Email', 'gradient'),
+        'section'  => 'footer-settings-section',
+        'type'     => 'text',
+    ));
+
+    $wp_customize->add_setting('company_street_address', array(
+        'default'   => '',
+        'transport' => 'refresh',
+    ));
+
+    $wp_customize->add_control('company_street_address', array(
+        'label'    => __('Company Street Address', 'gradient'),
+        'section'  => 'footer-settings-section',
+        'type'     => 'text',
+    ));
+
+    $wp_customize->add_setting('company_city', array(
+        'default'   => '',
+        'transport' => 'refresh',
+    ));
+
+    $wp_customize->add_control('company_city', array(
+        'label'    => __('Company City', 'gradient'),
+        'section'  => 'footer-settings-section',
+        'type'     => 'text',
+    ));
+
+    $wp_customize->add_setting('company_state', array(
+        'default'   => '',
+        'transport' => 'refresh',
+    ));
+
+    $wp_customize->add_control('company_state', array(
+        'label'    => __('Company State', 'gradient'),
+        'section'  => 'footer-settings-section',
+        'type'     => 'text',
+        'description' => 'Please use the two-letter abbreviation to save space.',
+    ));
+
+    $wp_customize->add_setting('company_zip', array(
+        'default'   => '',
+        'transport' => 'refresh',
+    ));
+
+    $wp_customize->add_control('company_zip', array(
+        'label'    => __('Company Zip', 'gradient'),
+        'section'  => 'footer-settings-section',
+        'type'     => 'text',
+    ));
+
+    $wp_customize->add_setting('company_phone', array(
+        'default'   => '',
+        'transport' => 'refresh',
+    ));
+
+    $wp_customize->add_control('company_phone', array(
+        'label'    => __('Company Phone', 'gradient'),
+        'section'  => 'footer-settings-section',
+        'type'     => 'text',
+    ));
+
     // Register settings for each social media
+
     $social_sites = array('Facebook', 'Twitter', 'Instagram'); // Add more sites as needed
     foreach ($social_sites as $social_site) {
         $wp_customize->add_setting("social_media_{$social_site}", array(
@@ -115,7 +209,7 @@ function gradient_customize_register($wp_customize)
 
         $wp_customize->add_control("social_media_{$social_site}", array(
             'label'    => "{$social_site} URL",
-            'section'  => 'social_media_section',
+            'section'  => 'footer-settings-section',
             'type'     => 'url',
             'priority' => 10,
             'description' => 'Please enter the full URL, including "http://" or "https://".',
@@ -123,7 +217,7 @@ function gradient_customize_register($wp_customize)
     }
 }
 
-add_action('customize_register', 'gradient_customize_register');
+add_action('customize_register', 'footer_customize_register');
 
 
 
