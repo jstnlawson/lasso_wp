@@ -30,10 +30,10 @@
                             <li><?php echo esc_html($company_email) ?></li>
                             <?php endif; ?>
                             <?php if (!empty($company_street_address)) : ?>
-                            <li><?php echo esc_html($company_street_address) ?></li>
+                            <li style="margin-top: 5px;" ><?php echo esc_html($company_street_address) ?></li>
                             <?php endif; ?>
                             <?php if ($company_city || $company_state || $company_zip) : ?>
-                            <li><?php echo esc_html($company_city) ?>, <?php echo esc_html($company_state) ?> <?php echo esc_html($company_zip) ?></li>
+                            <li style="margin-bottom: 5px;" ><?php echo esc_html($company_city) ?>, <?php echo esc_html($company_state) ?> <?php echo esc_html($company_zip) ?></li>
                             <?php endif; ?>
                             <?php if (!empty($company_phone)) : ?>
                             <li><?php echo esc_html($company_phone) ?></li>

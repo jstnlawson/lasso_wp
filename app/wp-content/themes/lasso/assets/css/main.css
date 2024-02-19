@@ -576,6 +576,7 @@ button {
     width: 100%;
     height: fit-content;
     margin-top: 200px;
+    padding: 20px 0;
 }
 
 .gradient-footer div {
@@ -643,6 +644,9 @@ button {
     display: block;
     /* This can help with sizing and prevent unwanted whitespace */
 }
+
+.gradient-footer__contact--address { margin: 5px 0; }
+
 
 /*----------------------------------------------------------------------------------
    Products
