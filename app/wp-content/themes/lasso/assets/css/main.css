@@ -757,3 +757,32 @@ button {
     will-change: transform;
   }
   
+/*--------------------------------------------------------------------------------------------------------------
+    Single Product Page
+---------------------------------------------------------------------------------------------------------------*/
+
+.single-product__carousel .swiper {
+    width: 100vw;
+    height: 100%;
+  }
+
+  .single-product__carousel .swiper-slide {
+    text-align: center;
+    font-size: 18px;
+    background: transparent;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .single-product__carousel .swiper-slide img {
+    display: block;
+    width: auto;
+    max-height: 80vh;
+    object-fit: cover;
+  }
+
+  .single-product__carousel  .swiper {
+    margin-left: auto;
+    margin-right: auto;
+  }
