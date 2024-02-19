@@ -710,6 +710,8 @@ button {
 .products-btn:hover {
     background-color: #464c9a;
 }
+
+
 /*----------------------------------------------------------------------------------
    Cube Swiper (product page)
 -----------------------------------------------------------------------------------*/
@@ -725,7 +727,7 @@ button {
 .products .swiper {
     width: 30vw;
     height: 30vw;
-    object-fit: cover;
+    /* object-fit: cover; */
     border-radius: 10px;
     position: relative;
     right: -8vw;
@@ -738,8 +740,10 @@ button {
   }
 
   .products .swiper-slide img {
-    display: block;
-    width: 100%;
+   display: block;
+   height: 100%;
+   width: 100%;
+    object-fit: cover;
   }
 
   .products .swiper-pagination {
@@ -751,13 +755,5 @@ button {
 .products-card, .cubeSwiper {
     transition: transform 0.5s ease-out;
     will-change: transform;
-  }
-  
-  .off-screen-left {
-    transform: translateX(-100%);
-  }
-  
-  .off-screen-right {
-    transform: translateX(100%);
   }
   

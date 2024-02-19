@@ -12,20 +12,39 @@ $args = array(
 );
 $products = new WP_Query($args);
 
-$price = get_post_meta(get_the_ID(), 'price', true);
-$description = get_post_meta(get_the_ID(), 'description', true);
-$dimensions = get_post_meta(get_the_ID(), 'dimensions', true);
-$specifications = get_post_meta(get_the_ID(), 'specifications', true);
+if ($products->have_posts()) :
+    while ($products->have_posts()) : $products->the_post();
 
-if ($products->have_posts()) : while ($products->have_posts()) : $products->the_post();
-    // Display each product details here
-    the_title(); 
-    the_content();
-    echo $price;
-    echo $description;
-    echo $dimensions;
-    echo $specifications;
+        $price = get_field('price');
+        $dimensions = get_field('dimensions');
+        $specifications = get_field('specifications');
+        $images = array(
+            get_field('image_one'),
+            get_field('image_two'),
+            get_field('image_three'),
+            get_field('image_four')
+        );
 
-endwhile; endif;
+        the_title('<h2>', '</h2>');
+        if (!empty($price)) {
+            echo '$' . number_format($price, 2);
+        }
+        echo '<div class="product-details__description">';
+        the_content();
+        echo '</div>';
+        if (!empty($dimensions)) {
+            echo '<p>Dimensions: ' . esc_html($dimensions) . '</p>';
+        }
+        if (!empty($specifications)) {
+            echo '<p>Specifications: ' . wp_kses_post($specifications) . '</p>';
+        }
+        foreach ($images as $image) {
+            if ($image) {
+                echo '<img src="' . esc_url($image['url']) . '" alt="' . esc_attr($image['alt']) . '">';
+            }
+        }
+
+    endwhile;
+endif;
 
 get_footer();
