@@ -527,13 +527,13 @@ function create_product_post_type() {
     register_post_type('product',
         array(
             'labels'      => array(
-                'name'          => __('Products', 'textdomain'),
-                'singular_name' => __('Product', 'textdomain'),
+                'name'          => __('Products'),
+                'singular_name' => __('Product'),
             ),
             'public'      => true,
             'has_archive' => true,
             'supports'    => array('title', 'editor', 'thumbnail', 'excerpt'),
-            'rewrite'     => array('slug' => 'products'), // Customize the permalink structure
+            // Customize the permalink structure
         )
     );
 }
