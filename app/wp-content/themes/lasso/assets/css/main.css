@@ -761,6 +761,14 @@ button {
     Single Product Page
 ---------------------------------------------------------------------------------------------------------------*/
 
+.single-product {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;  
+    background-color: transparent;
+}
+
 .single-product__head {
     display: flex;
     justify-content: center;
@@ -806,3 +814,79 @@ button {
     background-color: transparent;
     padding: 20px;
   }
+
+  /* .single-product__dropdown__container {
+    height: fit-content;
+    background: linear-gradient(to right, rgba(245, 245, 245, 0.605), transparent);
+    border-radius: 30px;
+  } */
+
+  .single-product__dropdown {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    padding: 20px;
+    background-color: transparent;
+    
+    width: 80vw;
+    border-bottom: #404040 2px solid;
+  }
+
+  .single-product__dropdown--title {
+    display: flex;
+    justify-content: space-between;
+    align-items: end;
+    width: 100%;
+    cursor: pointer;
+  }
+
+  .single-product__dropdown--title:hover {
+    cursor: pointer;
+  }
+
+  .single-product__dropdown--icon {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: transparent;
+    background-color: #f5e5e51f;
+    border:#404040 2px solid;
+    border-radius: 50%;
+    padding: 10px;
+    font-size: 2rem;
+    height: 50px;
+    width: 50px;
+  }
+
+  .single-product__dropdown--icon:hover {
+    background-color: #f5e5e500;
+  }
+
+  .single-product__dropdown--content {
+    display: none;
+    justify-content: start;
+    align-items: center;
+    background-color: transparent;
+    width: 100%;
+    text-wrap: balance;
+    transition: max-height 1s ease-in-out;
+  }
+
+  .single-product__dropdown--content p {
+    font-size: 1.125rem;
+    color: #303030;
+  }
+
+  .show-dropdown {
+    display: flex;
+  }
+
+  .rotate-icon {
+    transform: rotate(180deg);
+  }
+
+  .single-product__dropdown--content.show-dropdown {
+    max-height: 1000px; /* Adjust based on the maximum expected content height */
+}

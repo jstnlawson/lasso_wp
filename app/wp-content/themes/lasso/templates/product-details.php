@@ -29,7 +29,7 @@ if ($products->have_posts()) :
         if (!empty($price)) {
             echo '$' . number_format($price, 2);
         }
-        echo '<div class="product-details__description">';
+        echo '<div>';
         the_content();
         echo '</div>';
         if (!empty($dimensions)) {

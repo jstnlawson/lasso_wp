@@ -34,7 +34,7 @@ while (have_posts()) : the_post();
             <?php endif; ?>
 
             <div class="single-product__quick-details">
-                <h2><?php the_title(); ?> details</h2>
+                <h2><?php the_title(); ?></h2>
                 <?php if (!empty($price)) : ?>
                     <span>$ <?php echo number_format($price, 2) ?></span>
                 <?php endif; ?>
@@ -43,23 +43,41 @@ while (have_posts()) : the_post();
 
         </div>
 
-        <div class="product-details__description">
-            <?php the_content(); ?>
+        <div class="single-product__dropdown__container">
+            <div class="single-product__dropdown">
+                <div class="single-product__dropdown--title">
+                    <h3>Description</h3>
+                    <button class="single-product__dropdown--icon">↓</button>
+                </div>
+                <div class="single-product__dropdown--content">
+                    <?php the_content(); ?>
+                </div>
+            </div>
+            <div class="single-product__dropdown">
+                <div class="single-product__dropdown--title">
+                    <h3>Dimensions</h3>
+                    <button class="single-product__dropdown--icon">↓</button>
+                </div>
+                <div class="single-product__dropdown--content">
+                    <?php if (!empty($dimensions)) : ?>
+                        <p><?php echo esc_html($dimensions) ?></p>
+                    <?php endif; ?>
+                </div>
+            </div>
+            <div class="single-product__dropdown">
+                <div class="single-product__dropdown--title">
+                    <h3>Specifications</h3>
+                    <button class="single-product__dropdown--icon">↓</button>
+                </div>
+                <div class="single-product__dropdown--content">
+                    <?php if (!empty($specifications)) : ?>
+                        <p><?php echo wp_kses_post($specifications) ?></p>
+                    <?php endif; ?>
+                </div>
+            </div>
         </div>
 
-        <?php if (!empty($dimensions)) : ?>
-            <p>Dimensions: <?php echo esc_html($dimensions) ?></p>
-        <?php endif; ?>
-
-        <?php if (!empty($specifications)) : ?>
-            <p>Specifications: <?php echo wp_kses_post($specifications) ?></p>
-        <?php endif; ?>
-
-
-
-
-
-        <a href="<?php echo get_permalink(get_page_by_title('Products')); ?>">Back to products</a>
+        <!-- <a href="<?php echo get_permalink(get_page_by_title('Products')); ?>" class="btn">Back to products</a> -->
 
     <?php endwhile; ?>
 

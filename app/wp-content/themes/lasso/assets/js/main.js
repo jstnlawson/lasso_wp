@@ -74,5 +74,14 @@
         // Attach the scroll event listener
         window.addEventListener('scroll', handleScroll);
     });
+
+    const $dropdownArea = $('.single-product__dropdown--title');
+
+    $dropdownArea.on('click', function() {
+        let $dropdownContent = $(this).closest('.single-product__dropdown').find('.single-product__dropdown--content');
+        $dropdownContent.toggleClass('show-dropdown');
+        let $dropdownBtn = $(this).closest('.single-product__dropdown').find('.single-product__dropdown--icon');
+        $dropdownBtn.toggleClass('rotate-icon');
+    });
     
 })(jQuery);
