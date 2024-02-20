@@ -39,6 +39,10 @@ a {
     color: inherit;
 }
 
+a:hover {
+    text-decoration: underline;
+}
+
 button {
     padding: 0;
     margin: 0;
@@ -239,7 +243,7 @@ button {
     /* margin-top: 40px; */
 }
 
-.mySwiper {
+.gradient-splash .mySwiper {
     width: 100vw;
     height: fit-content;
 }
@@ -688,7 +692,7 @@ button {
     display: flex;
     align-items: start;
     flex-direction: column;
-    gap: 20px;
+    gap: 10px;
 }
 
 .products-card__title {
@@ -699,6 +703,10 @@ button {
 .products-card__text {
     font-size: 1.25rem;
     text-wrap: balance;
+}
+
+.products-card__single-link--container {
+   margin-bottom: 10px;
 }
 
 .products-btn {
@@ -728,10 +736,20 @@ button {
     width: 30vw;
     height: 30vw;
     /* object-fit: cover; */
-    border-radius: 10px;
+    /* border-radius: 10px; */
     position: relative;
     right: -8vw;
     top: 0;
+}
+
+/* settings for all cubes that are not first cube */
+
+/* .products .swiper:not(:first-of-type) {
+    right: -6vw;
+}  */
+
+.products-card:not(:first-of-type) .swiper {
+    right: -12vw;
 }
 
   .products .swiper-slide {
@@ -775,10 +793,13 @@ button {
     align-items: center;
     gap: 20px;
     background-color: transparent;
-    padding: 20px;
+    padding: 0 20px;
 }
 
 .single-product__carousel .swiper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
     width: 65vw;
     height: 85vh;
   }
@@ -810,9 +831,13 @@ button {
     justify-content: center;
     align-items: center;
     width: 20vw;
-    gap: 20px;
+    gap: 60px;
     background-color: transparent;
     padding: 20px;
+  }
+
+  .single-product__title {
+    font-size: 2.5rem;
   }
 
   /* .single-product__dropdown__container {
@@ -829,12 +854,12 @@ button {
     gap: 20px;
     padding: 20px;
     background-color: transparent;
-    
+    color: #303030;
     width: 80vw;
     border-bottom: #404040 2px solid;
   }
 
-  .single-product__dropdown--title {
+  .single-product__dropdown--head {
     display: flex;
     justify-content: space-between;
     align-items: end;
@@ -872,11 +897,12 @@ button {
     width: 100%;
     text-wrap: balance;
     transition: max-height 1s ease-in-out;
+    color: #303030;
   }
 
   .single-product__dropdown--content p {
     font-size: 1.125rem;
-    color: #303030;
+    color: black;
   }
 
   .show-dropdown {
@@ -888,5 +914,116 @@ button {
   }
 
   .single-product__dropdown--content.show-dropdown {
-    max-height: 1000px; /* Adjust based on the maximum expected content height */
+    max-height: 1000px; 
+    transition: max-height 1s ease-in-out;
+
+}
+
+.thumbnail {  
+    margin: 20px 0;
+}
+
+.thumbnail .swiper {
+    width: 100%;
+    height: 100%;
+    width: 65vw;
+    height: 65vh;
+  }
+
+  .thumbnail .swiper-slide {
+    text-align: center;
+    font-size: 18px;
+    background: transparent;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  /* .thumbnail .swiper-slide img {
+    display: block;
+    width: 60vw;
+    height: 100%;
+    object-fit: cover;
+  } */
+
+  /* .thumbnail .swiper {
+    width: 100%;
+    height: 300px;
+    margin-left: auto;
+    margin-right: auto;
+  } */
+
+  /* .thumbnail .swiper-slide {
+    background-size: cover;
+    background-position: center;
+  } */
+
+  /* .thumbnail .thumbSwiper2 {
+    height: 80%;
+    width: 100%;
+  } */
+
+  .thumbnail .thumbSwiper {
+    height: auto;
+    width: 80%;
+    box-sizing: border-box;
+    padding: 10px 0;
+  }
+
+  .thumbnail .thumbSwiper .swiper-slide {
+    width: 100%;
+    height: 100%;
+    opacity: 0.4;
+  }
+
+  .thumbnail .thumbSwiper .swiper-slide-thumb-active {
+    opacity: 1;
+  }
+
+  .thumbnail .swiper-slide img {
+    display: block;
+    width: 85%;
+    max-height: 100%;
+    object-fit: cover;
+  }
+
+  /* .thumbnail .swiper-slide img:hover {
+    cursor: zoom-in;
+  } */
+
+  .thumbSwiper-img--main:hover {
+    cursor: zoom-in;
+  }
+
+  .thumbSwiper-img--thumb:hover {
+    cursor: pointer;
+  }
+
+  .thumbnail .swiper-free-mode>.swiper-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .fullscreen-image {
+    position: fixed; /* Position fixed to cover the whole screen */
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.9); /* Black background with opacity */
+    z-index: 9999; /* Make sure it's on top of other content */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.fullscreen-image img {
+    max-width: 90%; /* Limit image width to avoid overflow */
+    max-height: 90%; /* Limit image height to avoid overflow */
+    object-fit: contain; /* Ensure the aspect ratio is maintained */
+}
+
+.fullscreen-image img:hover {
+    cursor: zoom-out;
 }

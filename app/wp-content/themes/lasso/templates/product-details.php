@@ -22,7 +22,13 @@ if ($products->have_posts()) :
             get_field('image_one'),
             get_field('image_two'),
             get_field('image_three'),
-            get_field('image_four')
+            get_field('image_four'),
+            get_field('image_five'),
+            get_field('image_six'),
+            get_field('image_seven'),
+            get_field('image_eight'),
+            get_field('image_nine'),
+            get_field('image_ten')
         );
 
         the_title('<h2>', '</h2>');

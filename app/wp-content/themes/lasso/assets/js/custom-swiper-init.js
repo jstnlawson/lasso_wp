@@ -72,4 +72,45 @@ document.addEventListener("DOMContentLoaded", function () {
     },
   });
 
+  var thumbSwiper = new Swiper(".thumbSwiper", {
+    loop: true,
+    spaceBetween: 10,
+    slidesPerView: 10,
+    freeMode: true,
+    watchSlidesProgress: true,
+  });
+  var thumbSwiper2 = new Swiper(".thumbSwiper2", {
+    loop: true,
+    spaceBetween: 10,
+    navigation: {
+      nextEl: ".swiper-button-next",
+      prevEl: ".swiper-button-prev",
+    },
+    thumbs: {
+      swiper: thumbSwiper,
+    },
+  });
+
+      // Query all images within the swiper-slide
+      document.querySelectorAll('.thumbSwiper-img--main').forEach(function(image) {
+        image.addEventListener('click', function() {
+            // Create a new div element for the fullscreen view
+            var fullscreenDiv = document.createElement('div');
+            fullscreenDiv.classList.add('fullscreen-image');
+
+            // Create a new img element for the fullscreen image
+            var fullscreenImg = new Image();
+            fullscreenImg.src = this.src; // Set the source of the image to the clicked image's src
+            fullscreenDiv.appendChild(fullscreenImg); // Add the image to the fullscreen div
+
+            // Append the fullscreen div to the body
+            document.body.appendChild(fullscreenDiv);
+
+            // Add click event to close the fullscreen view when clicked
+            fullscreenDiv.addEventListener('click', function() {
+                document.body.removeChild(this); // Remove the fullscreen div from the body
+            });
+        });
+    });
+
 });

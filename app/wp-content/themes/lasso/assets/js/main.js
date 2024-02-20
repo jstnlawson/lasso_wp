@@ -58,7 +58,7 @@
         const handleScroll = () => {
             applyTransform(aboutTeaser, -1); 
             applyTransform(cards, -1); 
-            applyTransform(productCube, 1);
+            applyTransform(productCube, 2);
             // applyTransform(splash, 1); 
             applyTransform(splashText, 1);
             adjustOpacityOnScroll(splash);
@@ -73,9 +73,11 @@
       
         // Attach the scroll event listener
         window.addEventListener('scroll', handleScroll);
+
+        
     });
 
-    const $dropdownArea = $('.single-product__dropdown--title');
+    const $dropdownArea = $('.single-product__dropdown--head');
 
     $dropdownArea.on('click', function() {
         let $dropdownContent = $(this).closest('.single-product__dropdown').find('.single-product__dropdown--content');

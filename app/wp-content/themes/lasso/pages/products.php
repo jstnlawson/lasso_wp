@@ -24,13 +24,14 @@ get_header(); ?>
             $image_three = get_field('image_three');
             $image_four = get_field('image_four');
     ?>
-           <div class="products-card">
+            <div class="products-card">
                 <div class="products-card__description">
                     <h2 class="products-card__title"><?php the_title(); ?></h2>
                     <span class="products-card__price"><?php echo esc_html($price); ?></span>
                     <p class="products-card__text"><?php the_excerpt(); ?></p>
-                    <a href="<?php the_permalink(); ?>">Full Details</a>
-
+                    <div class="products-card__single-link--container">
+                        <a href="<?php the_permalink(); ?>" class="products-card__single-link">full details</a>
+                    </div>
                     <button class="btn products-btn">add to cart</button>
                 </div>
                 <div class="swiper cubeSwiper">

@@ -13,8 +13,6 @@
                             <div class="section__sub-title gradient-products__teaser--text">
                                 <p><?php echo esc_html($products_teaser_text); ?></p>
                             </div>
-                            <a href="<?php echo get_permalink($product_id); ?>">Details</a>
-
                             <button class="btn products-teaser-btn"><?php echo esc_html($products_teaser_button_text); ?></button>
                         </div>
                         <div class="gradient-products__teaser-image--container">
