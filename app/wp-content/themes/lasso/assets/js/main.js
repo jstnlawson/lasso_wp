@@ -43,7 +43,7 @@
         
                 // Dampening factor - Adjust this value to control how quickly opacity decreases
                 // Higher values will keep the opacity at 1 longer as the element moves away from the center
-                const dampeningFactor = 0.25;
+                const dampeningFactor = 0.5;
         
                 let opacity = 1 - (distanceNormalized * dampeningFactor);
         
@@ -53,23 +53,31 @@
             });
         };
         
+        let scrollInProgress = false;
 
         // Listen for scroll events and apply transformations
         const handleScroll = () => {
+            if (!scrollInProgress) {
+                requestAnimationFrame(() => {
             applyTransform(aboutTeaser, -1); 
             applyTransform(cards, -1); 
             applyTransform(productCube, 2);
             // applyTransform(splash, 1); 
             applyTransform(splashText, 1);
             adjustOpacityOnScroll(splash);
-            adjustOpacityOnScroll(productsTeaser);
+            // adjustOpacityOnScroll(productsTeaser);
             // adjustOpacityOnScroll(contactInfo);
             applyTransform(contactPhotoOne, -1);
             applyTransform(contactPhotoTwo, 1);
+            scrollInProgress = false;
+                }
+            );
+            }
+            scrollInProgress = true;
         };
     
         // Initial call in case they're already in view
-        handleScroll();
+        // handleScroll();
       
         // Attach the scroll event listener
         window.addEventListener('scroll', handleScroll);
