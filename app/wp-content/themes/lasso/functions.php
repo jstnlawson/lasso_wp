@@ -538,3 +538,40 @@ function create_product_post_type() {
     );
 }
 add_action('init', 'create_product_post_type');
+
+function register_about_page ($wp_customize) {
+
+    $wp_customize->add_section('gradient_about_page', array(
+        'title'    => __('About Page Settings', 'gradient'),
+        'priority' => 30,
+    ));
+
+    $wp_customize->add_setting('about_main_photo', array(
+        'default'   => '',
+        'transport' => 'refresh',
+    ));
+
+    // Add control for the About Main Photo
+    $wp_customize->add_control( new WP_Customize_Image_Control( $wp_customize, 'about_main_photo', array(
+        'label'    => __('About Main Photo', 'gradient'),
+        'section'  => 'gradient_about_page',
+        'settings' => 'about_main_photo',
+    )));
+
+    // Add setting for About Main Photo Alt Text
+    $wp_customize->add_setting('about_main_photo_alt', array(
+        'default'   => '',
+        'transport' => 'refresh',
+    ));
+
+    // Add control for the About Main Photo Alt Text
+    $wp_customize->add_control('about_main_photo_alt', array(
+        'label'    => __('About Main Photo Alt Text', 'gradient'),
+        'section'  => 'gradient_about_page',
+        'settings' => 'about_main_photo_alt',
+        'type'     => 'text',
+    ));
+    
+}
+
+add_action('customize_register', 'register_about_page');

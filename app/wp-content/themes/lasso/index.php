@@ -2,8 +2,8 @@
     get_header(); 
     get_template_part('partials/splash'); 
     get_template_part('partials/reviews');
-    get_template_part('partials/about');
-    get_template_part('partials/products');
-    get_template_part('partials/contact');
+    get_template_part('partials/about-preview');
+    get_template_part('partials/products-preview');
+    get_template_part('partials/contact-preview');
     get_footer();
 ?>

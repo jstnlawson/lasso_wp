@@ -181,6 +181,11 @@ button {
     z-index: 1000;
 }
 
+.home-link:hover {
+    text-decoration: none;
+    opacity: 0.5;
+}
+
 .gradient-header__spacer {
 
     width: 100%;
@@ -709,6 +714,10 @@ button {
    margin-bottom: 10px;
 }
 
+.products-card__single-link {
+    color: #545bb8;
+}
+
 .products-btn {
     color: #f5e5e5;
     background-color: #545bb8;
@@ -1027,3 +1036,58 @@ button {
 .fullscreen-image img:hover {
     cursor: zoom-out;
 }
+
+/*----------------------------------------------------------------------------------
+    About Page
+-----------------------------------------------------------------------------------*/
+
+.about-head {
+    position: inherit;
+}
+
+.about-head__image {
+    width: 100vw;
+    height: 85vh;
+    -webkit-mask-image: linear-gradient(to right, transparent, black 5%, black 85%, transparent);
+    mask-image: linear-gradient(to right, transparent,  black , black , black , black , black , black , transparent); 
+    object-fit: cover;
+}
+
+.about-head__blurb {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: start;
+    padding: 50px;
+    background-color: rgba(255, 255, 255, 0.8);
+    width: 30vw;
+    height: fit-content;
+    position: absolute;
+    top: 45vh;
+    left: 55vw;
+    border-radius: 30px;
+    text-wrap: balance;
+}
+
+/* .about-head__bg-cloud {
+    position: absolute;
+    background: radial-gradient(circle at center, #fcf6f6 10%, transparent, transparent);
+    width: 50vw;
+    height: 50vw; 
+    z-index: 5;  
+}
+
+.bgc-one {
+    top: 15%;
+    left: 40%;
+}
+
+.bgc-two {
+    top: 33%;
+    left: 60%;
+}
+
+.bgc-three {
+    top: 36%;
+    left: 40%;
+} */

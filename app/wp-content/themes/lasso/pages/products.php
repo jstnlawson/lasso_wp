@@ -27,7 +27,7 @@ get_header(); ?>
             <div class="products-card">
                 <div class="products-card__description">
                     <h2 class="products-card__title"><?php the_title(); ?></h2>
-                    <span class="products-card__price"><?php echo esc_html($price); ?></span>
+                    <span class="products-card__price">$ <?php echo number_format($price, 2) ?></span>
                     <p class="products-card__text"><?php the_excerpt(); ?></p>
                     <div class="products-card__single-link--container">
                         <a href="<?php the_permalink(); ?>" class="products-card__single-link">full details</a>
