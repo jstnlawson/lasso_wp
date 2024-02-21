@@ -54,34 +54,22 @@ button {
     outline: none;
 }
 
-/* nav a {
-    text-decoration: none;
-    color: inherit; 
-} */
-
-/* .wpgt {
-   height: 1000px;
-} */
-
 .gradient-gradient {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     background: linear-gradient(to bottom, #f5e5e5, #b85954);
-    /* background: linear-gradient(to bottom, #e5f5ef, #54b89c);
-    background: linear-gradient(to bottom, #dffdff, #4bb0b7); */
-    padding: 20px;
-    /* gap:240px; */
+    padding: 0 20px;
     overflow-x: hidden;
 }
 
-.home-page { 
+.home-page {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    gap:200px; 
+    gap: 200px;
 }
 
 .section__title {
@@ -100,29 +88,22 @@ button {
     background-color: transparent;
 }
 
+.opaque-box {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: start;
+    padding: 50px;
+    background-color: rgba(255, 255, 255, 0.8);
+    width: 30vw;
+    height: fit-content;
+    border-radius: 30px;
+    text-wrap: balance;
+}
+
 /*----------------------------------------------------------------------------------
     Buttons
 -----------------------------------------------------------------------------------*/
-
-/* .btn {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding: 10px 20px;
-    border-radius: 10px;
-    background: linear-gradient(to bottom, #f5e5e5, #b77f7c);
-    color: #404040;
-    font-size: 1rem;
-    font-weight: 500;
-    cursor: pointer;
-}
-
-.btn:hover {
-    background: linear-gradient(to bottom, #f5e5e5, #b18180);
-    background: linear-gradient(to bottom, #f0dcdc, #ab726f);
-    cursor: pointer;
-    transform: scale(1.025);
-} */
 
 .btn {
     display: flex;
@@ -144,19 +125,14 @@ button {
     transform: scale(1.025);
     background: rgba(0, 0, 0, 0.035);
 }
+
 .btn:active {
     transform: scale(0.975);
 }
 
-/* .products-btn {
-    background: linear-gradient(to right, transparent, rgba(255, 230, 104, 0.243));
+.swiper-btn {
+    z-index: 10;
 }
-
-.products-btn:hover {
-    background: linear-gradient(to right, rgba(255, 230, 104, 0.243), transparent);
-} */
-
-.swiper-btn { z-index: 10; }
 
 /*----------------------------------------------------------------------------------
     Header
@@ -164,20 +140,15 @@ button {
 
 .gradient-header {
     position: fixed;
-    /* top: 0;
-    left: 0; */
     display: flex;
     flex-direction: column;
     justify-content: space-between;
     align-items: center;
     background: linear-gradient(to bottom, white, #f5e5e5);
-    /* background: linear-gradient(to bottom, white, #e5f5ef);  
-    background: linear-gradient(to bottom, white, #dffdff); */
     width: 100%;
     height: 15vh;
     padding: 3vh 0 0 0;
     box-sizing: border-box;
-    /* Ensures padding is included in height calculation */
     z-index: 1000;
 }
 
@@ -191,8 +162,6 @@ button {
     width: 100%;
     height: 15vh;
     background: linear-gradient(to bottom, white, #f5e5e5);
-    /* background: linear-gradient(to bottom, white, #e5f5ef);
-    background: linear-gradient(to bottom, white, #dffdff); */
     background-color: transparent;
 }
 
@@ -200,9 +169,7 @@ button {
     text-align: center;
     display: flex;
     align-items: center;
-    /* Centers title vertically */
     justify-content: center;
-    /* Centers title horizontally */
     font-family: cursive;
     font-size: 2rem;
     letter-spacing: 3px;
@@ -210,35 +177,17 @@ button {
     margin-bottom: 2vh;
 }
 
-/* .gradient-nav {
-    width: 100%;  
-      
-} */
-
 .gradient-nav nav ul {
     padding: 0;
     margin: 0;
     list-style-type: none;
     display: flex;
     justify-content: center;
-    /* Center nav items horizontally */
 }
 
 .gradient-nav nav ul li {
     padding: 0 10px;
-    /* Add horizontal spacing between nav items */
 }
-
-/*----------------------------------------------------------------------------------
-    Section
------------------------------------------------------------------------------------*/
-
-/* .gradient-section {
-    display: grid;
-    justify-content: center;
-    gap: 10px;
-    background-color: transparent;
-} */
 
 /*----------------------------------------------------------------------------------
     Splash Swiper
@@ -264,36 +213,16 @@ button {
 .swiper-slide__image {
     width: 100vw;
     height: 85vh;
-    /* height: 40vw; */
-    /* margin-right: 7vw; */
     object-fit: cover;
-    -webkit-mask-image: radial-gradient(circle at center, black 85%, transparent);
-    mask-image: radial-gradient(circle at center, black 85%, transparent); 
-    -webkit-mask-image: linear-gradient(to right, transparent, black 5%, black 85%, transparent);
-    mask-image: linear-gradient(to right, transparent,  black , black , black , black , black , black , transparent); 
-    /* -webkit-mask-image: linear-gradient(to bottom, transparent, black 25%, black 75%, transparent);
-    mask-image: linear-gradient(to bottom, transparent, black 25%, black 75%, transparent);  */
+    -webkit-mask-image: linear-gradient(to right, transparent, black, black, black, black, black, black, black, transparent);
+    mask-image: linear-gradient(to right, transparent, black, black, black, black, black, black, black, transparent);
 }
 
-
-
 .swiper-slide__action-call {
-    display: flex;
-    flex-direction: column;
-    justify-content: start;
-    align-items: start;
     position: absolute;
     top: 20%;
     left: 15%;
     text-wrap: balance;
-    /* gap: 20px; */
-    font-size: 2em;
-    width: 30vw;
-    height: fit-content;
-    padding: 50px;
-    /* margin-right: 5vw; */
-    border-radius: 25px;
-    background-color: rgba(255, 255, 255, 0.819);
     z-index: 5;
 }
 
@@ -313,34 +242,16 @@ button {
 
 .reviewSwiper .swiper-button-prev,
 .reviewSwiper .swiper-button-next {
-    /* position: relative;
-    top: 50%;
-    transform: translateY(-50%); */
     color: #595959;
-    /* text-align: center; */
     background: transparent;
-    /* width: 30px;
-    height: 30px;
-    border-radius: 15px; */
     display: flex;
     align-items: center;
     justify-content: center;
 }
 
-/* .reviewSwiper .swiper-button-prev {
-    left: 10px;
-    z-index: 10;
-} */
-
-/* .reviewSwiper .swiper-button-next {
-    right: 10px;
-    z-index: 10;
-} */
-
 .reviewSwiper {
     width: 100vw;
     height: 20vh;
-    /* margin: 40px 0; */
 }
 
 
@@ -374,18 +285,16 @@ button {
     justify-content: space-between;
     align-items: center;
     height: fit-content;
-    /* height: 50vh; */
     width: 80vw;
     background: #fcf6f6;
     background: linear-gradient(to right, rgb(246, 227, 132), rgba(246, 227, 132, 0.347), transparent);
     color: #404040;
-    /* color: #fcf6f6; */
     border-radius: 30px;
 }
 
-.gradient-about__teaser--photo-container { 
+.gradient-about__teaser--photo-container {
     height: 50vh;
-   width: 45vw;  
+    width: 45vw;
 }
 
 .gradient-about__teaser--photo {
@@ -393,7 +302,7 @@ button {
     height: 100%;
     border-radius: 30px 0 0 30px;
     object-fit: cover;
- 
+
 }
 
 .gradient-about__teaser--info {
@@ -413,18 +322,8 @@ button {
     display: flex;
     justify-content: center;
     align-items: center;
-   
-    /* margin-bottom: 30px; */
     font-size: 1.25rem;
 }
-
-/* .gradient-about__teaser--foot {
-    display: flex;
-    justify-content: start;
-    align-items: center;
-
-    font-size: 1rem;
-} */
 
 /*----------------------------------------------------------------------------------
     Product Teaser Section
@@ -438,21 +337,14 @@ button {
     gap: 20px;
     height: fit-content;
     width: calc(60vw + 20px);
-    /* background: transparent; */
-    background: linear-gradient(to right, transparent,  rgba(246, 227, 132, 0.137), rgba(246, 227, 132, 0.247), rgba(246, 227, 132, 0.405),  rgb(246, 227, 132));
-    /* background: linear-gradient(to right, rgb(246, 227, 132), rgba(246, 227, 132, 0.247), rgba(246, 227, 132, 0.137), transparent); */
     background: linear-gradient(to right, transparent, rgb(246, 227, 132));
-
-
-
     color: #404040;
     padding: 20px;
-    /* border: solid 2px #fcf6f6; */
-    /* border: solid 2px rgb(246, 227, 132); */
     border-radius: 50px;
 }
 
-.gradient-products__teaser-head, .gradient-products__teaser-foot {
+.gradient-products__teaser-head,
+.gradient-products__teaser-foot {
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -479,11 +371,6 @@ button {
     max-height: 35vh;
 }
 
-/* .gradient-products__teaser--title, .gradient-products__teaser--text, .products-btn {
-    color: #fcf6f6;
-    border-color: #fcf6f6;
-} */
-
 /*----------------------------------------------------------------------------------
     Custom Teaser Section 
 -----------------------------------------------------------------------------------*/
@@ -493,7 +380,6 @@ button {
     display: flex;
     justify-content: space-between;
     width: 90vw;
-
 }
 
 .gradient-custom__photo-container--one {
@@ -503,10 +389,10 @@ button {
     width: 70vw;
     height: 65vh;
     border-radius: 30px;
-    /* border: solid 2px #fcf6f6; */
 }
 
-.gradient-custom__photo--one, .gradient-custom__photo--two {
+.gradient-custom__photo--one,
+.gradient-custom__photo--two {
     width: 100%;
     height: 100%;
     object-fit: cover;
@@ -520,7 +406,6 @@ button {
     width: 30vw;
     height: 65vh;
     border-radius: 30px;
-    /* border: solid 2px #fcf6f6; */
 }
 
 .photo-cover--yellow {
@@ -528,8 +413,6 @@ button {
     height: 100%;
     width: 100%;
     border-radius: 30px;
-    background: linear-gradient(to right, transparent, rgba(246, 227, 132, 0.102), rgba(246, 227, 132, 0.5));
-    /* background: linear-gradient(to right, rgba(246, 132, 132, 0.4), rgba(246, 227, 132, 0.5)); */
     background: rgba(246, 227, 132, 0.25);
 }
 
@@ -538,15 +421,8 @@ button {
     height: 100%;
     width: 100%;
     border-radius: 30px;
-    /* background:  rgba(246, 132, 132, 0.3); */
-    background:  rgba(132, 197, 246, 0.4);
-    /* background: linear-gradient(to right, transparent, rgba(246, 132, 132, 0.4)); */
-    /* background: linear-gradient(to right, rgba(246, 132, 132, 0.5), rgba(246, 227, 132, 0.5)); */
-    /* background: linear-gradient(to right, transparent, rgba(132, 197, 246, 0.56)); */
-
+    background: rgba(132, 197, 246, 0.4);
 }
-
-
 
 .gradient-custom__info {
     position: absolute;
@@ -631,7 +507,6 @@ button {
 
 .gradient-footer__social-icons__container {
     display: flex;
-    /* align-items: center; */
     background-color: transparent;
     max-height: 30px;
     gap: 10px;
@@ -643,18 +518,17 @@ button {
     align-items: center;
     background-color: transparent;
     max-width: 30px;
-    /* max-height: 30px; */
 }
 
 .gradient-footer__social--icons svg {
     max-width: 100%;
     max-height: 100%;
-    /* Or any specific size you want */
     display: block;
-    /* This can help with sizing and prevent unwanted whitespace */
 }
 
-.gradient-footer__contact--address { margin: 5px 0; }
+.gradient-footer__contact--address {
+    margin: 5px 0;
+}
 
 
 /*----------------------------------------------------------------------------------
@@ -669,8 +543,6 @@ button {
     position: relative;
     gap: 200px;
     background-color: transparent;
-    /* height: fit-content; */
-    /* padding: 50px 0; */
 }
 
 .products-card {
@@ -685,7 +557,6 @@ button {
     border-radius: 25px;
     background: linear-gradient(to right, transparent, rgb(246, 227, 132));
     background: linear-gradient(to right, transparent, whitesmoke);
-
 }
 
 .products-card__price {
@@ -711,7 +582,7 @@ button {
 }
 
 .products-card__single-link--container {
-   margin-bottom: 10px;
+    margin-bottom: 10px;
 }
 
 .products-card__single-link {
@@ -733,14 +604,6 @@ button {
    Cube Swiper (product page)
 -----------------------------------------------------------------------------------*/
 
-/* .cubeSwiper {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background-color: transparent;
-    position: absolute;
-} */
-
 .products .swiper {
     width: 30vw;
     height: 30vw;
@@ -751,39 +614,33 @@ button {
     top: 0;
 }
 
-/* settings for all cubes that are not first cube */
-
-/* .products .swiper:not(:first-of-type) {
-    right: -6vw;
-}  */
-
 .products-card:not(:first-of-type) .swiper {
     right: -12vw;
 }
 
-  .products .swiper-slide {
+.products .swiper-slide {
     background-position: center;
     background-size: cover;
-  }
+}
 
-  .products .swiper-slide img {
-   display: block;
-   height: 100%;
-   width: 100%;
+.products .swiper-slide img {
+    display: block;
+    height: 100%;
+    width: 100%;
     object-fit: cover;
-  }
+}
 
-  .products .swiper-pagination {
+.products .swiper-pagination {
     position: relative;
     margin-top: 25px;
-  }
+}
 
-  /* Initial state: moved out of view */
-.products-card, .cubeSwiper {
+.products-card,
+.cubeSwiper {
     transition: transform 0.5s ease-out;
     will-change: transform;
-  }
-  
+}
+
 /*--------------------------------------------------------------------------------------------------------------
     Single Product Page
 ---------------------------------------------------------------------------------------------------------------*/
@@ -792,7 +649,7 @@ button {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    align-items: center;  
+    align-items: center;
     background-color: transparent;
 }
 
@@ -811,30 +668,30 @@ button {
     align-items: center;
     width: 65vw;
     height: 85vh;
-  }
+}
 
-  .single-product__carousel .swiper-slide {
+.single-product__carousel .swiper-slide {
     text-align: center;
     font-size: 18px;
     background: transparent;
     display: flex;
     justify-content: center;
     align-items: center;
-  }
+}
 
-  .single-product__carousel .swiper-slide img {
+.single-product__carousel .swiper-slide img {
     display: block;
     width: 85%;
     max-height: 100%;
     object-fit: cover;
-  }
+}
 
-  .single-product__carousel  .swiper {
+.single-product__carousel .swiper {
     margin-left: auto;
     margin-right: auto;
-  }
+}
 
-  .single-product__quick-details {
+.single-product__quick-details {
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -843,19 +700,13 @@ button {
     gap: 60px;
     background-color: transparent;
     padding: 20px;
-  }
+}
 
-  .single-product__title {
+.single-product__title {
     font-size: 2.5rem;
-  }
+}
 
-  /* .single-product__dropdown__container {
-    height: fit-content;
-    background: linear-gradient(to right, rgba(245, 245, 245, 0.605), transparent);
-    border-radius: 30px;
-  } */
-
-  .single-product__dropdown {
+.single-product__dropdown {
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -866,39 +717,39 @@ button {
     color: #303030;
     width: 80vw;
     border-bottom: #404040 2px solid;
-  }
+}
 
-  .single-product__dropdown--head {
+.single-product__dropdown--head {
     display: flex;
     justify-content: space-between;
     align-items: end;
     width: 100%;
     cursor: pointer;
-  }
+}
 
-  .single-product__dropdown--title:hover {
+.single-product__dropdown--title:hover {
     cursor: pointer;
-  }
+}
 
-  .single-product__dropdown--icon {
+.single-product__dropdown--icon {
     display: flex;
     justify-content: center;
     align-items: center;
     background-color: transparent;
     background-color: #f5e5e51f;
-    border:#404040 2px solid;
+    border: #404040 2px solid;
     border-radius: 50%;
     padding: 10px;
     font-size: 2rem;
     height: 50px;
     width: 50px;
-  }
+}
 
-  .single-product__dropdown--icon:hover {
+.single-product__dropdown--icon:hover {
     background-color: #f5e5e500;
-  }
+}
 
-  .single-product__dropdown--content {
+.single-product__dropdown--content {
     display: none;
     justify-content: start;
     align-items: center;
@@ -907,28 +758,28 @@ button {
     text-wrap: balance;
     transition: max-height 1s ease-in-out;
     color: #303030;
-  }
+}
 
-  .single-product__dropdown--content p {
+.single-product__dropdown--content p {
     font-size: 1.125rem;
     color: black;
-  }
+}
 
-  .show-dropdown {
+.show-dropdown {
     display: flex;
-  }
+}
 
-  .rotate-icon {
+.rotate-icon {
     transform: rotate(180deg);
-  }
+}
 
-  .single-product__dropdown--content.show-dropdown {
-    max-height: 1000px; 
+.single-product__dropdown--content.show-dropdown {
+    max-height: 1000px;
     transition: max-height 1s ease-in-out;
 
 }
 
-.thumbnail {  
+.thumbnail {
     margin: 20px 0;
 }
 
@@ -937,100 +788,72 @@ button {
     height: 100%;
     width: 65vw;
     height: 65vh;
-  }
+}
 
-  .thumbnail .swiper-slide {
+.thumbnail .swiper-slide {
     text-align: center;
     font-size: 18px;
     background: transparent;
     display: flex;
     justify-content: center;
     align-items: center;
-  }
+}
 
-  /* .thumbnail .swiper-slide img {
-    display: block;
-    width: 60vw;
-    height: 100%;
-    object-fit: cover;
-  } */
-
-  /* .thumbnail .swiper {
-    width: 100%;
-    height: 300px;
-    margin-left: auto;
-    margin-right: auto;
-  } */
-
-  /* .thumbnail .swiper-slide {
-    background-size: cover;
-    background-position: center;
-  } */
-
-  /* .thumbnail .thumbSwiper2 {
-    height: 80%;
-    width: 100%;
-  } */
-
-  .thumbnail .thumbSwiper {
+.thumbnail .thumbSwiper {
     height: auto;
     width: 80%;
     box-sizing: border-box;
     padding: 10px 0;
-  }
+}
 
-  .thumbnail .thumbSwiper .swiper-slide {
+.thumbnail .thumbSwiper .swiper-slide {
     width: 100%;
     height: 100%;
     opacity: 0.4;
-  }
+}
 
-  .thumbnail .thumbSwiper .swiper-slide-thumb-active {
+.thumbnail .thumbSwiper .swiper-slide-thumb-active {
     opacity: 1;
-  }
+}
 
-  .thumbnail .swiper-slide img {
+.thumbnail .swiper-slide img {
     display: block;
     width: 85%;
     max-height: 100%;
     object-fit: cover;
-  }
+}
 
-  /* .thumbnail .swiper-slide img:hover {
+.thumbSwiper-img--main:hover {
     cursor: zoom-in;
-  } */
+}
 
-  .thumbSwiper-img--main:hover {
-    cursor: zoom-in;
-  }
-
-  .thumbSwiper-img--thumb:hover {
+.thumbSwiper-img--thumb:hover {
     cursor: pointer;
-  }
+}
 
-  .thumbnail .swiper-free-mode>.swiper-wrapper {
+.thumbnail .swiper-free-mode>.swiper-wrapper {
     display: flex;
     align-items: center;
     justify-content: center;
-  }
+}
 
-  .fullscreen-image {
-    position: fixed; /* Position fixed to cover the whole screen */
+.fullscreen-image {
+    position: fixed;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: rgba(0, 0, 0, 0.9); /* Black background with opacity */
-    z-index: 9999; /* Make sure it's on top of other content */
+    background-color: rgba(0, 0, 0, 0.9);
+    z-index: 9999;
     display: flex;
     justify-content: center;
     align-items: center;
 }
 
 .fullscreen-image img {
-    max-width: 90%; /* Limit image width to avoid overflow */
-    max-height: 90%; /* Limit image height to avoid overflow */
-    object-fit: contain; /* Ensure the aspect ratio is maintained */
+    max-width: 90%;
+    max-height: 90%;
+    object-fit: contain;
 }
 
 .fullscreen-image img:hover {
@@ -1040,33 +863,31 @@ button {
 /*----------------------------------------------------------------------------------
     About Page
 -----------------------------------------------------------------------------------*/
-
-.about-head {
-    position: inherit;
-}
-
-.about-head__image {
-    width: 100vw;
-    height: 85vh;
-    -webkit-mask-image: linear-gradient(to right, transparent, black 5%, black 85%, transparent);
-    mask-image: linear-gradient(to right, transparent,  black , black , black , black , black , black , transparent); 
-    object-fit: cover;
-}
-
-.about-head__blurb {
+.about {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    align-items: start;
-    padding: 50px;
-    background-color: rgba(255, 255, 255, 0.8);
-    width: 30vw;
-    height: fit-content;
+    align-items: center;
+    gap: 200px;
+    background-color: transparent;
+}
+
+.about-owner {
+    position: inherit;
+}
+
+.about-owner__image {
+    width: 100vw;
+    height: 85vh;
+    -webkit-mask-image: linear-gradient(to right, transparent, black, black, black, black, black, black, black, transparent);
+    mask-image: linear-gradient(to right, transparent, black, black, black, black, black, black, black, transparent);
+    object-fit: cover;
+}
+
+.about-owner__blurb {
     position: absolute;
     top: 45vh;
     left: 55vw;
-    border-radius: 30px;
-    text-wrap: balance;
 }
 
 /* .about-head__bg-cloud {

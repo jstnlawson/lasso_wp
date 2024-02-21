@@ -14,7 +14,7 @@ if ($hasImages && $splash_title && $splash_text && $splash_button_text) : ?>
     <div class="gradient-splash">
         <div class="swiper mySwiper">
             <div class="swiper-wrapper">
-                <div class="swiper-slide__action-call">
+                <div class="opaque-box swiper-slide__action-call">
                     <h1 class="swiper-slide__action-call--title section__title"><?php echo esc_html($splash_title) ?></h1>
                     <span class="swiper-slide__action-call--sub-title section__sub-title"><?php echo esc_html($splash_text) ?></span>
                     <button class="btn swiper-btn"><?php echo esc_html($splash_button_text) ?></button>
