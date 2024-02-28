@@ -571,6 +571,124 @@ function register_about_page ($wp_customize) {
         'settings' => 'about_main_photo_alt',
         'type'     => 'text',
     ));
+
+    $wp_customize->add_setting('about_main_title', array(
+        'default'   => '',
+        'transport' => 'refresh',
+    ));
+
+    $wp_customize->add_control('about_main_title', array(
+        'label'    => __('About Main Title', 'gradient'),
+        'section'  => 'gradient_about_page',
+        'settings' => 'about_main_title',
+        'type'     => 'text',
+    ));
+
+    $wp_customize->add_setting('about_main_text', array(
+        'default'   => '',
+        'transport' => 'refresh',
+    ));
+
+    $wp_customize->add_control('about_main_text', array(
+        'label'    => __('About Main Text', 'gradient'),
+        'section'  => 'gradient_about_page',
+        'settings' => 'about_main_text',
+        'type'     => 'textarea',
+    ));
+
+    $wp_customize->add_setting('about_team_photo', array(
+        'default'   => '',
+        'transport' => 'refresh',
+    ));
+
+    $wp_customize->add_control( new WP_Customize_Image_Control( $wp_customize, 'about_team_photo', array(
+        'label'    => __('About Team Photo', 'gradient'),
+        'section'  => 'gradient_about_page',
+        'settings' => 'about_team_photo',
+    )));
+
+    $wp_customize->add_setting('about_team_photo_alt', array(
+        'default'   => '',
+        'transport' => 'refresh',
+    ));
+
+    $wp_customize->add_control('about_team_photo_alt', array(
+        'label'    => __('About Team Photo Alt Text', 'gradient'),
+        'section'  => 'gradient_about_page',
+        'settings' => 'about_team_photo_alt',
+        'type'     => 'text',
+    ));
+
+    $wp_customize->add_setting('about_team_title', array(
+        'default'   => '',
+        'transport' => 'refresh',
+    ));
+
+    $wp_customize->add_control('about_team_title', array(
+        'label'    => __('About Team Title', 'gradient'),
+        'section'  => 'gradient_about_page',
+        'settings' => 'about_team_title',
+        'type'     => 'text',
+    ));
+
+    $wp_customize->add_setting('about_team_text', array(
+        'default'   => '',
+        'transport' => 'refresh',
+    ));
+
+    $wp_customize->add_control('about_team_text', array(
+        'label'    => __('About Team Text', 'gradient'),
+        'section'  => 'gradient_about_page',
+        'settings' => 'about_team_text',
+        'type'     => 'textarea',
+    ));
+
+    $wp_customize->add_setting('about_mission_photo', array(
+        'default'   => '',
+        'transport' => 'refresh',
+    ));
+
+    $wp_customize->add_control( new WP_Customize_Image_Control( $wp_customize, 'about_mission_photo', array(
+        'label'    => __('About Mission Photo', 'gradient'),
+        'section'  => 'gradient_about_page',
+        'settings' => 'about_mission_photo',
+    )));
+
+    $wp_customize->add_setting('about_mission_photo_alt', array(
+        'default'   => '',
+        'transport' => 'refresh',
+    ));
+
+    $wp_customize->add_control('about_mission_photo_alt', array(
+        'label'    => __('About Mission Photo Alt Text', 'gradient'),
+        'section'  => 'gradient_about_page',
+        'settings' => 'about_mission_photo_alt',
+        'type'     => 'text',
+    ));
+
+    $wp_customize->add_setting('about_mission_title', array(
+        'default'   => '',
+        'transport' => 'refresh',
+    ));
+
+    $wp_customize->add_control('about_mission_title', array(
+        'label'    => __('About Mission Title', 'gradient'),
+        'section'  => 'gradient_about_page',
+        'settings' => 'about_mission_title',
+        'type'     => 'text',
+    ));
+
+    $wp_customize->add_setting('about_mission_text', array(
+        'default'   => '',
+        'transport' => 'refresh',
+    ));
+
+    $wp_customize->add_control('about_mission_text', array(
+        'label'    => __('About Mission Text', 'gradient'),
+        'section'  => 'gradient_about_page',
+        'settings' => 'about_mission_text',
+        'type'     => 'textarea',
+    ));
     
 }
 

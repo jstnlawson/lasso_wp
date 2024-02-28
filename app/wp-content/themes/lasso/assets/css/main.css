@@ -88,7 +88,7 @@ button {
     background-color: transparent;
 }
 
-.opaque-box {
+.opaque-box, .solid-box {
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -99,6 +99,14 @@ button {
     height: fit-content;
     border-radius: 30px;
     text-wrap: balance;
+}
+
+.opaque-box {
+    background-color: rgba(255, 255, 255, 0.8);
+}
+
+.solid-box {
+    background-color: #fcf6f6;
 }
 
 /*----------------------------------------------------------------------------------
@@ -868,47 +876,73 @@ button {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    gap: 200px;
+    gap: 150px;
     background-color: transparent;
 }
 
 .about-owner {
-    position: inherit;
+    position: relative;
 }
 
 .about-owner__image {
     width: 100vw;
     height: 85vh;
-    -webkit-mask-image: linear-gradient(to right, transparent, black, black, black, black, black, black, black, transparent);
-    mask-image: linear-gradient(to right, transparent, black, black, black, black, black, black, black, transparent);
+    -webkit-mask-image: linear-gradient(to right, transparent, rgba(0, 0, 0, 0.4) 2%, rgba(0, 0, 0, 0.9) 6%, black 8%, black 92%, rgba(0, 0, 0, 0.9) 94%, rgba(0, 0, 0, 0.4) 98%, transparent);
+    mask-image: linear-gradient(to right, transparent, rgba(0, 0, 0, 0.4) 2%, rgba(0, 0, 0, 0.9) 6%, black 8%, black 92%, rgba(0, 0, 0, 0.9) 94%, rgba(0, 0, 0, 0.4) 98%, transparent);
     object-fit: cover;
 }
 
 .about-owner__blurb {
     position: absolute;
-    top: 45vh;
+    top: 20vh;
     left: 55vw;
 }
 
-/* .about-head__bg-cloud {
+.about-team { 
+    position: relative;
+    display: flex;
+    justify-content: end;
+    align-items: center;
+    height: 85vh;
+    width: 90vw;
+}
+
+.about-team__image {
+    position: relative;
+    top: 0;
+    left: 0;
+    width: 70vw;
+    max-height: 75vh;
+    object-fit: cover;
+    border-radius: 30px;
+}
+
+.about-team__blurb {
     position: absolute;
-    background: radial-gradient(circle at center, #fcf6f6 10%, transparent, transparent);
-    width: 50vw;
-    height: 50vw; 
-    z-index: 5;  
+    /* top: 0;
+    bottom:0; */
+    left: 0;
+    margin: auto;
 }
 
-.bgc-one {
-    top: 15%;
-    left: 40%;
+.about-mission {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 85vh;
 }
 
-.bgc-two {
-    top: 33%;
-    left: 60%;
+.about-mission__image {
+    width: 90vw;
+    max-height: 75vh;
+    object-fit: cover;
+    border-radius: 30px;
 }
 
-.bgc-three {
-    top: 36%;
-    left: 40%;
-} */
+.about-mission__blurb {
+    position: absolute;
+    left: 0;
+    right: 0;
+    margin: auto;
+}
