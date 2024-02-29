@@ -693,3 +693,12 @@ function register_about_page ($wp_customize) {
 }
 
 add_action('customize_register', 'register_about_page');
+
+function woocommerce_support() {
+    if (class_exists('WooCommerce')) {
+        add_filter('woocommerce_enqueue_styles', '__return_empty_array');
+    }
+    add_theme_support('woocommerce');
+}
+
+add_action('after_setup_theme', 'woocommerce_support');
