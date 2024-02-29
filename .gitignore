@@ -15,8 +15,8 @@ app/wp-content/themes/*
 # !app/wp-content/plugins/custom-plugin
 
 # Custom Themes
-!app/wp-content/themes/nsc
-app/wp-content/themes/nsc/node_modules
+!app/wp-content/themes/lasso
+app/wp-content/themes/lasso/node_modules
 
 # Favicons
 !app/android-chrome-192x192.png
