@@ -28,17 +28,17 @@
                 <div class='gradient-nav'>
                     <nav>
                         <ul>
-                            <?php if ($about_page_link) : ?>
-                                <li>
-                                    <a href="<?php echo esc_url(get_permalink($about_page_link)); ?>">
-                                        <?php echo esc_html(get_the_title($about_page_link)); ?>
-                                    </a>
-                                </li>
-                            <?php endif; ?>
                             <?php if ($products_page_link) : ?>
                                 <li>
                                     <a href="<?php echo esc_url(get_permalink($products_page_link)); ?>">
                                         <?php echo esc_html(get_the_title($products_page_link)); ?>
+                                    </a>
+                                </li>
+                            <?php endif; ?>
+                            <?php if ($about_page_link) : ?>
+                                <li>
+                                    <a href="<?php echo esc_url(get_permalink($about_page_link)); ?>">
+                                        <?php echo esc_html(get_the_title($about_page_link)); ?>
                                     </a>
                                 </li>
                             <?php endif; ?>

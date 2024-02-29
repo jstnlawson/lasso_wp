@@ -876,7 +876,7 @@ button {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    gap: 150px;
+    gap: 20vh;
     background-color: transparent;
 }
 
@@ -903,7 +903,7 @@ button {
     display: flex;
     justify-content: end;
     align-items: center;
-    height: 85vh;
+    /* height: 85vh; */
     width: 90vw;
 }
 
@@ -911,7 +911,7 @@ button {
     position: relative;
     top: 0;
     left: 0;
-    width: 70vw;
+    width: 80vw;
     max-height: 75vh;
     object-fit: cover;
     border-radius: 30px;
@@ -930,7 +930,7 @@ button {
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 85vh;
+    /* height: 85vh; */
 }
 
 .about-mission__image {

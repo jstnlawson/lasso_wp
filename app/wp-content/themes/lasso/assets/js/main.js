@@ -14,7 +14,6 @@
         const contactPhotoTwo = document.querySelectorAll('.gradient-custom__photo-container--two');
         const contactInfo = document.querySelectorAll('.gradient-custom__info');
       
-        // Function to calculate and apply the transform for each element
         const applyTransform = (elements, directionMultiplier) => {
             elements.forEach(element => {
                 const rect = element.getBoundingClientRect();
@@ -34,7 +33,7 @@
             elements.forEach(element => {
                 const rect = element.getBoundingClientRect();
                 const windowHeight = window.innerHeight;
-                const headerHeight = windowHeight * 0.15; // Header takes up 15vh
+                const headerHeight = windowHeight * 0.15; // 15vh header space
                 const adjustedWindowHeight = windowHeight - headerHeight;
                 const viewportCenter = adjustedWindowHeight / 2 + headerHeight;
         
@@ -42,7 +41,6 @@
                 const distanceNormalized = elementCenterToAdjustedViewportCenter / (adjustedWindowHeight / 2);
         
                 // Dampening factor - Adjust this value to control how quickly opacity decreases
-                // Higher values will keep the opacity at 1 longer as the element moves away from the center
                 const dampeningFactor = 0.5;
         
                 let opacity = 1 - (distanceNormalized * dampeningFactor);
@@ -76,10 +74,6 @@
             scrollInProgress = true;
         };
     
-        // Initial call in case they're already in view
-        // handleScroll();
-      
-        // Attach the scroll event listener
         window.addEventListener('scroll', handleScroll);
 
         
