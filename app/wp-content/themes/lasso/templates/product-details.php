@@ -1,6 +1,6 @@
 <?php
 /*
-Template Name: Product Details
+removed tplate nameproductdetails for testing
 */
 
 get_header();

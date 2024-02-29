@@ -2,43 +2,62 @@
 
 error_log('functions.php is loaded');
 
-function gradient_enqueue_scripts()
-{
-    wp_enqueue_style('dashicons');
+// function gradient_enqueue_scripts()
+// {
+//     wp_enqueue_style('dashicons');
     
-}
-add_action('wp_enqueue_scripts', 'gradient_enqueue_scripts');
+// }
+// add_action('wp_enqueue_scripts', 'gradient_enqueue_scripts');
 
-function gradient_add_js()
-{
-    wp_enqueue_script('gradient-main-js', get_template_directory_uri() . '/assets/js/main.js', array('jquery'), null, true);
-}
+// function gradient_add_js()
+// {
+//     wp_enqueue_script('gradient-main-js', get_template_directory_uri() . '/assets/js/main.js', array('jquery'), null, true);
+// }
 
-add_action('wp_enqueue_scripts', 'gradient_add_js');
+// add_action('wp_enqueue_scripts', 'gradient_add_js');
 
-function gradient_add_styles()
-{
+// function gradient_add_styles()
+// {
 
-    // register the style
-    wp_register_style('gradient-main-css', get_template_directory_uri() . '/assets/css/main.css');
+//     // register the style
+//     wp_register_style('gradient-main-css', get_template_directory_uri() . '/assets/css/main.css');
 
-    // enqueue the style
-    wp_enqueue_style('gradient-main-css');
+//     // enqueue the style
+//     wp_enqueue_style('gradient-main-css');
 
-    // Enqueue Dashicons for use in the front-end.
+//     // Enqueue Dashicons for use in the front-end.
+//     wp_enqueue_style('dashicons');
+// }
+
+// add_action('wp_enqueue_scripts', 'gradient_add_styles');
+
+// function gradient_enqueue_swiper_assets() {
+//     wp_enqueue_style('swiper-css', 'https://unpkg.com/swiper/swiper-bundle.min.css');
+//     wp_enqueue_script('swiper-js', 'https://unpkg.com/swiper/swiper-bundle.min.js', array(), null, true);
+
+//     // Enqueue your custom script to initialize the swiper
+//     wp_enqueue_script('custom-swiper-init', get_template_directory_uri() . '/assets/js/custom-swiper-init.js', array('swiper-js'), null, true);
+// }
+// add_action('wp_enqueue_scripts', 'gradient_enqueue_swiper_assets');
+
+function gradient_enqueue_scripts_styles() {
+    // Enqueue Styles
     wp_enqueue_style('dashicons');
-}
-
-add_action('wp_enqueue_scripts', 'gradient_add_styles');
-
-function gradient_enqueue_swiper_assets() {
+    wp_register_style('gradient-main-css', get_template_directory_uri() . '/assets/css/main.css');
+    wp_enqueue_style('gradient-main-css');
     wp_enqueue_style('swiper-css', 'https://unpkg.com/swiper/swiper-bundle.min.css');
-    wp_enqueue_script('swiper-js', 'https://unpkg.com/swiper/swiper-bundle.min.js', array(), null, true);
 
-    // Enqueue your custom script to initialize the swiper
+    // Enqueue Scripts
+    wp_enqueue_script('gradient-main-js', get_template_directory_uri() . '/assets/js/main.js', array('jquery'), null, true);
+    wp_enqueue_script('swiper-js', 'https://unpkg.com/swiper/swiper-bundle.min.js', array(), null, true);
     wp_enqueue_script('custom-swiper-init', get_template_directory_uri() . '/assets/js/custom-swiper-init.js', array('swiper-js'), null, true);
 }
-add_action('wp_enqueue_scripts', 'gradient_enqueue_swiper_assets');
+
+// Only add the action if we're not in the admin area
+if (!is_admin()) {
+    add_action('wp_enqueue_scripts', 'gradient_enqueue_scripts_styles');
+}
+
 
 function register_header($wp_customize)
 {
@@ -694,11 +713,4 @@ function register_about_page ($wp_customize) {
 
 add_action('customize_register', 'register_about_page');
 
-function woocommerce_support() {
-    if (class_exists('WooCommerce')) {
-        add_filter('woocommerce_enqueue_styles', '__return_empty_array');
-    }
-    add_theme_support('woocommerce');
-}
 
-add_action('after_setup_theme', 'woocommerce_support');
