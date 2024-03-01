@@ -542,21 +542,21 @@ function register_custom_teaser ($wp_customize) {
 
 add_action('customize_register', 'register_custom_teaser');
 
-function create_product_post_type() {
-    register_post_type('product',
-        array(
-            'labels'      => array(
-                'name'          => __('Products'),
-                'singular_name' => __('Product'),
-            ),
-            'public'      => true,
-            'has_archive' => true,
-            'supports'    => array('title', 'editor', 'thumbnail', 'excerpt'),
-            // Customize the permalink structure
-        )
-    );
-}
-add_action('init', 'create_product_post_type');
+// function create_product_post_type() {
+//     register_post_type('product',
+//         array(
+//             'labels'      => array(
+//                 'name'          => __('Products'),
+//                 'singular_name' => __('Product'),
+//             ),
+//             'public'      => true,
+//             'has_archive' => true,
+//             'supports'    => array('title', 'editor', 'thumbnail', 'excerpt'),
+//             // Customize the permalink structure
+//         )
+//     );
+// }
+// add_action('init', 'create_product_post_type');
 
 function register_about_page ($wp_customize) {
 
