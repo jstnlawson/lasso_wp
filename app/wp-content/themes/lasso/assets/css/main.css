@@ -143,6 +143,59 @@ button {
 }
 
 /*----------------------------------------------------------------------------------
+    WooCommerce
+-----------------------------------------------------------------------------------*/
+
+.button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 15px 20px;
+    height: 50px;
+    border-radius: 25px;
+    border: #404040 2px solid;
+    background: transparent;
+    color: #404040;
+    font-size: 1rem;
+    font-weight: 500;
+    cursor: pointer;
+    text-transform: capitalize;
+}
+
+.button:hover {
+    transform: scale(1.025);
+    background: rgba(0, 0, 0, 0.035);
+}
+
+.button:active {
+    transform: scale(0.975);
+}
+
+.single_add_to_cart_button {
+    color: #f5e5e5;
+    background-color: #545bb8;
+    border: none;
+}
+
+.single_add_to_cart_button:hover {
+    background-color: #464c9a;
+}
+
+.quantity input.qty {
+    display: none;
+}
+
+/* Style the variations dropdown */
+.variations select {
+    padding: 5px; /* Add padding */
+    border: 1px solid #ddd; /* Add a border */
+}
+
+.woocommerce-breadcrumb {
+    display: none;
+}
+
+/*----------------------------------------------------------------------------------
     Header
 -----------------------------------------------------------------------------------*/
 
