@@ -84,7 +84,7 @@ button {
 }
 
 .page-spacer {
-    height: 1vh;
+    height: 3vh;
     background-color: transparent;
 }
 
@@ -671,7 +671,7 @@ button {
     /* object-fit: cover; */
     /* border-radius: 10px; */
     position: relative;
-    right: -8vw;
+    right: -14vw;
     top: 0;
 }
 

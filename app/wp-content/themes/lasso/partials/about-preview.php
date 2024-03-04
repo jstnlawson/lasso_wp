@@ -8,7 +8,7 @@ if ($about_teaser_photo && $about_teaser_title && $about_teaser_text && $about_t
 ?>
     <div class="gradient-about__teaser">
         <div class="gradient-about__teaser--photo-container">
-            <img class="gradient-about__teaser--photo" src="<?php echo esc_url($about_teaser_photo); ?>" alt="<?php esc_html($about_teaser_photo_alt); ?> ">
+            <img class="gradient-about__teaser--photo" src="<?php echo esc_url($about_teaser_photo); ?>" alt="<?php esc_attr($about_teaser_photo_alt); ?> ">
         </div>
         <div class="gradient-about__teaser--info">
             <h1 class="section__title gradient-about__teaser--title"><?php echo esc_html($about_teaser_title); ?></h1>

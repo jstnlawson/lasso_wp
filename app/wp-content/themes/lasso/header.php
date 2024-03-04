@@ -1,12 +1,14 @@
 <!DOCTYPE html>
-<html lang="en">
+<html <?php language_attributes(); ?>>
 
 <head>
     <title>gradient</title>
+    <meta charset="<?php bloginfo( 'charset' ); ?>">
     <?php wp_head(); ?>
 </head>
 
-<body>
+<body <?php body_class(); ?>>
+    <?php wp_body_open(); ?>
     <?php
     $header_title = get_theme_mod('header_title');
     // Check if any of the specific page links have been set
