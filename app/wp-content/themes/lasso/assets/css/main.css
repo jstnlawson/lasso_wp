@@ -18,9 +18,13 @@ body {
 
 html,
 body {
-    height: 100vh;
-    width: 100vw;
+    /* height: 100vh;
+    width: 100vw; */
     /* overflow-x: hidden; */
+}
+
+body.single-product .gradient-header {
+    top: 0;
 }
 
 
@@ -59,6 +63,7 @@ button {
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    width: 100%;
     background: linear-gradient(to bottom, #f5e5e5, #b85954);
     padding: 0 20px;
     overflow-x: hidden;
@@ -194,6 +199,77 @@ button {
 .woocommerce-breadcrumb {
     display: none;
 }
+
+/*----------------------------------------------------------------------------------
+    Ninja Forms
+-----------------------------------------------------------------------------------*/
+.nf-form-title {
+    display: none;
+}
+
+.nf-before-form-content {
+    display: none;
+}
+
+.nf-form-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    width: 80vw;
+    max-width: 800px;
+    padding: 40px;
+    background-color: #fcf6f6;
+    border-radius: 30px;
+}
+
+
+.nf-field-element input[type=text],
+.nf-field-element input[type=email],
+.nf-field-element textarea {
+    width: 70vw;
+    max-width: 700px;
+    padding: 10px;
+    margin: 10px 0;
+    border-radius: 10px;
+    border: #999 1px solid;
+    background: white;
+    color: #404040;
+    font-size: 1rem;
+    font-weight: 500;
+}
+
+.nf-field-element input[type=submit] {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 15px 20px;
+    height: 50px;
+    border-radius: 25px;
+    border: #404040 2px solid;
+    background: transparent;
+    color: #404040;
+    font-size: 1rem;
+    font-weight: 500;
+    cursor: pointer;
+    text-transform: capitalize; 
+}
+
+.nf-field-element input[type=submit]:hover {
+    transform: scale(1.025);
+    background: rgba(0, 0, 0, 0.035);
+}
+
+.field-wrap input[type=submit]:hover {
+    transform: scale(1.025);
+    background: rgba(0, 0, 0, 0.035);
+}
+
+.nf-field-element input[type=submit]:active {
+    transform: scale(0.975);
+}
+
 
 /*----------------------------------------------------------------------------------
     Header
