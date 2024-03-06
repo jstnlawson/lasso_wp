@@ -252,9 +252,9 @@ button {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    gap: 20px;
+    /* gap: 20px; */
     width: 100%;
-    background-color: #ffffffca;
+    background-color: #ffffff8a;
     border-radius: 30px;
 
 }
@@ -376,6 +376,80 @@ button {
     padding: 0 10px;
 }
 
+.cart-image {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* width: 25px; */
+    /* height: 25px; */
+    position: fixed;
+    top: 10vh;
+    right: 5vw;
+    cursor: pointer;
+}
+
+.cart-image:hover {
+    opacity: 0.5;
+}
+
+.cart-image img {
+    width: 25px;
+    height: 25px;
+}
+
+.cart-image span {
+    margin-top: 2px;
+    font-size: 0.85rem;
+    color: #505050;
+}
+
+/*-----------------------------------------------------------------------
+    Cart and Checkout
+------------------------------------------------------------------------*/
+
+.cart-content__container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    width: 80vw;
+    background-color: white;
+    padding: 20px;
+}
+
+.entry-header {
+    margin: 40px 0;
+    width: 100%;
+    text-align: center;
+}
+.entry-content {
+    padding: 0 40px;
+}
+
+.wc-block-components-button__text {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 15px 20px;
+    border-radius: 25px;
+    border: #404040 2px solid;
+    background: transparent;
+    color: #404040;
+    font-size: 1rem;
+    font-weight: 500;
+    cursor: pointer;
+    text-transform: capitalize;
+}
+
+.wc-block-components-button__text:hover {
+    transform: scale(1.025);
+    background: rgba(0, 0, 0, 0.035);
+}
+
+.wc-block-components-button__text:active {
+    transform: scale(0.975);
+}
 /*----------------------------------------------------------------------------------
     Splash Swiper
 -----------------------------------------------------------------------------------*/

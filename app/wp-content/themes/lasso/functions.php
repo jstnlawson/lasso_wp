@@ -63,15 +63,28 @@ function register_header($wp_customize)
     ));
 
     // Custom Page Link
-    $wp_customize->add_setting('custom_page_link', array(
+    $wp_customize->add_setting('contact_page_link', array(
         'default'   => '',
         'transport' => 'refresh',
     ));
-    $wp_customize->add_control('custom_page_link', array(
-        'label'    => __('Custom Page Link', 'gradient'),
+    $wp_customize->add_control('contact_page_link', array(
+        'label'    => __('Contact Page Link', 'gradient'),
         'section'  => 'gradient_header',
         'type'     => 'dropdown-pages',
     ));
+
+    // Cart Page Link
+    $wp_customize->add_setting('cart_page_link', array(
+        'default'   => '',
+        'transport' => 'refresh',
+    ));
+
+    $wp_customize->add_control('cart_page_link', array(
+        'label'    => __('Cart Page Link', 'gradient'),
+        'section'  => 'gradient_header',
+        'type'     => 'dropdown-pages',
+    ));
+
 }
 
 add_action('customize_register', 'register_header');
@@ -661,3 +674,13 @@ function register_about_page ($wp_customize) {
 add_action('customize_register', 'register_about_page');
 
 
+function register_cart_wrapper_page ($wp_customize) {
+
+    $wp_customize->add_section('gradient_cart_page', array(
+        'title'    => __('Cart Wrapper Page Settings', 'gradient'),
+        'priority' => 30,
+    ));
+
+}
+
+add_action('customize_register', 'register_cart_wrapper_page');
