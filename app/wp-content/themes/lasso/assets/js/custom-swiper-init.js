@@ -58,38 +58,62 @@ document.addEventListener("DOMContentLoaded", function () {
     },
   });
 
-  var singleProductSwiper = new Swiper(".singleProductSwiper", {
-    slidesPerView: 1,
-    spaceBetween: 30,
-    loop: true,
-    pagination: {
-      el: ".swiper-pagination",
-      clickable: true,
-    },
-    navigation: {
-      nextEl: ".swiper-button-next",
-      prevEl: ".swiper-button-prev",
-    },
-  });
+  // var singleProductSwiper = new Swiper(".singleProductSwiper", {
+  //   slidesPerView: 1,
+  //   spaceBetween: 30,
+  //   loop: true,
+  //   pagination: {
+  //     el: ".swiper-pagination",
+  //     clickable: true,
+  //   },
+  //   navigation: {
+  //     nextEl: ".swiper-button-next",
+  //     prevEl: ".swiper-button-prev",
+  //   },
+  // });
 
-  var thumbSwiper = new Swiper(".thumbSwiper", {
-    loop: true,
-    spaceBetween: 10,
-    slidesPerView: 10,
-    freeMode: true,
-    watchSlidesProgress: true,
-  });
-  var thumbSwiper2 = new Swiper(".thumbSwiper2", {
-    loop: true,
-    spaceBetween: 10,
-    navigation: {
-      nextEl: ".swiper-button-next",
-      prevEl: ".swiper-button-prev",
-    },
-    thumbs: {
-      swiper: thumbSwiper,
-    },
-  });
+  const numberOfSlides = document.querySelectorAll(".thumbSwiper .swiper-slide").length;
+  console.log("Number of slides: ", numberOfSlides);
+
+  if (numberOfSlides > 1) {
+    console.log("Number of slides: ", numberOfSlides);
+    var thumbSwiper = new Swiper(".thumbSwiper", {
+      loop: false,
+      spaceBetween: 5,
+      slidesPerView: numberOfSlides, 
+      freeMode: true,
+      watchSlidesProgress: true,
+    });
+    var thumbSwiper2 = new Swiper(".thumbSwiper2", {
+      loop: false,
+      navigation: {
+        nextEl: ".swiper-button-next",
+        prevEl: ".swiper-button-prev",
+      },
+      thumbs: {
+        swiper: thumbSwiper,
+      },
+    });
+  }
+
+  // var thumbSwiper = new Swiper(".thumbSwiper", {
+  //   loop: true,
+  //   spaceBetween: 10,
+  //   slidesPerView: 10,
+  //   freeMode: true,
+  //   watchSlidesProgress: true,
+  // });
+  // var thumbSwiper2 = new Swiper(".thumbSwiper2", {
+  //   loop: true,
+  //   spaceBetween: 10,
+  //   navigation: {
+  //     nextEl: ".swiper-button-next",
+  //     prevEl: ".swiper-button-prev",
+  //   },
+  //   thumbs: {
+  //     swiper: thumbSwiper,
+  //   },
+  // });
 
       // Query all images within the swiper-slide
       document.querySelectorAll('.thumbSwiper-img--main').forEach(function(image) {
