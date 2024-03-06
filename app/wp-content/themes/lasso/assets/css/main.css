@@ -13,15 +13,13 @@ body {
     color: #404040;
     margin: 0;
     padding: 0;
-
+   
 }
 
-html,
+/* html,
 body {
-    /* height: 100vh;
-    width: 100vw; */
-    /* overflow-x: hidden; */
-}
+    min-height: 100vh;
+} */
 
 body.single-product .gradient-header {
     top: 0;
@@ -67,6 +65,7 @@ button {
     background: linear-gradient(to bottom, #f5e5e5, #b85954);
     /* padding: 0 20px; */
     overflow-x: hidden;
+    min-height: 100vh;
 }
 
 .home-page {
@@ -200,6 +199,62 @@ button {
     display: none;
 }
 
+/*-----------------------------------------------------------------------
+    Cart and Checkout
+------------------------------------------------------------------------*/
+
+.cart-content__container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    width: 80vw;
+    background-color: white;
+    padding: 20px;
+}
+
+.entry-header {
+    margin: 40px 0;
+    width: 100%;
+    text-align: center;
+}
+.entry-content {
+    padding: 0 40px;
+}
+
+.wc-block-components-button__text {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 15px 20px;
+    border-radius: 25px;
+    border: #404040 2px solid;
+    background: #ffffffc5;
+    color: #404040;
+    font-size: 1rem;
+    font-weight: 500;
+    cursor: pointer;
+    text-transform: capitalize;
+}
+
+.wc-block-components-button__text:hover {
+    transform: scale(1.025);
+    background: #ffffff85;
+}
+
+.wc-block-components-button__text:active {
+    transform: scale(0.975);
+}
+
+.post-127 {
+    margin-top: 40px;
+    background-color: #ffffff8a;
+    padding-top: 10px;
+    border-radius: 25px;
+    width: 80vw;
+}
+
 /*----------------------------------------------------------------------------------
     Ninja Forms
 -----------------------------------------------------------------------------------*/
@@ -219,8 +274,9 @@ button {
     width: 70vw;
     height: fit-content;
     padding: 40px 40px;
-    background-color: transparent;
-    background: linear-gradient(to right, rgb(246, 227, 132), #b88354, #c4605b, #b85954, #b85488, rgb(151, 132, 246));
+    /* background-color: transparent;
+    background: linear-gradient(to right, rgb(246, 227, 132), #b88354, #c4605b, #b85954, #b85488, rgb(151, 132, 246)); */
+    background-color: #ffffff8a;
     border-radius: 50px;
     margin-top: 40px;
 }
@@ -235,7 +291,7 @@ button {
     gap: 20px;
     margin-bottom: 40px;
     background: transparent;
-    color: #ffffff;
+    color: #404040;
 }
 
 .contact-banner__title {
@@ -255,6 +311,7 @@ button {
     /* gap: 20px; */
     width: 100%;
     background-color: #ffffff8a;
+    background-color: transparent;
     border-radius: 30px;
 
 }
@@ -298,7 +355,7 @@ button {
     height: 50px;
     border-radius: 25px;
     border: #404040 2px solid;
-    background: transparent;
+    background: #ffffffc5;
     color: #404040;
     font-size: 1rem;
     font-weight: 500;
@@ -306,14 +363,15 @@ button {
     text-transform: capitalize; 
 }
 
-.nf-field-element input[type=submit]:hover {
+/* .nf-field-element input[type=submit]:hover {
     transform: scale(1.025);
     background: rgba(0, 0, 0, 0.035);
-}
+    cursor: pointer;
+} */
 
 .field-wrap input[type=submit]:hover {
     transform: scale(1.025);
-    background: rgba(0, 0, 0, 0.035);
+    background: #ffffff85;
 }
 
 .nf-field-element input[type=submit]:active {
@@ -403,53 +461,6 @@ button {
     color: #505050;
 }
 
-/*-----------------------------------------------------------------------
-    Cart and Checkout
-------------------------------------------------------------------------*/
-
-.cart-content__container {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    gap: 20px;
-    width: 80vw;
-    background-color: white;
-    padding: 20px;
-}
-
-.entry-header {
-    margin: 40px 0;
-    width: 100%;
-    text-align: center;
-}
-.entry-content {
-    padding: 0 40px;
-}
-
-.wc-block-components-button__text {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding: 15px 20px;
-    border-radius: 25px;
-    border: #404040 2px solid;
-    background: transparent;
-    color: #404040;
-    font-size: 1rem;
-    font-weight: 500;
-    cursor: pointer;
-    text-transform: capitalize;
-}
-
-.wc-block-components-button__text:hover {
-    transform: scale(1.025);
-    background: rgba(0, 0, 0, 0.035);
-}
-
-.wc-block-components-button__text:active {
-    transform: scale(0.975);
-}
 /*----------------------------------------------------------------------------------
     Splash Swiper
 -----------------------------------------------------------------------------------*/

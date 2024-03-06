@@ -672,15 +672,3 @@ function register_about_page ($wp_customize) {
 }
 
 add_action('customize_register', 'register_about_page');
-
-
-function register_cart_wrapper_page ($wp_customize) {
-
-    $wp_customize->add_section('gradient_cart_page', array(
-        'title'    => __('Cart Wrapper Page Settings', 'gradient'),
-        'priority' => 30,
-    ));
-
-}
-
-add_action('customize_register', 'register_cart_wrapper_page');
