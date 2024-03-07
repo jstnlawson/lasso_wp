@@ -21,7 +21,7 @@ body {
     min-height: 100vh;
 } */
 
-body.single-product .gradient-header {
+body.single-product .lasso-header {
     top: 0;
 }
 
@@ -56,7 +56,7 @@ button {
     outline: none;
 }
 
-.gradient-gradient {
+.lasso-lasso {
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -384,7 +384,7 @@ button {
     Header
 -----------------------------------------------------------------------------------*/
 
-.gradient-header {
+.lasso-header {
     position: fixed;
     display: flex;
     flex-direction: column;
@@ -403,7 +403,7 @@ button {
     opacity: 0.5;
 }
 
-.gradient-header__spacer {
+.lasso-header__spacer {
 
     width: 100%;
     height: 15vh;
@@ -411,7 +411,7 @@ button {
     background-color: transparent;
 }
 
-.gradient-header__title {
+.lasso-header__title {
     text-align: center;
     display: flex;
     align-items: center;
@@ -423,7 +423,7 @@ button {
     margin-bottom: 2vh;
 }
 
-.gradient-nav nav ul {
+.lasso-nav nav ul {
     padding: 0;
     margin: 0;
     list-style-type: none;
@@ -431,7 +431,7 @@ button {
     justify-content: center;
 }
 
-.gradient-nav nav ul li {
+.lasso-nav nav ul li {
     padding: 0 10px;
 }
 
@@ -466,11 +466,11 @@ button {
     Splash Swiper
 -----------------------------------------------------------------------------------*/
 
-.gradient-splash {
+.lasso-splash {
     /* margin-top: 40px; */
 }
 
-.gradient-splash .mySwiper {
+.lasso-splash .mySwiper {
     width: 100vw;
     height: fit-content;
 }
@@ -503,7 +503,7 @@ button {
     Review Swiper    
 -----------------------------------------------------------------------------------*/
 
-.gradient-reviews {
+.lasso-reviews {
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -537,13 +537,13 @@ button {
     background-color: transparent;
 }
 
-.gradient-reviews__display--text {
+.lasso-reviews__display--text {
     font-size: 2rem;
     width: 80vw;
     background-color: transparent;
 }
 
-.gradient-reviews__display--author {
+.lasso-reviews__display--author {
     font-size: 1.25rem;
     background-color: transparent;
     margin-top: 20px;
@@ -553,7 +553,7 @@ button {
     About Teaser Section  
 -----------------------------------------------------------------------------------*/
 
-.gradient-about__teaser {
+.lasso-about__teaser {
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -565,12 +565,12 @@ button {
     border-radius: 30px;
 }
 
-.gradient-about__teaser--photo-container {
+.lasso-about__teaser--photo-container {
     height: 50vh;
     width: 45vw;
 }
 
-.gradient-about__teaser--photo {
+.lasso-about__teaser--photo {
     width: 100%;
     height: 100%;
     border-radius: 30px 0 0 30px;
@@ -578,7 +578,7 @@ button {
 
 }
 
-.gradient-about__teaser--info {
+.lasso-about__teaser--info {
     display: flex;
     flex-direction: column;
     justify-content: start;
@@ -591,7 +591,7 @@ button {
     /* background: #fcf6f6; */
 }
 
-.gradient-about__teaser--text {
+.lasso-about__teaser--text {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -602,7 +602,7 @@ button {
     Product Teaser Section
 -----------------------------------------------------------------------------------*/
 
-.gradient-products__teaser {
+.lasso-products__teaser {
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -616,8 +616,8 @@ button {
     border-radius: 50px;
 }
 
-.gradient-products__teaser-head,
-.gradient-products__teaser-foot {
+.lasso-products__teaser-head,
+.lasso-products__teaser-foot {
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -626,17 +626,17 @@ button {
     background: transparent;
 }
 
-.gradient-products__teaser-info {
+.lasso-products__teaser-info {
     width: calc(30vw - 20px);
     margin-left: 20px
 }
 
-.gradient-products__teaser-image--container {
+.lasso-products__teaser-image--container {
     width: 30vw;
     height: 30vh;
 }
 
-.gradient-products__teaser-image {
+.lasso-products__teaser-image {
     width: 100%;
     height: 100%;
     object-fit: cover;
@@ -648,14 +648,14 @@ button {
     Custom Teaser Section 
 -----------------------------------------------------------------------------------*/
 
-.gradient-custom__teaser {
+.lasso-custom__teaser {
     position: relative;
     display: flex;
     justify-content: space-between;
     width: 90vw;
 }
 
-.gradient-custom__photo-container--one {
+.lasso-custom__photo-container--one {
     position: inherit;
     top: 0;
     left: 0;
@@ -664,15 +664,15 @@ button {
     border-radius: 30px;
 }
 
-.gradient-custom__photo--one,
-.gradient-custom__photo--two {
+.lasso-custom__photo--one,
+.lasso-custom__photo--two {
     width: 100%;
     height: 100%;
     object-fit: cover;
     border-radius: 30px;
 }
 
-.gradient-custom__photo-container--two {
+.lasso-custom__photo-container--two {
     position: absolute;
     bottom: -5vw;
     right: 0;
@@ -697,7 +697,7 @@ button {
     background: rgba(132, 197, 246, 0.4);
 }
 
-.gradient-custom__info {
+.lasso-custom__info {
     position: absolute;
     top: 10vw;
     left: 25vw;
@@ -714,7 +714,7 @@ button {
     z-index: 10;
 }
 
-.gradient-custom__teaser--text-container {
+.lasso-custom__teaser--text-container {
     padding: 30px;
     background: #fcf6f6;
     border-radius: 30px;
@@ -725,7 +725,7 @@ button {
     Footer
 -----------------------------------------------------------------------------------*/
 
-.gradient-footer {
+.lasso-footer {
     display: flex;
     justify-content: space-between;
     align-items: start;
@@ -737,55 +737,55 @@ button {
     padding: 20px 0;
 }
 
-.gradient-footer div {
+.lasso-footer div {
     padding: 0 80px;
 }
 
-.gradient-footer__company {
+.lasso-footer__company {
     display: flex;
     align-items: baseline;
     justify-content: center;
     background-color: transparent;
 }
 
-.gradient-footer__company--logo {
+.lasso-footer__company--logo {
     font-family: cursive;
     font-size: 4rem;
     background-color: transparent;
     margin-right: 10px;
 }
 
-.gradient-footer__company--est {
+.lasso-footer__company--est {
     font-size: .75rem;
     background-color: transparent;
 }
 
-.gradient-footer__contact {
+.lasso-footer__contact {
     display: flex;
     flex-direction: column;
     background-color: transparent;
 }
 
-.gradient-footer__contact li {
+.lasso-footer__contact li {
     font-size: .75rem;
     background-color: transparent;
 }
 
-.gradient-footer__title {
+.lasso-footer__title {
     font-size: 1rem;
     font-weight: 500;
     background-color: transparent;
     margin: 15px 0 15px 0;
 }
 
-.gradient-footer__social-icons__container {
+.lasso-footer__social-icons__container {
     display: flex;
     background-color: transparent;
     max-height: 30px;
     gap: 10px;
 }
 
-.gradient-footer__social--icons {
+.lasso-footer__social--icons {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -793,13 +793,13 @@ button {
     max-width: 30px;
 }
 
-.gradient-footer__social--icons svg {
+.lasso-footer__social--icons svg {
     max-width: 100%;
     max-height: 100%;
     display: block;
 }
 
-.gradient-footer__contact--address {
+.lasso-footer__contact--address {
     margin: 5px 0;
 }
 

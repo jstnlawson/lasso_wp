@@ -35,13 +35,13 @@
         const handleScroll = () => {
             if (!scrollInProgress) {
                 requestAnimationFrame(() => {
-                    applyTransform('.gradient-about__teaser', -1); 
+                    applyTransform('.lasso-about__teaser', -1); 
                     applyTransform('.products-card', -1); 
                     applyTransform('.cubeSwiper', 2);
                     applyTransform('.swiper-slide__action-call', 1);
-                    adjustOpacityOnScroll('.gradient-splash');
-                    applyTransform('.gradient-custom__photo-container--one', -1);
-                    applyTransform('.gradient-custom__photo-container--two', 1);
+                    adjustOpacityOnScroll('.lasso-splash');
+                    applyTransform('.lasso-custom__photo-container--one', -1);
+                    applyTransform('.lasso-custom__photo-container--two', 1);
                     scrollInProgress = false;
                 });
             }

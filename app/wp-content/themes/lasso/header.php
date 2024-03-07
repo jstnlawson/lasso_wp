@@ -2,7 +2,7 @@
 <html <?php language_attributes(); ?>>
 
 <head>
-    <title>gradient</title>
+    <title>lasso</title>
     <meta charset="<?php bloginfo('charset'); ?>">
     <?php wp_head(); ?>
 </head>
@@ -21,14 +21,14 @@
     $hasPageLinks = $about_page_link || $products_page_link || $contact_page_link || $cart_page_link;
 
     if ($header_title && $hasPageLinks) : ?>
-        <div class="gradient-header">
+        <div class="lasso-header">
             <header>
-                <div class="gradient-header__title">
+                <div class="lasso-header__title">
                     <a class="home-link" href="<?php echo esc_url(home_url('/')); ?>">
                         <h1><?php echo esc_html($header_title); ?></h1>
                     </a>
                 </div>
-                <div class='gradient-nav'>
+                <div class='lasso-nav'>
                     <nav>
                         <ul>
                             <?php if ($products_page_link) : ?>
@@ -69,5 +69,5 @@
             </header>
         </div>
     <?php endif; ?>
-    <div class="gradient-header__spacer"></div>
-    <div class="gradient-gradient">
+    <div class="lasso-header__spacer"></div>
+    <div class="lasso-lasso">

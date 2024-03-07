@@ -10,7 +10,7 @@ for ($i = 1; $i <= 5; $i++) {
     }
 }
 if ($reviewsExist) : ?>
-    <div class="gradient-reviews">
+    <div class="lasso-reviews">
         <div class="swiper reviewSwiper">
             <div class="swiper-wrapper">
                 <?php for ($i = 1; $i <= 5; $i++) : ?>
@@ -21,13 +21,13 @@ if ($reviewsExist) : ?>
                         $showControls = true;
                     ?>
                         <div class="swiper-slide">
-                            <div class="gradient-reviews__display">
-                                <div class="gradient-reviews__display--text">
+                            <div class="lasso-reviews__display">
+                                <div class="lasso-reviews__display--text">
                                     <p>
                                         "<?php echo esc_html($review_text); ?>"
                                     </p>
                                 </div>
-                                <div class="gradient-reviews__display--author">
+                                <div class="lasso-reviews__display--author">
                                     <p>
                                         - <?php echo esc_html($review_author); ?>
                                     </p>

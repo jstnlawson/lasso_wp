@@ -11,7 +11,7 @@ for ($i = 1; $i <= 5; $i++) {
     }
 }
 if ($hasImages && $splash_title && $splash_text && $splash_button_text) : ?>
-    <div class="gradient-splash">
+    <div class="lasso-splash">
         <div class="swiper mySwiper">
             <div class="swiper-wrapper">
                 <div class="opaque-box swiper-slide__action-call">
