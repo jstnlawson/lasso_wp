@@ -2,43 +2,24 @@
 
 error_log('functions.php is loaded');
 
-function gradient_enqueue_scripts()
-{
+function gradient_enqueue_scripts_styles() {
+    // Enqueue Styles
     wp_enqueue_style('dashicons');
-    
-}
-add_action('wp_enqueue_scripts', 'gradient_enqueue_scripts');
-
-function gradient_add_js()
-{
-    wp_enqueue_script('gradient-main-js', get_template_directory_uri() . '/assets/js/main.js', array('jquery'), null, true);
-}
-
-add_action('wp_enqueue_scripts', 'gradient_add_js');
-
-function gradient_add_styles()
-{
-
-    // register the style
     wp_register_style('gradient-main-css', get_template_directory_uri() . '/assets/css/main.css');
-
-    // enqueue the style
     wp_enqueue_style('gradient-main-css');
-
-    // Enqueue Dashicons for use in the front-end.
-    wp_enqueue_style('dashicons');
-}
-
-add_action('wp_enqueue_scripts', 'gradient_add_styles');
-
-function gradient_enqueue_swiper_assets() {
     wp_enqueue_style('swiper-css', 'https://unpkg.com/swiper/swiper-bundle.min.css');
-    wp_enqueue_script('swiper-js', 'https://unpkg.com/swiper/swiper-bundle.min.js', array(), null, true);
 
-    // Enqueue your custom script to initialize the swiper
+    // Enqueue Scripts
+    wp_enqueue_script('gradient-main-js', get_template_directory_uri() . '/assets/js/main.js', array('jquery'), null, true);
+    wp_enqueue_script('swiper-js', 'https://unpkg.com/swiper/swiper-bundle.min.js', array(), null, true);
     wp_enqueue_script('custom-swiper-init', get_template_directory_uri() . '/assets/js/custom-swiper-init.js', array('swiper-js'), null, true);
 }
-add_action('wp_enqueue_scripts', 'gradient_enqueue_swiper_assets');
+
+// Only add the action if we're not in the admin area
+if (!is_admin()) {
+    add_action('wp_enqueue_scripts', 'gradient_enqueue_scripts_styles');
+}
+
 
 function register_header($wp_customize)
 {
@@ -82,15 +63,28 @@ function register_header($wp_customize)
     ));
 
     // Custom Page Link
-    $wp_customize->add_setting('custom_page_link', array(
+    $wp_customize->add_setting('contact_page_link', array(
         'default'   => '',
         'transport' => 'refresh',
     ));
-    $wp_customize->add_control('custom_page_link', array(
-        'label'    => __('Custom Page Link', 'gradient'),
+    $wp_customize->add_control('contact_page_link', array(
+        'label'    => __('Contact Page Link', 'gradient'),
         'section'  => 'gradient_header',
         'type'     => 'dropdown-pages',
     ));
+
+    // Cart Page Link
+    $wp_customize->add_setting('cart_page_link', array(
+        'default'   => '',
+        'transport' => 'refresh',
+    ));
+
+    $wp_customize->add_control('cart_page_link', array(
+        'label'    => __('Cart Page Link', 'gradient'),
+        'section'  => 'gradient_header',
+        'type'     => 'dropdown-pages',
+    ));
+
 }
 
 add_action('customize_register', 'register_header');
@@ -523,21 +517,6 @@ function register_custom_teaser ($wp_customize) {
 
 add_action('customize_register', 'register_custom_teaser');
 
-function create_product_post_type() {
-    register_post_type('product',
-        array(
-            'labels'      => array(
-                'name'          => __('Products'),
-                'singular_name' => __('Product'),
-            ),
-            'public'      => true,
-            'has_archive' => true,
-            'supports'    => array('title', 'editor', 'thumbnail', 'excerpt'),
-            // Customize the permalink structure
-        )
-    );
-}
-add_action('init', 'create_product_post_type');
 
 function register_about_page ($wp_customize) {
 
