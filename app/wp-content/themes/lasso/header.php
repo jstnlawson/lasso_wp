@@ -11,11 +11,11 @@
     <?php wp_body_open(); ?>
     <?php
     $header_title = get_theme_mod('header_title');
-    // Check if any of the specific page links have been set
     $about_page_link     = get_theme_mod('about_page_link');
     $products_page_link  = get_theme_mod('products_page_link');
     $contact_page_link   = get_theme_mod('contact_page_link');
     $cart_page_link      = get_theme_mod('cart_page_link');
+	$cart_count          = function_exists('WC') ? WC()->cart->get_cart_contents_count() : 0;
 
     // Determine if we should show the navigation based on whether any page links are set
     $hasPageLinks = $about_page_link || $products_page_link || $contact_page_link || $cart_page_link;
@@ -58,7 +58,7 @@
                                         <a class="cart-image" href="<?php echo esc_url(get_permalink($cart_page_link)); ?>">
                                             <img src="<?php echo esc_url(get_template_directory_uri()) . '/assets/images/commerce/cart.svg'; ?>" alt="cart">
                                             <!-- Display the number of items in the cart -->
-                                            <span><?php echo WC()->cart->get_cart_contents_count(); ?></span>
+                                            <span><?php echo $cart_count; ?></span>
                                         </a>
                                     </li>
                                 <?php endif; ?>
