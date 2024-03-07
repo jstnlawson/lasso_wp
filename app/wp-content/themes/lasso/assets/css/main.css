@@ -823,13 +823,17 @@ button {
     justify-content: center;
     align-items: center;
     width: 60vw;
-    height: 60vh;
+    height: 40vh;
     background-color: whitesmoke;
     color: #404040;
     padding: 50px;
     border-radius: 25px;
     background: linear-gradient(to right, transparent, rgb(246, 227, 132));
-    background: linear-gradient(to right, transparent, whitesmoke);
+    background: linear-gradient(to right, transparent, #ffffffb1);
+}
+
+.products-card:first-of-type {
+    margin-top: 12.5vh;
 }
 
 .products-card__price {
@@ -895,9 +899,9 @@ button {
     top: 0;
 }
 
-.products-card:not(:first-of-type) .swiper {
+/* .products-card:not(:first-of-type) .swiper {
     right: -12vw;
-}
+} */
 
 .products .swiper-slide {
     background-position: center;
