@@ -452,70 +452,70 @@ function register_product_teaser ($wp_customize) {
 
 add_action('customize_register', 'register_product_teaser');
 
-function register_custom_teaser ($wp_customize) {
+function register_contact_teaser ($wp_customize) {
 
-    $wp_customize->add_section('lasso_custom_teaser', array(
-        'title'    => __('custom Teaser Settings', 'lasso'),
+    $wp_customize->add_section('lasso_contact_teaser', array(
+        'title'    => __('Contact Teaser Settings', 'lasso'),
         'priority' => 30,
     ));
 
-    $wp_customize->add_setting('custom_teaser_title', array(
+    $wp_customize->add_setting('contact_teaser_title', array(
         'default'   => '',
         'transport' => 'refresh',
     ));
 
-    $wp_customize->add_control('custom_teaser_title', array(
-        'label'    => __('custom Teaser Title', 'lasso'),
-        'section'  => 'lasso_custom_teaser',
+    $wp_customize->add_control('contact_teaser_title', array(
+        'label'    => __('Contact Teaser Title', 'lasso'),
+        'section'  => 'lasso_contact_teaser',
         'type'     => 'text',
     ));
 
-    $wp_customize->add_setting('custom_teaser_text', array(
+    $wp_customize->add_setting('contact_teaser_text', array(
         'default'   => '',
         'transport' => 'refresh',
     ));
 
-    $wp_customize->add_control('custom_teaser_text', array(
-        'label'    => __('custom Teaser Text', 'lasso'),
-        'section'  => 'lasso_custom_teaser',
+    $wp_customize->add_control('contact_teaser_text', array(
+        'label'    => __('Contact Teaser Text', 'lasso'),
+        'section'  => 'lasso_contact_teaser',
         'type'     => 'textarea',
     ));
 
-    $wp_customize->add_setting('custom_teaser_button_text', array(
+    $wp_customize->add_setting('contact_teaser_button_text', array(
         'default'   => '',
         'transport' => 'refresh',
     ));
 
-    $wp_customize->add_control('custom_teaser_button_text', array(
-        'label'    => __('custom Teaser Button Text', 'lasso'),
-        'section'  => 'lasso_custom_teaser',
+    $wp_customize->add_control('contact_teaser_button_text', array(
+        'label'    => __('Contact Teaser Button Text', 'lasso'),
+        'section'  => 'lasso_contact_teaser',
         'type'     => 'text',
     ));
 
-    $wp_customize->add_setting('custom_teaser_photo_one', array(
+    $wp_customize->add_setting('contact_teaser_photo_one', array(
         'default'   => '',
         'transport' => 'refresh',
     ));
 
-    $wp_customize->add_control(new WP_Customize_Image_Control($wp_customize, 'custom_teaser_photo_one', array(
-        'label'    => __('custom Teaser Photo One', 'lasso'),
-        'section'  => 'lasso_custom_teaser',
-        'settings' => 'custom_teaser_photo_one',
+    $wp_customize->add_control(new WP_Customize_Image_Control($wp_customize, 'contact_teaser_photo_one', array(
+        'label'    => __('Contact Teaser Photo One', 'lasso'),
+        'section'  => 'lasso_contact_teaser',
+        'settings' => 'contact_teaser_photo_one',
     )));
 
-    $wp_customize->add_setting('custom_teaser_photo_two', array(
+    $wp_customize->add_setting('contact_teaser_photo_two', array(
         'default'   => '',
         'transport' => 'refresh',
     ));
 
-    $wp_customize->add_control(new WP_Customize_Image_Control($wp_customize, 'custom_teaser_photo_two', array(
-        'label'    => __('custom Teaser Photo Two', 'lasso'),
-        'section'  => 'lasso_custom_teaser',
-        'settings' => 'custom_teaser_photo_two',
+    $wp_customize->add_control(new WP_Customize_Image_Control($wp_customize, 'contact_teaser_photo_two', array(
+        'label'    => __('Contact Teaser Photo Two', 'lasso'),
+        'section'  => 'lasso_contact_teaser',
+        'settings' => 'contact_teaser_photo_two',
     )));
 }
 
-add_action('customize_register', 'register_custom_teaser');
+add_action('customize_register', 'register_contact_teaser');
 
 
 function register_about_page ($wp_customize) {

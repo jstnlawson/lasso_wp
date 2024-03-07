@@ -40,8 +40,8 @@
                     applyTransform('.cubeSwiper', 2);
                     applyTransform('.swiper-slide__action-call', 1);
                     adjustOpacityOnScroll('.lasso-splash');
-                    applyTransform('.lasso-custom__photo-container--one', -1);
-                    applyTransform('.lasso-custom__photo-container--two', 1);
+                    applyTransform('.lasso-contact__photo-container--one', -1);
+                    applyTransform('.lasso-contact__photo-container--two', 1);
                     scrollInProgress = false;
                 });
             }
