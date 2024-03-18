@@ -672,3 +672,44 @@ function register_about_page ($wp_customize) {
 }
 
 add_action('customize_register', 'register_about_page');
+
+function register_contact_page ($wp_customize) {
+    
+        $wp_customize->add_section('lasso_contact_page', array(
+            'title'    => __('Contact Page Settings', 'lasso'),
+            'priority' => 30,
+        ));
+    
+        $wp_customize->add_setting('contact_main_photo', array(
+            'default'   => '',
+            'transport' => 'refresh',
+        ));
+    
+    
+        $wp_customize->add_setting('contact_main_title', array(
+            'default'   => '',
+            'transport' => 'refresh',
+        ));
+    
+        $wp_customize->add_control('contact_main_title', array(
+            'label'    => __('Contact Main Title', 'lasso'),
+            'section'  => 'lasso_contact_page',
+            'settings' => 'contact_main_title',
+            'type'     => 'text',
+        ));
+    
+        $wp_customize->add_setting('contact_main_text', array(
+            'default'   => '',
+            'transport' => 'refresh',
+        ));
+    
+        $wp_customize->add_control('contact_main_text', array(
+            'label'    => __('Contact Main Text', 'lasso'),
+            'section'  => 'lasso_contact_page',
+            'settings' => 'contact_main_text',
+            'type'     => 'textarea',
+        ));
+    
+}
+
+add_action('customize_register', 'register_contact_page');
