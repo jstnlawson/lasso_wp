@@ -26,7 +26,7 @@ function register_header($wp_customize)
 
     $wp_customize->add_section('lasso_header', array(
         'title'    => __('Header Settings', 'lasso'),
-        'priority' => 30,
+        'priority' => 1,
     ));
 
     $wp_customize->add_setting('header_title', array(
@@ -62,7 +62,7 @@ function register_header($wp_customize)
         'type'     => 'dropdown-pages',
     ));
 
-    // Custom Page Link
+    // Contact Page Link
     $wp_customize->add_setting('contact_page_link', array(
         'default'   => '',
         'transport' => 'refresh',
@@ -96,7 +96,7 @@ function footer_customize_register($wp_customize)
     // Add Footer Section
     $wp_customize->add_section('footer-settings-section', array(
         'title'    => __('Footer Settings', 'lasso'),
-        'priority' => 120,
+        'priority' => 3,
     ));
 
     //Company Name and Logo
@@ -213,74 +213,82 @@ function footer_customize_register($wp_customize)
 
 add_action('customize_register', 'footer_customize_register');
 
+add_action('customize_register', function ($wp_customize) {
+    // Check if the panel does not already exist to avoid conflicts
+    if (!$wp_customize->get_panel('my_homepage_settings_panel')) {
+        $wp_customize->add_panel('my_homepage_settings_panel', array(
+            'title' => __('My Homepage Settings', 'lasso'),
+            'description' => __('Customize the homepage settings for my theme.', 'lasso'),
+            'priority' => 2, // Adjust priority to change the position in the Customizer
+        ));
+    }
+});
 
+function register_hero_carousel($wp_customize) {
 
-function register_splash_carousel($wp_customize) {
-    $splash_title       = get_theme_mod('splash_title');
-            $splash_text        = get_theme_mod('splash_text');
-            $splash_button_text = get_theme_mod('splash_button_text');
-
-    $wp_customize->add_section('lasso_carousel_settings', array(
-        'title'    => __('Carousel Settings', 'lasso'),
-        'priority' => 30,
+    $wp_customize->add_section('lasso_hero_settings', array(
+        'title'    => __('Homepage Hero', 'lasso'),
+        'priority' => 1,
+        'panel'    => 'my_homepage_settings_panel',
     ));
 
-    $wp_customize->add_setting('splash_title', array(
+    $wp_customize->add_setting('hero_title', array(
         'default'   => '',
         'transport' => 'refresh',
     ));
 
-    $wp_customize->add_control('splash_title', array(
-        'label'    => __('Splash Title', 'lasso'),
-        'section'  => 'lasso_carousel_settings',
+    $wp_customize->add_control('hero_title', array(
+        'label'    => __('hero Title', 'lasso'),
+        'section'  => 'lasso_hero_settings',
         'type'     => 'text',
     ));
 
-    $wp_customize->add_setting('splash_text', array(
+    $wp_customize->add_setting('hero_text', array(
         'default'   => '',
         'transport' => 'refresh',
     ));
 
-    $wp_customize->add_control('splash_text', array(
-        'label'    => __('Splash Text', 'lasso'),
-        'section'  => 'lasso_carousel_settings',
+    $wp_customize->add_control('hero_text', array(
+        'label'    => __('hero Text', 'lasso'),
+        'section'  => 'lasso_hero_settings',
         'type'     => 'textarea',
     ));
 
-    $wp_customize->add_setting('splash_button_text', array(
+    $wp_customize->add_setting('hero_button_text', array(
         'default'   => '',
         'transport' => 'refresh',
     ));
 
-    $wp_customize->add_control('splash_button_text', array(
-        'label'    => __('Splash Button Text', 'lasso'),
-        'section'  => 'lasso_carousel_settings',
+    $wp_customize->add_control('hero_button_text', array(
+        'label'    => __('hero Button Text', 'lasso'),
+        'section'  => 'lasso_hero_settings',
         'type'     => 'text',
     ));
 
     for ($i = 1; $i <= 5; $i++) { 
-        $wp_customize->add_setting("carousel_image_{$i}", array(
+        $wp_customize->add_setting("hero_image_{$i}", array(
             'default'   => '',
             'transport' => 'refresh',
         ));
 
         $wp_customize->add_control(new WP_Customize_Image_Control($wp_customize, "carousel_image_{$i}", array(
-            'label'    => sprintf(__('Carousel Image %d', 'lasso'), $i),
-            'section'  => 'lasso_carousel_settings',
-            'settings' => "carousel_image_{$i}",
+            'label'    => sprintf(__('Hero Image %d', 'lasso'), $i),
+            'section'  => 'lasso_hero_settings',
+            'settings' => "hero_image_{$i}",
         )));
     }
 }
 
-add_action('customize_register', 'register_splash_carousel');
+add_action('customize_register', 'register_hero_carousel');
 
 
 
 function register_review_carousel($wp_customize) {
 
     $wp_customize->add_section('lasso_review_settings', array(
-        'title'    => __('Review Settings', 'lasso'),
-        'priority' => 30,
+        'title'    => __('Homepage Reviews', 'lasso'),
+        'priority' => 2,
+        'panel'    => 'my_homepage_settings_panel',
     ));
 
     for ($i = 1; $i <= 5; $i++) {
@@ -313,8 +321,9 @@ add_action('customize_register', 'register_review_carousel');
 function register_about_teaser ($wp_customize) {
 
     $wp_customize->add_section('lasso_about_teaser', array(
-        'title'    => __('About Teaser Settings', 'lasso'),
-        'priority' => 30,
+        'title'    => __('Homepage About Teaser', 'lasso'),
+        'priority' => 3,
+        'panel'    => 'my_homepage_settings_panel',
     ));
 
     $wp_customize->add_setting('about_teaser_photo', array(
@@ -378,8 +387,9 @@ add_action('customize_register', 'register_about_teaser');
 function register_product_teaser ($wp_customize) {
 
     $wp_customize->add_section('lasso_product_teaser', array(
-        'title'    => __('Product Teaser Settings', 'lasso'),
-        'priority' => 30,
+        'title'    => __('Homepage Product Teaser', 'lasso'),
+        'priority' => 4,
+        'panel'    => 'my_homepage_settings_panel',
     ));
 
     $wp_customize->add_setting('products_teaser_title', array(
@@ -455,8 +465,9 @@ add_action('customize_register', 'register_product_teaser');
 function register_contact_teaser ($wp_customize) {
 
     $wp_customize->add_section('lasso_contact_teaser', array(
-        'title'    => __('Contact Teaser Settings', 'lasso'),
-        'priority' => 30,
+        'title'    => __('Homepage Contact Teaser', 'lasso'),
+        'priority' => 5,
+        'panel'    => 'my_homepage_settings_panel',
     ));
 
     $wp_customize->add_setting('contact_teaser_title', array(
@@ -522,7 +533,7 @@ function register_about_page ($wp_customize) {
 
     $wp_customize->add_section('lasso_about_page', array(
         'title'    => __('About Page Settings', 'lasso'),
-        'priority' => 30,
+        'priority' => 4,
     ));
 
     $wp_customize->add_setting('about_main_photo', array(
@@ -677,7 +688,7 @@ function register_contact_page ($wp_customize) {
     
         $wp_customize->add_section('lasso_contact_page', array(
             'title'    => __('Contact Page Settings', 'lasso'),
-            'priority' => 30,
+            'priority' => 5,
         ));
     
         $wp_customize->add_setting('contact_main_photo', array(
@@ -713,3 +724,39 @@ function register_contact_page ($wp_customize) {
 }
 
 add_action('customize_register', 'register_contact_page');
+
+function woocommerce_support() {
+    if (class_exists('WooCommerce')) {
+        add_filter('woocommerce_enqueue_styles', '__return_empty_array');
+    }
+    add_theme_support('woocommerce');
+}
+
+add_action('after_setup_theme', 'woocommerce_support');
+
+function custom_toast_script() {
+    // Enqueue custom script with jQuery as a dependency
+    wp_enqueue_script('custom-script', get_stylesheet_directory_uri() . '/assets/js/toast.js', array('jquery'), '1.0.0', true);
+}
+add_action('wp_enqueue_scripts', 'custom_toast_script');
+
+function customizer_general_edit_page_warning() {
+    global $pagenow;
+
+    // Check if the current screen is for editing a page
+    if ('post.php' === $pagenow || 'post-new.php' === $pagenow) {
+        $current_post_type = isset($_GET['post']) ? get_post_type($_GET['post']) : (isset($_GET['post_type']) ? $_GET['post_type'] : '');
+
+        // If editing or creating a new page, show the warning
+        if ('page' === $current_post_type) {
+            add_action('admin_notices', function() {
+                echo '<div class="notice notice-warning is-dismissible">
+                        <p>Please be cautious when editing pages directly. For certain pages, it may be preferable to use the Customizer for a more guided editing experience.</p>
+                     </div>';
+            });
+        }
+    }
+}
+
+add_action('admin_init', 'customizer_general_edit_page_warning');
+

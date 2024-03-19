@@ -463,14 +463,14 @@ button {
 }
 
 /*----------------------------------------------------------------------------------
-    Splash Swiper
+    hero Swiper
 -----------------------------------------------------------------------------------*/
 
-.lasso-splash {
+.lasso-hero {
     /* margin-top: 40px; */
 }
 
-.lasso-splash .mySwiper {
+.lasso-hero .mySwiper {
     width: 100vw;
     height: fit-content;
 }
