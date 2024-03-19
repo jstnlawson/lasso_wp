@@ -740,23 +740,5 @@ function custom_toast_script() {
 }
 add_action('wp_enqueue_scripts', 'custom_toast_script');
 
-function customizer_general_edit_page_warning() {
-    global $pagenow;
 
-    // Check if the current screen is for editing a page
-    if ('post.php' === $pagenow || 'post-new.php' === $pagenow) {
-        $current_post_type = isset($_GET['post']) ? get_post_type($_GET['post']) : (isset($_GET['post_type']) ? $_GET['post_type'] : '');
-
-        // If editing or creating a new page, show the warning
-        if ('page' === $current_post_type) {
-            add_action('admin_notices', function() {
-                echo '<div class="notice notice-warning is-dismissible">
-                        <p>Please be cautious when editing pages directly. For certain pages, it may be preferable to use the Customizer for a more guided editing experience.</p>
-                     </div>';
-            });
-        }
-    }
-}
-
-add_action('admin_init', 'customizer_general_edit_page_warning');
-
+// add_filter('use_block_editor_for_post', '__return_false', 10);
