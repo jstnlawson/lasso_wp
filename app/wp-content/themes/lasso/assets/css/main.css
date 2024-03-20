@@ -731,7 +731,7 @@ button {
     position: inherit;
     top: 0;
     left: 0;
-    width: 70vw;
+    width: 60vw;
     height: 65vh;
     border-radius: 30px;
 }
@@ -740,7 +740,7 @@ button {
     position: inherit;
     bottom: -5vw;
     right: 0;
-    width: 30vw;
+    width: 40vw;
     height: 65vh;
     border-radius: 30px;
 }
@@ -794,15 +794,6 @@ button {
 }
 
 @media screen and (max-width: 600px){
-    .lasso-contact__teaser {
-
-    }
-
-    
-
-    .lasso-contact__photo-container--two {
-      
-    }
 
     .lasso-contact__info {
         top: 0;
@@ -1546,4 +1537,75 @@ button {
     left: 0;
     right: 0;
     margin: auto;
+}
+
+@media screen and (max-width: 600px) {
+
+    .about {
+        gap: 5vh;
+    }
+
+    .about-owner__blurb {
+        left: 15vw;
+        top: 45vh;
+        width: 70vw;
+        padding: 20px;
+    }
+
+    .about-team { 
+        position: static;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        height: 85vh;
+        width: 90vw;
+    }
+    
+    .about-team__image {
+        position: static;
+        width: 100%;
+        object-fit: cover;
+        border-radius: 30px 30px 0 0;
+    }
+    
+    .about-team__blurb {
+        position: static;
+        width: 100%;
+        padding: 20px;
+        height: fit-content;
+        margin: 0px;
+        border-radius: 0 0 30px 30px;
+        box-sizing: border-box;
+    }
+
+    .about-mission {
+        position: static;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        height: 85vh;
+        width: 90vw;
+    }
+
+    .about-mission__image {
+        position: static;
+        width: 100%;
+        height: 85vh;
+        object-fit: cover;
+        border-radius: 30px;
+    }
+
+    .about-mission__blurb {
+        left: 50%;
+        transform: translate(-50%, 0);
+        width: 70%;
+        padding: 20px;
+        height: fit-content;
+        margin: 0px;
+        border-radius: 30px;
+        box-sizing: border-box;
+    }
+    
 }
