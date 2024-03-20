@@ -615,14 +615,14 @@ button {
         flex-direction: column;
         justify-content: center;
         align-items: center;
-        gap: 20px;
+        gap: 0px;
         height: fit-content;
         width: 90vw;
     }
 
     .lasso-about__teaser--photo-container {
         width: 90vw;
-        height: 40vh;
+        height: 30vh;
     }
 
     .lasso-about__teaser--photo {
@@ -688,6 +688,7 @@ button {
 @media screen and (max-width: 600px){
     .lasso-products__teaser {
         width: 85vw;
+        gap: 10px;
     }
 
     .lasso-products__teaser-head,
@@ -695,7 +696,7 @@ button {
         flex-direction: column;
         justify-content: center;
         align-items: center;
-        gap: 20px;
+        gap: 10px;
     }
 
     .lasso-products__teaser-info {
@@ -705,9 +706,14 @@ button {
 
     .lasso-products__teaser-image--container {
         width: 85vw;
-        height: 20vh;
+        height: 30vh;
+        -webkit-mask-image: linear-gradient(to left,  black, black, black, black, black, black, black, transparent);
+        mask-image: linear-gradient(to left,  black, black, black, black, black, black, black, transparent);
     }
     
+    .lasso-products__teaser-image--container:not(:first-of-type) {
+       display: none;
+    }
 }
 
 /*----------------------------------------------------------------------------------
@@ -784,6 +790,7 @@ button {
     padding: 30px;
     background: #fcf6f6;
     border-radius: 30px;
+    opacity: 0.75;
 }
 
 @media screen and (max-width: 600px){
@@ -791,9 +798,7 @@ button {
 
     }
 
-    .lasso-contact__photo-container--one {
-        
-    }
+    
 
     .lasso-contact__photo-container--two {
       
@@ -802,28 +807,26 @@ button {
     .lasso-contact__info {
         top: 0;
         left: 50%;
-        width: 80vw;
+        width: 60vw;
         height: fit-content;
         transform: translate(-50%, 0);
     }
 
     .lasso-contact__teaser--text-container {
-        opacity: 0.75;
+        padding: 20px;
+    }
+
+    .lasso-contact__photo-container--one, .lasso-contact__photo-container--two  {
+        width: 300px;
+        height: 300px;
     }
 
     .lasso-contact__photo-container--one {
-        /* top: -38vh;
-        width: 70vw;
-        height: 20vh;
-        z-index: 20; */
+        top: -10vh;
     }
 
     .lasso-contact__photo-container--two {
-        /* right: 50vw;
-        bottom: -40vh;
-        width: 70vw;
-        height: 20vh;
-        z-index: 20; */
+       bottom: -10vh;
     }
     
 }
