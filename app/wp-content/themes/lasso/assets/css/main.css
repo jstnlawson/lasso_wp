@@ -570,7 +570,7 @@ button {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    height: fit-content;
+    height: 60vh;
     width: 80vw;
     background: #fcf6f6;
     background: linear-gradient(to right, #FFE066, transparent);
@@ -579,7 +579,7 @@ button {
 }
 
 .lasso-about__teaser--photo-container {
-    height: 50vh;
+    height: 60vh;
     width: 45vw;
 }
 
@@ -599,9 +599,8 @@ button {
     background-color: transparent;
     padding: 20px;
     width: calc(35vw - 40px);
-    height: calc(50vh -40px);
+    height: calc(60vh -40px);
     text-wrap: balance;
-    /* background: #fcf6f6; */
 }
 
 .lasso-about__teaser--text {
@@ -609,6 +608,35 @@ button {
     justify-content: center;
     align-items: center;
     font-size: 1.25rem;
+}
+
+@media screen and (max-width: 600px){
+    .lasso-about__teaser {
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 20px;
+        height: fit-content;
+        width: 90vw;
+    }
+
+    .lasso-about__teaser--photo-container {
+        width: 90vw;
+        height: 40vh;
+    }
+
+    .lasso-about__teaser--photo {
+        border-radius: 30px 0 0 0;
+        -webkit-mask-image: linear-gradient(to right,  black, black, black, black, black, black, rgba(0, 0, 0, 0.333), transparent);
+        mask-image: linear-gradient(to right,  black, black, black, black, black, black, rgba(0, 0, 0, 0.333), transparent);
+    }
+
+    .lasso-about__teaser--info {
+        width: 90vw;
+        height: fit-content;
+        margin-left: 40px;
+    }
+    
 }
 
 /*----------------------------------------------------------------------------------
@@ -655,6 +683,31 @@ button {
     object-fit: cover;
     border-radius: 30px;
     max-height: 35vh;
+}
+
+@media screen and (max-width: 600px){
+    .lasso-products__teaser {
+        width: 85vw;
+    }
+
+    .lasso-products__teaser-head,
+    .lasso-products__teaser-foot {
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 20px;
+    }
+
+    .lasso-products__teaser-info {
+        width: 85vw;
+        margin-left: 0;
+    }
+
+    .lasso-products__teaser-image--container {
+        width: 85vw;
+        height: 20vh;
+    }
+    
 }
 
 /*----------------------------------------------------------------------------------
@@ -731,6 +784,35 @@ button {
     padding: 30px;
     background: #fcf6f6;
     border-radius: 30px;
+}
+
+@media screen and (max-width: 600px){
+    .lasso-contact__teaser {
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 20px;
+    }
+
+    .lasso-contact__photo-container--one {
+        width: 90vw;
+        height: 40vh;
+    }
+
+    .lasso-contact__photo-container--two {
+        width: 90vw;
+        height: 40vh;
+    }
+
+    .lasso-contact__info {
+        position: relative;
+        top: 0;
+        left: 0;
+        width: 90vw;
+        height: fit-content;
+        padding: 20px;
+    }
+    
 }
 
 
@@ -820,6 +902,8 @@ button {
     .lasso-footer div {
         padding: 0 20px;
     }
+
+    
 }
 
 @media screen and (max-width: 600px) {
@@ -828,13 +912,20 @@ button {
         justify-content: center;
         align-items: start;
         gap: 10px;
-        margin-top: 20px;
+        margin-top: 0px;
+        margin-left: 100vw;
     }
 
     .lasso-footer div {
         padding: 0 20px;
     }
     
+    .lasso-footer__company--logo {
+        position: relative;
+        left: -45vw;
+        bottom: -100px;
+    }
+
 }
 
 
@@ -926,16 +1017,10 @@ button {
 .products .swiper {
     width: 35vh;
     height: 35vh;
-    /* object-fit: cover; */
-    /* border-radius: 10px; */
     position: relative;
     right: -14vw;
     top: 0;
 }
-
-/* .products-card:not(:first-of-type) .swiper {
-    right: -12vw;
-} */
 
 .products .swiper-slide {
     background-position: center;
@@ -958,6 +1043,36 @@ button {
 .cubeSwiper {
     transition: transform 0.5s ease-out;
     will-change: transform;
+}
+
+@media screen and (max-width: 600px){
+
+    .products .swiper {
+        width: 33vh;
+        height: 33vh;
+        right: -10vw;
+    }
+    
+}
+
+@media screen and (max-width: 500px){
+
+    .products .swiper {
+        width: 30vh;
+        height: 30vh;
+        right: -5vw;
+    }
+    
+}
+
+@media screen and (max-width: 400px){
+
+    .products .swiper {
+        width: 15vh;
+        height: 15vh;
+        right: -15vw;
+    }
+    
 }
 
 /*--------------------------------------------------------------------------------------------------------------
@@ -1180,6 +1295,14 @@ button {
     cursor: zoom-out;
 }
 
+@media screen and (max-width: 800px){
+    
+    .thumbnail .swiper-slide img {
+        width: 80%;
+    }
+
+}
+
 @media screen and (max-width: 600px) {
 
     .single-product__head {
@@ -1188,10 +1311,7 @@ button {
     }
 
     .thumbnail .swiper-slide img {
-        display: block;
         width: 75%;
-        max-height: 100%;
-        object-fit: cover;
     }
 
     .single-product__dropdown {
