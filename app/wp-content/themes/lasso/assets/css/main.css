@@ -730,6 +730,15 @@ button {
     border-radius: 30px;
 }
 
+.lasso-contact__photo-container--two {
+    position: inherit;
+    bottom: -5vw;
+    right: 0;
+    width: 30vw;
+    height: 65vh;
+    border-radius: 30px;
+}
+
 .lasso-contact__photo--one,
 .lasso-contact__photo--two {
     width: 100%;
@@ -738,17 +747,8 @@ button {
     border-radius: 30px;
 }
 
-.lasso-contact__photo-container--two {
-    position: absolute;
-    bottom: -5vw;
-    right: 0;
-    width: 30vw;
-    height: 65vh;
-    border-radius: 30px;
-}
-
 .photo-cover--yellow {
-    position: inherit;
+    position: absolute;
     height: 100%;
     width: 100%;
     border-radius: 30px;
@@ -788,29 +788,42 @@ button {
 
 @media screen and (max-width: 600px){
     .lasso-contact__teaser {
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        gap: 20px;
+
     }
 
     .lasso-contact__photo-container--one {
-        width: 90vw;
-        height: 40vh;
+        
     }
 
     .lasso-contact__photo-container--two {
-        width: 90vw;
-        height: 40vh;
+      
     }
 
     .lasso-contact__info {
-        position: relative;
         top: 0;
-        left: 0;
-        width: 90vw;
+        left: 50%;
+        width: 80vw;
         height: fit-content;
-        padding: 20px;
+        transform: translate(-50%, 0);
+    }
+
+    .lasso-contact__teaser--text-container {
+        opacity: 0.75;
+    }
+
+    .lasso-contact__photo-container--one {
+        /* top: -38vh;
+        width: 70vw;
+        height: 20vh;
+        z-index: 20; */
+    }
+
+    .lasso-contact__photo-container--two {
+        /* right: 50vw;
+        bottom: -40vh;
+        width: 70vw;
+        height: 20vh;
+        z-index: 20; */
     }
     
 }
