@@ -364,12 +364,6 @@ button {
     text-transform: capitalize; 
 }
 
-/* .nf-field-element input[type=submit]:hover {
-    transform: scale(1.025);
-    background: rgba(0, 0, 0, 0.035);
-    cursor: pointer;
-} */
-
 .field-wrap input[type=submit]:hover {
     transform: scale(1.025);
     background: #ffffff85;
@@ -495,8 +489,14 @@ button {
     position: absolute;
     top: 20%;
     left: 15%;
-    text-wrap: balance;
     z-index: 5;
+}
+
+@media screen and (max-width: 600px) {
+    .swiper-slide__action-call {
+        width: 50vw;
+    }
+    
 }
 
 /*----------------------------------------------------------------------------------
@@ -520,6 +520,7 @@ button {
     display: flex;
     align-items: center;
     justify-content: center;
+    font-size: x-small;
 }
 
 .reviewSwiper {
@@ -547,6 +548,18 @@ button {
     font-size: 1.25rem;
     background-color: transparent;
     margin-top: 20px;
+}
+
+@media screen and (max-width: 600px) {
+    
+    .lasso-reviews {
+        height: fit-content;
+    }
+
+    .reviewSwiper {
+        height: 50vh;
+    }
+    
 }
 
 /*----------------------------------------------------------------------------------
@@ -1144,6 +1157,35 @@ button {
 
 .fullscreen-image img:hover {
     cursor: zoom-out;
+}
+
+@media screen and (max-width: 600px) {
+
+    .single-product__head {
+        flex-direction: column;
+        gap: 0px;
+    }
+
+    .thumbnail .swiper-slide img {
+        display: block;
+        width: 75%;
+        max-height: 100%;
+        object-fit: cover;
+    }
+
+    .single-product__dropdown {
+        width: 90vw;
+    }
+
+    .thumbnail .swiper {
+        width: 95vw;
+    }
+
+    .single-product__quick-details {
+        width: 95vw;
+        gap: 20px;
+    }
+    
 }
 
 /*----------------------------------------------------------------------------------
