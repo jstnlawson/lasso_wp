@@ -983,7 +983,7 @@ button {
 
 .products-card__description {
     display: flex;
-    align-items: start;
+    /* align-items: start; */
     flex-direction: column;
     gap: 10px;
 }
@@ -1007,7 +1007,7 @@ button {
     background-color: #247BA0;
     border: none;
     height: fit-content;
-    min-width: 100px;
+    width: fit-content;
 }
 
 .products-card__single-link:hover {
@@ -1042,7 +1042,7 @@ button {
     }
 
     .products-card__title {
-        font-size: 2rem;
+        min-width: 180px;
     }
 
     .products-card__price {
@@ -1055,6 +1055,7 @@ button {
 
     .products-card__text {
         margin-top: 40vh;
+        min-width: 180px;
     }
 }
 
@@ -1101,7 +1102,7 @@ button {
         height: 30vh;
         /* right: 50%; */
         right: 18vw;
-        top: -4vh;
+        top: -6vh;
         /* transform: translate(50%, 0); */
     }
     

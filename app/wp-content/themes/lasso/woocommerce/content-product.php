@@ -42,20 +42,14 @@ if (empty($product) || !$product->is_visible()) {
                     <a href="<?php the_permalink(); ?>" class="btn products-card__single-link">full details</a>
                 </div>
             </div>
-            <!-- Swiper code will go here -->
             <div class="swiper cubeSwiper">
                 <div class="swiper-wrapper">
                     <?php
-                    // Get main product image ID
                     $main_image_id = $product->get_image_id();
-
-                    // Output the main product image first
                     if ($main_image_id) {
                         $main_image_url = wp_get_attachment_url($main_image_id);
                         echo '<div class="swiper-slide"><img src="' . $main_image_url . '" /></div>';
                     }
-
-                    // Get gallery image IDs and output them
                     $attachment_ids = $product->get_gallery_image_ids();
                     foreach ($attachment_ids as $attachment_id) {
                         $image_url = wp_get_attachment_url($attachment_id);
@@ -65,7 +59,6 @@ if (empty($product) || !$product->is_visible()) {
                 </div>
                 <div class="swiper-pagination"></div>
             </div>
-
         </div>
     </div>
 </li>
