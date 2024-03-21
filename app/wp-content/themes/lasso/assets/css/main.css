@@ -964,6 +964,8 @@ button {
     background: linear-gradient(to right, transparent, #ffffffb1);
 }
 
+
+
 .products-card:first-of-type {
     margin-top: 12.5vh;
 }
@@ -999,6 +1001,7 @@ button {
     background-color: #247BA0;
     border: none;
     height: fit-content;
+    min-width: 100px;
 }
 
 .products-card__single-link:hover {
@@ -1016,6 +1019,38 @@ button {
     background-color: #216f91;
 }
 
+@media screen and (max-width: 600px){
+    .products {
+    }
+
+    .products-card {
+        width: 70vw;
+        height: fit-content;
+        max-height: 85vh;
+        padding: 20px;
+        margin-left: 15vw;
+    }
+
+    .products-card:first-of-type {
+        margin-top: 0px;
+    }
+
+    .products-card__title {
+        font-size: 2rem;
+    }
+
+    .products-card__price {
+        display: none;
+    }
+    
+    .products-card__description {
+           
+    }
+
+    .products-card__text {
+        margin-top: 40vh;
+    }
+}
 
 /*----------------------------------------------------------------------------------
    Cube Swiper (product page)
@@ -1057,7 +1092,7 @@ button {
     .products .swiper {
         width: 33vh;
         height: 33vh;
-        right: -10vw;
+        /* right: -10vw; */
     }
     
 }
@@ -1067,7 +1102,7 @@ button {
     .products .swiper {
         width: 30vh;
         height: 30vh;
-        right: -5vw;
+        /* right: -5vw; */
     }
     
 }
@@ -1075,9 +1110,12 @@ button {
 @media screen and (max-width: 400px){
 
     .products .swiper {
-        width: 15vh;
-        height: 15vh;
-        right: -15vw;
+        width: 30vh;
+        height: 30vh;
+        /* right: 50%; */
+        right: 18vw;
+        top: -4vh;
+        /* transform: translate(50%, 0); */
     }
     
 }
@@ -1546,10 +1584,13 @@ button {
     }
 
     .about-owner__blurb {
-        left: 15vw;
+        left: 50%;
         top: 45vh;
-        width: 70vw;
+        width: 90vw;
+        max-height: 45vh;
         padding: 20px;
+        transform: translate(-50%, 0);
+        box-sizing: border-box;
     }
 
     .about-team { 
