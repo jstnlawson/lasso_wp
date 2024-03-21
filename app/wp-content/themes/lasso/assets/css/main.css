@@ -210,7 +210,7 @@ button {
     justify-content: center;
     align-items: center;
     gap: 20px;
-    width: 80vw;
+    width: 90vw;
     background-color: white;
     padding: 20px;
 }
@@ -248,12 +248,12 @@ button {
     transform: scale(0.975);
 }
 
-.post-127 {
+.post-127, .post-128 {
     margin-top: 40px;
     background-color: #ffffff8a;
     padding-top: 10px;
     border-radius: 25px;
-    width: 80vw;
+    width: 90vw;
 }
 
 /*----------------------------------------------------------------------------------
@@ -272,14 +272,13 @@ button {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    width: 70vw;
+    width: 90vw;
     height: fit-content;
     padding: 40px 40px;
-    /* background-color: transparent;
-    background: linear-gradient(to right, #FFE066, #b88354, #c4605b, #b85954, #b85488, rgb(151, 132, 246)); */
     background-color: #ffffff8a;
     border-radius: 50px;
     margin-top: 40px;
+    box-sizing: border-box;
 }
 
 .contact-banner {
@@ -309,7 +308,6 @@ button {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    /* gap: 20px; */
     width: 100%;
     background-color: #ffffff8a;
     background-color: transparent;
@@ -322,14 +320,22 @@ button {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    /* gap: 10px; */
-    /* width: 70vw; */
     width: 100%;
-    /* max-width: 800px; */
     padding: 40px;
     background-color: transparent;
-
     margin: 0;
+}
+
+@media screen and (max-width: 600px) {
+
+    .contact {
+        padding: 40px 0px;
+    }
+
+    .nf-form-content {
+        padding: 20px;
+    }
+    
 }
 
 
@@ -1087,27 +1093,8 @@ button {
     will-change: transform;
 }
 
+
 @media screen and (max-width: 600px){
-
-    .products .swiper {
-        width: 33vh;
-        height: 33vh;
-        /* right: -10vw; */
-    }
-    
-}
-
-@media screen and (max-width: 500px){
-
-    .products .swiper {
-        width: 30vh;
-        height: 30vh;
-        /* right: -5vw; */
-    }
-    
-}
-
-@media screen and (max-width: 400px){
 
     .products .swiper {
         width: 30vh;
@@ -1194,9 +1181,9 @@ button {
     gap: 20px;
     padding: 20px;
     background-color: transparent;
-    color: #303030;
+    color: #292E1E;
     width: 80vw;
-    border-bottom: #292E1E 2px solid;
+    border-bottom: #303030a9 2px solid;
 }
 
 .single-product__dropdown--head {
@@ -1360,7 +1347,7 @@ button {
     }
 
     .single-product__dropdown {
-        width: 90vw;
+        width: 85vw;
     }
 
     .thumbnail .swiper {
