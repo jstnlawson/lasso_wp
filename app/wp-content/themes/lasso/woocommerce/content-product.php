@@ -35,7 +35,7 @@ if (empty($product) || !$product->is_visible()) {
                 <span class="products-card__price"><?php echo $product->get_price_html(); ?></span>
                 <?php
                 if (!empty($product->get_short_description())) {
-                    echo '<p class="products-card__text">' . apply_filters('woocommerce_short_description', $product->get_short_description()) . '</p>';
+                    echo '<div class="products-card__text">' . apply_filters('woocommerce_short_description', $product->get_short_description()) . '</div>';
                 }
                 ?>
                 <div class="products-card__single-link--container">
@@ -51,6 +51,7 @@ if (empty($product) || !$product->is_visible()) {
                         echo '<div class="swiper-slide"><img src="' . $main_image_url . '" /></div>';
                     }
                     $attachment_ids = $product->get_gallery_image_ids();
+                    $attachment_ids = array_slice($attachment_ids, 0, 3); 
                     foreach ($attachment_ids as $attachment_id) {
                         $image_url = wp_get_attachment_url($attachment_id);
                         echo '<div class="swiper-slide"><img src="' . $image_url . '" /></div>';

@@ -34,21 +34,46 @@
 
   let scrollInProgress = false;
 
+  // const handleScroll = () => {
+  //   if (!scrollInProgress && $(window).width() > 600) {
+  //     requestAnimationFrame(() => {
+  //       applyTransform(".lasso-about__teaser", -1);
+  //       applyTransform(".products-card", -1);
+  //       applyTransform(".cubeSwiper", 2);
+  //       applyTransform(".swiper-slide__action-call", 1);
+  //       adjustOpacityOnScroll(".lasso-splash");
+  //       applyTransform(".lasso-contact__photo-container--one", -1);
+  //       applyTransform(".lasso-contact__photo-container--two", 1);
+  //       scrollInProgress = false;
+  //     });
+  //   }
+  //   scrollInProgress = true;
+  // };
+
   const handleScroll = () => {
     if (!scrollInProgress) {
+      scrollInProgress = true;
+  
       requestAnimationFrame(() => {
+        // These transformations are applied regardless of the screen width
         applyTransform(".lasso-about__teaser", -1);
-        applyTransform(".products-card", -1);
-        applyTransform(".cubeSwiper", 2);
         applyTransform(".swiper-slide__action-call", 1);
         adjustOpacityOnScroll(".lasso-splash");
         applyTransform(".lasso-contact__photo-container--one", -1);
         applyTransform(".lasso-contact__photo-container--two", 1);
+  
+        // Screen width check is specifically for these transformations
+        if ($(window).width() > 600) {
+          applyTransform(".products-card", -1);
+          applyTransform(".cubeSwiper", 2);
+        }
+  
+        // Mark the scrolling operation as completed
         scrollInProgress = false;
       });
     }
-    scrollInProgress = true;
   };
+  
 
   $(window).on("scroll", handleScroll);
 
