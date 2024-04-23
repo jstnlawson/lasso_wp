@@ -12,9 +12,13 @@ https://github.com/jstnlawson/lasso_wp/assets/121266226/b763a14f-ef26-42ce-b2fc-
 
 I wanted to find a fun way to display a product and I love the cube swiper from swiper.js. The biggest challenge was incorperating my designs with the Woo-Commerce Plugin and swiper.js.
 
-## Technology
+https://github.com/jstnlawson/lasso_wp/assets/121266226/941fd16b-6be6-49f1-8d6a-460398703e5d
 
-Uploading lasso__product-page.mov…
+
+
+
+
+## Technology
 
 
 
