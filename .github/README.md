@@ -1,6 +1,6 @@
 # Lasso Wordpress Theme
 
-A e-comm wordpress theme developed by me as a way to get more practice working with wordpress. Built with html, css, jquery, and php. All content is editable with the wordpress customiser.
+Lasso is an ecommerce wordpress theme I developed as a way to get more practice working with wordpress. Built with html, css, jquery, and php. All content is editable with the wordpress customiser.
 
 ## Homepage 
 
@@ -14,7 +14,12 @@ I wanted to find a fun way to display a product and I love the cube swiper from 
 
 https://github.com/jstnlawson/lasso_wp/assets/121266226/941fd16b-6be6-49f1-8d6a-460398703e5d
 
+## About Page
 
+Fairly boiler plate stuff here but I did enjoy making it into sort of an ecommerce parody 😆
+
+
+<img width="887" alt="lasso__about-page" src="https://github.com/jstnlawson/lasso_wp/assets/121266226/a9d2dfd3-5322-4392-8be5-e921884d3cab">
 
 
 
