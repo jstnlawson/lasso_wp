@@ -1,8 +1,10 @@
 # Lasso Wordpress Theme
 
-A e-comm wordpress theme developed by me as a way to get some practice working with wordpress.
+A e-comm wordpress theme developed by me as a way to get more practice working with wordpress. Built with html, css, jquery, and php. All content is editable with the wordpress customiser.
 
-Homepage Flow (video):
+## Homepage 
+
+I wanted to make a homepage that looks professional but not cookie cutter. I wanted it to have dynamic content and parallax effects without that disorientation feeling of objects flying all over the place. 
 
 https://github.com/jstnlawson/lasso_wp/assets/121266226/b763a14f-ef26-42ce-b2fc-ad7dc469a287
 
