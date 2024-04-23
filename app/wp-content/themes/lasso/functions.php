@@ -2,31 +2,31 @@
 
 error_log('functions.php is loaded');
 
-function gradient_enqueue_scripts_styles() {
+function lasso_enqueue_scripts_styles() {
     // Enqueue Styles
     wp_enqueue_style('dashicons');
-    wp_register_style('gradient-main-css', get_template_directory_uri() . '/assets/css/main.css');
-    wp_enqueue_style('gradient-main-css');
+    wp_register_style('lasso-main-css', get_template_directory_uri() . '/assets/css/main.css');
+    wp_enqueue_style('lasso-main-css');
     wp_enqueue_style('swiper-css', 'https://unpkg.com/swiper/swiper-bundle.min.css');
 
     // Enqueue Scripts
-    wp_enqueue_script('gradient-main-js', get_template_directory_uri() . '/assets/js/main.js', array('jquery'), null, true);
+    wp_enqueue_script('lasso-main-js', get_template_directory_uri() . '/assets/js/main.js', array('jquery'), null, true);
     wp_enqueue_script('swiper-js', 'https://unpkg.com/swiper/swiper-bundle.min.js', array(), null, true);
     wp_enqueue_script('custom-swiper-init', get_template_directory_uri() . '/assets/js/custom-swiper-init.js', array('swiper-js'), null, true);
 }
 
 // Only add the action if we're not in the admin area
 if (!is_admin()) {
-    add_action('wp_enqueue_scripts', 'gradient_enqueue_scripts_styles');
+    add_action('wp_enqueue_scripts', 'lasso_enqueue_scripts_styles');
 }
 
 
 function register_header($wp_customize)
 {
 
-    $wp_customize->add_section('gradient_header', array(
-        'title'    => __('Header Settings', 'gradient'),
-        'priority' => 30,
+    $wp_customize->add_section('lasso_header', array(
+        'title'    => __('Header Settings', 'lasso'),
+        'priority' => 1,
     ));
 
     $wp_customize->add_setting('header_title', array(
@@ -35,8 +35,8 @@ function register_header($wp_customize)
     ));
 
     $wp_customize->add_control('header_title', array(
-        'label'    => __('Header Title', 'gradient'),
-        'section'  => 'gradient_header',
+        'label'    => __('Header Title', 'lasso'),
+        'section'  => 'lasso_header',
         'type'     => 'text',
     ));
 
@@ -46,8 +46,8 @@ function register_header($wp_customize)
         'transport' => 'refresh',
     ));
     $wp_customize->add_control('about_page_link', array(
-        'label'    => __('About Page Link', 'gradient'),
-        'section'  => 'gradient_header',
+        'label'    => __('About Page Link', 'lasso'),
+        'section'  => 'lasso_header',
         'type'     => 'dropdown-pages',
     ));
 
@@ -57,19 +57,19 @@ function register_header($wp_customize)
         'transport' => 'refresh',
     ));
     $wp_customize->add_control('products_page_link', array(
-        'label'    => __('Products Page Link', 'gradient'),
-        'section'  => 'gradient_header',
+        'label'    => __('Products Page Link', 'lasso'),
+        'section'  => 'lasso_header',
         'type'     => 'dropdown-pages',
     ));
 
-    // Custom Page Link
+    // Contact Page Link
     $wp_customize->add_setting('contact_page_link', array(
         'default'   => '',
         'transport' => 'refresh',
     ));
     $wp_customize->add_control('contact_page_link', array(
-        'label'    => __('Contact Page Link', 'gradient'),
-        'section'  => 'gradient_header',
+        'label'    => __('Contact Page Link', 'lasso'),
+        'section'  => 'lasso_header',
         'type'     => 'dropdown-pages',
     ));
 
@@ -80,8 +80,8 @@ function register_header($wp_customize)
     ));
 
     $wp_customize->add_control('cart_page_link', array(
-        'label'    => __('Cart Page Link', 'gradient'),
-        'section'  => 'gradient_header',
+        'label'    => __('Cart Page Link', 'lasso'),
+        'section'  => 'lasso_header',
         'type'     => 'dropdown-pages',
     ));
 
@@ -95,8 +95,8 @@ function footer_customize_register($wp_customize)
 {
     // Add Footer Section
     $wp_customize->add_section('footer-settings-section', array(
-        'title'    => __('Footer Settings', 'gradient'),
-        'priority' => 120,
+        'title'    => __('Footer Settings', 'lasso'),
+        'priority' => 3,
     ));
 
     //Company Name and Logo
@@ -107,7 +107,7 @@ function footer_customize_register($wp_customize)
     ));
 
     $wp_customize->add_control(new WP_Customize_Image_Control($wp_customize, 'company_logo', array(
-        'label'    => __('Company Logo', 'gradient'),
+        'label'    => __('Company Logo', 'lasso'),
         'section'  => 'footer-settings-section',
         'settings' => 'company_logo',
     )));
@@ -118,7 +118,7 @@ function footer_customize_register($wp_customize)
     ));
 
     $wp_customize->add_control('company_name', array(
-        'label'    => __('Company Name', 'gradient'),
+        'label'    => __('Company Name', 'lasso'),
         'section'  => 'footer-settings-section',
         'type'     => 'text',
     ));
@@ -131,7 +131,7 @@ function footer_customize_register($wp_customize)
     ));
 
     $wp_customize->add_control('company_email', array(
-        'label'    => __('Company Email', 'gradient'),
+        'label'    => __('Company Email', 'lasso'),
         'section'  => 'footer-settings-section',
         'type'     => 'text',
     ));
@@ -142,7 +142,7 @@ function footer_customize_register($wp_customize)
     ));
 
     $wp_customize->add_control('company_street_address', array(
-        'label'    => __('Company Street Address', 'gradient'),
+        'label'    => __('Company Street Address', 'lasso'),
         'section'  => 'footer-settings-section',
         'type'     => 'text',
     ));
@@ -153,7 +153,7 @@ function footer_customize_register($wp_customize)
     ));
 
     $wp_customize->add_control('company_city', array(
-        'label'    => __('Company City', 'gradient'),
+        'label'    => __('Company City', 'lasso'),
         'section'  => 'footer-settings-section',
         'type'     => 'text',
     ));
@@ -164,7 +164,7 @@ function footer_customize_register($wp_customize)
     ));
 
     $wp_customize->add_control('company_state', array(
-        'label'    => __('Company State', 'gradient'),
+        'label'    => __('Company State', 'lasso'),
         'section'  => 'footer-settings-section',
         'type'     => 'text',
         'description' => 'Please use the two-letter abbreviation to save space.',
@@ -176,7 +176,7 @@ function footer_customize_register($wp_customize)
     ));
 
     $wp_customize->add_control('company_zip', array(
-        'label'    => __('Company Zip', 'gradient'),
+        'label'    => __('Company Zip', 'lasso'),
         'section'  => 'footer-settings-section',
         'type'     => 'text',
     ));
@@ -187,7 +187,7 @@ function footer_customize_register($wp_customize)
     ));
 
     $wp_customize->add_control('company_phone', array(
-        'label'    => __('Company Phone', 'gradient'),
+        'label'    => __('Company Phone', 'lasso'),
         'section'  => 'footer-settings-section',
         'type'     => 'text',
     ));
@@ -213,74 +213,82 @@ function footer_customize_register($wp_customize)
 
 add_action('customize_register', 'footer_customize_register');
 
+add_action('customize_register', function ($wp_customize) {
+    // Check if the panel does not already exist to avoid conflicts
+    if (!$wp_customize->get_panel('my_homepage_settings_panel')) {
+        $wp_customize->add_panel('my_homepage_settings_panel', array(
+            'title' => __('My Homepage Settings', 'lasso'),
+            'description' => __('Customize the homepage settings for my theme.', 'lasso'),
+            'priority' => 2, // Adjust priority to change the position in the Customizer
+        ));
+    }
+});
 
+function register_hero_carousel($wp_customize) {
 
-function register_splash_carousel($wp_customize) {
-    $splash_title       = get_theme_mod('splash_title');
-            $splash_text        = get_theme_mod('splash_text');
-            $splash_button_text = get_theme_mod('splash_button_text');
-
-    $wp_customize->add_section('gradient_carousel_settings', array(
-        'title'    => __('Carousel Settings', 'gradient'),
-        'priority' => 30,
+    $wp_customize->add_section('lasso_hero_settings', array(
+        'title'    => __('Homepage Hero', 'lasso'),
+        'priority' => 1,
+        'panel'    => 'my_homepage_settings_panel',
     ));
 
-    $wp_customize->add_setting('splash_title', array(
+    $wp_customize->add_setting('hero_title', array(
         'default'   => '',
         'transport' => 'refresh',
     ));
 
-    $wp_customize->add_control('splash_title', array(
-        'label'    => __('Splash Title', 'gradient'),
-        'section'  => 'gradient_carousel_settings',
+    $wp_customize->add_control('hero_title', array(
+        'label'    => __('hero Title', 'lasso'),
+        'section'  => 'lasso_hero_settings',
         'type'     => 'text',
     ));
 
-    $wp_customize->add_setting('splash_text', array(
+    $wp_customize->add_setting('hero_text', array(
         'default'   => '',
         'transport' => 'refresh',
     ));
 
-    $wp_customize->add_control('splash_text', array(
-        'label'    => __('Splash Text', 'gradient'),
-        'section'  => 'gradient_carousel_settings',
+    $wp_customize->add_control('hero_text', array(
+        'label'    => __('hero Text', 'lasso'),
+        'section'  => 'lasso_hero_settings',
         'type'     => 'textarea',
     ));
 
-    $wp_customize->add_setting('splash_button_text', array(
+    $wp_customize->add_setting('hero_button_text', array(
         'default'   => '',
         'transport' => 'refresh',
     ));
 
-    $wp_customize->add_control('splash_button_text', array(
-        'label'    => __('Splash Button Text', 'gradient'),
-        'section'  => 'gradient_carousel_settings',
+    $wp_customize->add_control('hero_button_text', array(
+        'label'    => __('hero Button Text', 'lasso'),
+        'section'  => 'lasso_hero_settings',
         'type'     => 'text',
     ));
 
     for ($i = 1; $i <= 5; $i++) { 
-        $wp_customize->add_setting("carousel_image_{$i}", array(
+        $wp_customize->add_setting("hero_image_{$i}", array(
             'default'   => '',
             'transport' => 'refresh',
         ));
 
         $wp_customize->add_control(new WP_Customize_Image_Control($wp_customize, "carousel_image_{$i}", array(
-            'label'    => sprintf(__('Carousel Image %d', 'gradient'), $i),
-            'section'  => 'gradient_carousel_settings',
-            'settings' => "carousel_image_{$i}",
+            'label'    => sprintf(__('Hero Image %d', 'lasso'), $i),
+            'section'  => 'lasso_hero_settings',
+            'settings' => "hero_image_{$i}",
         )));
     }
 }
 
-add_action('customize_register', 'register_splash_carousel');
+add_action('customize_register', 'register_hero_carousel');
 
 
 
 function register_review_carousel($wp_customize) {
 
-    $wp_customize->add_section('gradient_review_settings', array(
-        'title'    => __('Review Settings', 'gradient'),
-        'priority' => 30,
+    $wp_customize->add_section('lasso_review_settings', array(
+        'title'    => __('Homepage Reviews', 'lasso'),
+        'priority' => 2,
+        'panel'    => 'my_homepage_settings_panel',
     ));
 
     for ($i = 1; $i <= 5; $i++) {
@@ -290,8 +298,8 @@ function register_review_carousel($wp_customize) {
         ));
 
         $wp_customize->add_control("review_text_{$i}", array(
-            'label'    => sprintf(__('Review Text %d', 'gradient'), $i),
-            'section'  => 'gradient_review_settings',
+            'label'    => sprintf(__('Review Text %d', 'lasso'), $i),
+            'section'  => 'lasso_review_settings',
             'type'     => 'textarea',
         ));
 
@@ -301,8 +309,8 @@ function register_review_carousel($wp_customize) {
         ));
 
         $wp_customize->add_control("review_author_{$i}", array(
-            'label'    => sprintf(__('Review Author %d', 'gradient'), $i),
-            'section'  => 'gradient_review_settings',
+            'label'    => sprintf(__('Review Author %d', 'lasso'), $i),
+            'section'  => 'lasso_review_settings',
             'type'     => 'text',
         ));
     }
@@ -312,9 +320,10 @@ add_action('customize_register', 'register_review_carousel');
 
 function register_about_teaser ($wp_customize) {
 
-    $wp_customize->add_section('gradient_about_teaser', array(
-        'title'    => __('About Teaser Settings', 'gradient'),
-        'priority' => 30,
+    $wp_customize->add_section('lasso_about_teaser', array(
+        'title'    => __('Homepage About Teaser', 'lasso'),
+        'priority' => 3,
+        'panel'    => 'my_homepage_settings_panel',
     ));
 
     $wp_customize->add_setting('about_teaser_photo', array(
@@ -323,8 +332,8 @@ function register_about_teaser ($wp_customize) {
     ));
 
     $wp_customize->add_control(new WP_Customize_Image_Control($wp_customize, 'about_teaser_photo', array(
-        'label'    => __('About Teaser Photo', 'gradient'),
-        'section'  => 'gradient_about_teaser',
+        'label'    => __('About Teaser Photo', 'lasso'),
+        'section'  => 'lasso_about_teaser',
         'settings' => 'about_teaser_photo',
     )));
 
@@ -334,8 +343,8 @@ function register_about_teaser ($wp_customize) {
     ));
 
     $wp_customize->add_control('about_teaser_photo_alt', array(
-        'label'    => __('About Teaser Photo Alt Text', 'gradient'),
-        'section'  => 'gradient_about_teaser',
+        'label'    => __('About Teaser Photo Alt Text', 'lasso'),
+        'section'  => 'lasso_about_teaser',
         'type'     => 'text',
     ));
 
@@ -345,8 +354,8 @@ function register_about_teaser ($wp_customize) {
     ));
 
     $wp_customize->add_control('about_teaser_title', array(
-        'label'    => __('About Teaser Title', 'gradient'),
-        'section'  => 'gradient_about_teaser',
+        'label'    => __('About Teaser Title', 'lasso'),
+        'section'  => 'lasso_about_teaser',
         'type'     => 'text',
     ));
 
@@ -356,8 +365,8 @@ function register_about_teaser ($wp_customize) {
     ));
 
     $wp_customize->add_control('about_teaser_text', array(
-        'label'    => __('About Teaser Text', 'gradient'),
-        'section'  => 'gradient_about_teaser',
+        'label'    => __('About Teaser Text', 'lasso'),
+        'section'  => 'lasso_about_teaser',
         'type'     => 'textarea',
     ));
 
@@ -367,8 +376,8 @@ function register_about_teaser ($wp_customize) {
     ));
 
     $wp_customize->add_control('about_teaser_button_text', array(
-        'label'    => __('About Teaser Button Text', 'gradient'),
-        'section'  => 'gradient_about_teaser',
+        'label'    => __('About Teaser Button Text', 'lasso'),
+        'section'  => 'lasso_about_teaser',
         'type'     => 'text',
     ));
 }
@@ -377,9 +386,10 @@ add_action('customize_register', 'register_about_teaser');
 
 function register_product_teaser ($wp_customize) {
 
-    $wp_customize->add_section('gradient_product_teaser', array(
-        'title'    => __('Product Teaser Settings', 'gradient'),
-        'priority' => 30,
+    $wp_customize->add_section('lasso_product_teaser', array(
+        'title'    => __('Homepage Product Teaser', 'lasso'),
+        'priority' => 4,
+        'panel'    => 'my_homepage_settings_panel',
     ));
 
     $wp_customize->add_setting('products_teaser_title', array(
@@ -388,8 +398,8 @@ function register_product_teaser ($wp_customize) {
     ));
 
     $wp_customize->add_control('products_teaser_title', array(
-        'label'    => __('Product Teaser Title', 'gradient'),
-        'section'  => 'gradient_product_teaser',
+        'label'    => __('Product Teaser Title', 'lasso'),
+        'section'  => 'lasso_product_teaser',
         'type'     => 'text',
     ));
 
@@ -399,8 +409,8 @@ function register_product_teaser ($wp_customize) {
     ));
 
     $wp_customize->add_control('products_teaser_text', array(
-        'label'    => __('Product Teaser Text', 'gradient'),
-        'section'  => 'gradient_product_teaser',
+        'label'    => __('Product Teaser Text', 'lasso'),
+        'section'  => 'lasso_product_teaser',
         'type'     => 'textarea',
     ));
 
@@ -410,8 +420,8 @@ function register_product_teaser ($wp_customize) {
     ));
 
     $wp_customize->add_control(new WP_Customize_Image_Control($wp_customize, 'products_teaser_photo_one', array(
-        'label'    => __('Product Teaser Photo One', 'gradient'),
-        'section'  => 'gradient_product_teaser',
+        'label'    => __('Product Teaser Photo One', 'lasso'),
+        'section'  => 'lasso_product_teaser',
         'settings' => 'products_teaser_photo_one',
     )));
 
@@ -421,8 +431,8 @@ function register_product_teaser ($wp_customize) {
     ));
 
     $wp_customize->add_control(new WP_Customize_Image_Control($wp_customize, 'products_teaser_photo_two', array(
-        'label'    => __('Product Teaser Photo Two', 'gradient'),
-        'section'  => 'gradient_product_teaser',
+        'label'    => __('Product Teaser Photo Two', 'lasso'),
+        'section'  => 'lasso_product_teaser',
         'settings' => 'products_teaser_photo_two',
     )));
 
@@ -432,8 +442,8 @@ function register_product_teaser ($wp_customize) {
     ));
 
     $wp_customize->add_control(new WP_Customize_Image_Control($wp_customize, 'products_teaser_photo_three', array(
-        'label'    => __('Product Teaser Photo Three', 'gradient'),
-        'section'  => 'gradient_product_teaser',
+        'label'    => __('Product Teaser Photo Three', 'lasso'),
+        'section'  => 'lasso_product_teaser',
         'settings' => 'products_teaser_photo_three',
     )));
 
@@ -443,8 +453,8 @@ function register_product_teaser ($wp_customize) {
     ));
 
     $wp_customize->add_control('products_teaser_button_text', array(
-        'label'    => __('Product Teaser Button Text', 'gradient'),
-        'section'  => 'gradient_product_teaser',
+        'label'    => __('Product Teaser Button Text', 'lasso'),
+        'section'  => 'lasso_product_teaser',
         'type'     => 'text',
     ));
 
@@ -452,77 +462,78 @@ function register_product_teaser ($wp_customize) {
 
 add_action('customize_register', 'register_product_teaser');
 
-function register_custom_teaser ($wp_customize) {
+function register_contact_teaser ($wp_customize) {
 
-    $wp_customize->add_section('gradient_custom_teaser', array(
-        'title'    => __('custom Teaser Settings', 'gradient'),
-        'priority' => 30,
+    $wp_customize->add_section('lasso_contact_teaser', array(
+        'title'    => __('Homepage Contact Teaser', 'lasso'),
+        'priority' => 5,
+        'panel'    => 'my_homepage_settings_panel',
     ));
 
-    $wp_customize->add_setting('custom_teaser_title', array(
+    $wp_customize->add_setting('contact_teaser_title', array(
         'default'   => '',
         'transport' => 'refresh',
     ));
 
-    $wp_customize->add_control('custom_teaser_title', array(
-        'label'    => __('custom Teaser Title', 'gradient'),
-        'section'  => 'gradient_custom_teaser',
+    $wp_customize->add_control('contact_teaser_title', array(
+        'label'    => __('Contact Teaser Title', 'lasso'),
+        'section'  => 'lasso_contact_teaser',
         'type'     => 'text',
     ));
 
-    $wp_customize->add_setting('custom_teaser_text', array(
+    $wp_customize->add_setting('contact_teaser_text', array(
         'default'   => '',
         'transport' => 'refresh',
     ));
 
-    $wp_customize->add_control('custom_teaser_text', array(
-        'label'    => __('custom Teaser Text', 'gradient'),
-        'section'  => 'gradient_custom_teaser',
+    $wp_customize->add_control('contact_teaser_text', array(
+        'label'    => __('Contact Teaser Text', 'lasso'),
+        'section'  => 'lasso_contact_teaser',
         'type'     => 'textarea',
     ));
 
-    $wp_customize->add_setting('custom_teaser_button_text', array(
+    $wp_customize->add_setting('contact_teaser_button_text', array(
         'default'   => '',
         'transport' => 'refresh',
     ));
 
-    $wp_customize->add_control('custom_teaser_button_text', array(
-        'label'    => __('custom Teaser Button Text', 'gradient'),
-        'section'  => 'gradient_custom_teaser',
+    $wp_customize->add_control('contact_teaser_button_text', array(
+        'label'    => __('Contact Teaser Button Text', 'lasso'),
+        'section'  => 'lasso_contact_teaser',
         'type'     => 'text',
     ));
 
-    $wp_customize->add_setting('custom_teaser_photo_one', array(
+    $wp_customize->add_setting('contact_teaser_photo_one', array(
         'default'   => '',
         'transport' => 'refresh',
     ));
 
-    $wp_customize->add_control(new WP_Customize_Image_Control($wp_customize, 'custom_teaser_photo_one', array(
-        'label'    => __('custom Teaser Photo One', 'gradient'),
-        'section'  => 'gradient_custom_teaser',
-        'settings' => 'custom_teaser_photo_one',
+    $wp_customize->add_control(new WP_Customize_Image_Control($wp_customize, 'contact_teaser_photo_one', array(
+        'label'    => __('Contact Teaser Photo One', 'lasso'),
+        'section'  => 'lasso_contact_teaser',
+        'settings' => 'contact_teaser_photo_one',
     )));
 
-    $wp_customize->add_setting('custom_teaser_photo_two', array(
+    $wp_customize->add_setting('contact_teaser_photo_two', array(
         'default'   => '',
         'transport' => 'refresh',
     ));
 
-    $wp_customize->add_control(new WP_Customize_Image_Control($wp_customize, 'custom_teaser_photo_two', array(
-        'label'    => __('custom Teaser Photo Two', 'gradient'),
-        'section'  => 'gradient_custom_teaser',
-        'settings' => 'custom_teaser_photo_two',
+    $wp_customize->add_control(new WP_Customize_Image_Control($wp_customize, 'contact_teaser_photo_two', array(
+        'label'    => __('Contact Teaser Photo Two', 'lasso'),
+        'section'  => 'lasso_contact_teaser',
+        'settings' => 'contact_teaser_photo_two',
     )));
 }
 
-add_action('customize_register', 'register_custom_teaser');
+add_action('customize_register', 'register_contact_teaser');
 
 
 function register_about_page ($wp_customize) {
 
-    $wp_customize->add_section('gradient_about_page', array(
-        'title'    => __('About Page Settings', 'gradient'),
-        'priority' => 30,
+    $wp_customize->add_section('lasso_about_page', array(
+        'title'    => __('About Page Settings', 'lasso'),
+        'priority' => 4,
     ));
 
     $wp_customize->add_setting('about_main_photo', array(
@@ -532,8 +543,8 @@ function register_about_page ($wp_customize) {
 
     // Add control for the About Main Photo
     $wp_customize->add_control( new WP_Customize_Image_Control( $wp_customize, 'about_main_photo', array(
-        'label'    => __('About Main Photo', 'gradient'),
-        'section'  => 'gradient_about_page',
+        'label'    => __('About Main Photo', 'lasso'),
+        'section'  => 'lasso_about_page',
         'settings' => 'about_main_photo',
     )));
 
@@ -545,8 +556,8 @@ function register_about_page ($wp_customize) {
 
     // Add control for the About Main Photo Alt Text
     $wp_customize->add_control('about_main_photo_alt', array(
-        'label'    => __('About Main Photo Alt Text', 'gradient'),
-        'section'  => 'gradient_about_page',
+        'label'    => __('About Main Photo Alt Text', 'lasso'),
+        'section'  => 'lasso_about_page',
         'settings' => 'about_main_photo_alt',
         'type'     => 'text',
     ));
@@ -557,8 +568,8 @@ function register_about_page ($wp_customize) {
     ));
 
     $wp_customize->add_control('about_main_title', array(
-        'label'    => __('About Main Title', 'gradient'),
-        'section'  => 'gradient_about_page',
+        'label'    => __('About Main Title', 'lasso'),
+        'section'  => 'lasso_about_page',
         'settings' => 'about_main_title',
         'type'     => 'text',
     ));
@@ -569,8 +580,8 @@ function register_about_page ($wp_customize) {
     ));
 
     $wp_customize->add_control('about_main_text', array(
-        'label'    => __('About Main Text', 'gradient'),
-        'section'  => 'gradient_about_page',
+        'label'    => __('About Main Text', 'lasso'),
+        'section'  => 'lasso_about_page',
         'settings' => 'about_main_text',
         'type'     => 'textarea',
     ));
@@ -581,8 +592,8 @@ function register_about_page ($wp_customize) {
     ));
 
     $wp_customize->add_control( new WP_Customize_Image_Control( $wp_customize, 'about_team_photo', array(
-        'label'    => __('About Team Photo', 'gradient'),
-        'section'  => 'gradient_about_page',
+        'label'    => __('About Team Photo', 'lasso'),
+        'section'  => 'lasso_about_page',
         'settings' => 'about_team_photo',
     )));
 
@@ -592,8 +603,8 @@ function register_about_page ($wp_customize) {
     ));
 
     $wp_customize->add_control('about_team_photo_alt', array(
-        'label'    => __('About Team Photo Alt Text', 'gradient'),
-        'section'  => 'gradient_about_page',
+        'label'    => __('About Team Photo Alt Text', 'lasso'),
+        'section'  => 'lasso_about_page',
         'settings' => 'about_team_photo_alt',
         'type'     => 'text',
     ));
@@ -604,8 +615,8 @@ function register_about_page ($wp_customize) {
     ));
 
     $wp_customize->add_control('about_team_title', array(
-        'label'    => __('About Team Title', 'gradient'),
-        'section'  => 'gradient_about_page',
+        'label'    => __('About Team Title', 'lasso'),
+        'section'  => 'lasso_about_page',
         'settings' => 'about_team_title',
         'type'     => 'text',
     ));
@@ -616,8 +627,8 @@ function register_about_page ($wp_customize) {
     ));
 
     $wp_customize->add_control('about_team_text', array(
-        'label'    => __('About Team Text', 'gradient'),
-        'section'  => 'gradient_about_page',
+        'label'    => __('About Team Text', 'lasso'),
+        'section'  => 'lasso_about_page',
         'settings' => 'about_team_text',
         'type'     => 'textarea',
     ));
@@ -628,8 +639,8 @@ function register_about_page ($wp_customize) {
     ));
 
     $wp_customize->add_control( new WP_Customize_Image_Control( $wp_customize, 'about_mission_photo', array(
-        'label'    => __('About Mission Photo', 'gradient'),
-        'section'  => 'gradient_about_page',
+        'label'    => __('About Mission Photo', 'lasso'),
+        'section'  => 'lasso_about_page',
         'settings' => 'about_mission_photo',
     )));
 
@@ -639,8 +650,8 @@ function register_about_page ($wp_customize) {
     ));
 
     $wp_customize->add_control('about_mission_photo_alt', array(
-        'label'    => __('About Mission Photo Alt Text', 'gradient'),
-        'section'  => 'gradient_about_page',
+        'label'    => __('About Mission Photo Alt Text', 'lasso'),
+        'section'  => 'lasso_about_page',
         'settings' => 'about_mission_photo_alt',
         'type'     => 'text',
     ));
@@ -651,8 +662,8 @@ function register_about_page ($wp_customize) {
     ));
 
     $wp_customize->add_control('about_mission_title', array(
-        'label'    => __('About Mission Title', 'gradient'),
-        'section'  => 'gradient_about_page',
+        'label'    => __('About Mission Title', 'lasso'),
+        'section'  => 'lasso_about_page',
         'settings' => 'about_mission_title',
         'type'     => 'text',
     ));
@@ -663,8 +674,8 @@ function register_about_page ($wp_customize) {
     ));
 
     $wp_customize->add_control('about_mission_text', array(
-        'label'    => __('About Mission Text', 'gradient'),
-        'section'  => 'gradient_about_page',
+        'label'    => __('About Mission Text', 'lasso'),
+        'section'  => 'lasso_about_page',
         'settings' => 'about_mission_text',
         'type'     => 'textarea',
     ));
@@ -672,3 +683,62 @@ function register_about_page ($wp_customize) {
 }
 
 add_action('customize_register', 'register_about_page');
+
+function register_contact_page ($wp_customize) {
+    
+        $wp_customize->add_section('lasso_contact_page', array(
+            'title'    => __('Contact Page Settings', 'lasso'),
+            'priority' => 5,
+        ));
+    
+        $wp_customize->add_setting('contact_main_photo', array(
+            'default'   => '',
+            'transport' => 'refresh',
+        ));
+    
+    
+        $wp_customize->add_setting('contact_main_title', array(
+            'default'   => '',
+            'transport' => 'refresh',
+        ));
+    
+        $wp_customize->add_control('contact_main_title', array(
+            'label'    => __('Contact Main Title', 'lasso'),
+            'section'  => 'lasso_contact_page',
+            'settings' => 'contact_main_title',
+            'type'     => 'text',
+        ));
+    
+        $wp_customize->add_setting('contact_main_text', array(
+            'default'   => '',
+            'transport' => 'refresh',
+        ));
+    
+        $wp_customize->add_control('contact_main_text', array(
+            'label'    => __('Contact Main Text', 'lasso'),
+            'section'  => 'lasso_contact_page',
+            'settings' => 'contact_main_text',
+            'type'     => 'textarea',
+        ));
+    
+}
+
+add_action('customize_register', 'register_contact_page');
+
+function woocommerce_support() {
+    if (class_exists('WooCommerce')) {
+        add_filter('woocommerce_enqueue_styles', '__return_empty_array');
+    }
+    add_theme_support('woocommerce');
+}
+
+add_action('after_setup_theme', 'woocommerce_support');
+
+function custom_toast_script() {
+    // Enqueue custom script with jQuery as a dependency
+    wp_enqueue_script('custom-script', get_stylesheet_directory_uri() . '/assets/js/toast.js', array('jquery'), '1.0.0', true);
+}
+add_action('wp_enqueue_scripts', 'custom_toast_script');
+
+
+// add_filter('use_block_editor_for_post', '__return_false', 10);

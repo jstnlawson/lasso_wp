@@ -2,7 +2,8 @@
 <html <?php language_attributes(); ?>>
 
 <head>
-    <title>gradient</title>
+    <title>lasso</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta charset="<?php bloginfo('charset'); ?>">
     <?php wp_head(); ?>
 </head>
@@ -11,24 +12,24 @@
     <?php wp_body_open(); ?>
     <?php
     $header_title = get_theme_mod('header_title');
-    // Check if any of the specific page links have been set
     $about_page_link     = get_theme_mod('about_page_link');
     $products_page_link  = get_theme_mod('products_page_link');
     $contact_page_link   = get_theme_mod('contact_page_link');
     $cart_page_link      = get_theme_mod('cart_page_link');
+	$cart_count          = function_exists('WC') ? WC()->cart->get_cart_contents_count() : 0;
 
     // Determine if we should show the navigation based on whether any page links are set
     $hasPageLinks = $about_page_link || $products_page_link || $contact_page_link || $cart_page_link;
 
     if ($header_title && $hasPageLinks) : ?>
-        <div class="gradient-header">
+        <div class="lasso-header">
             <header>
-                <div class="gradient-header__title">
+                <div class="lasso-header__title">
                     <a class="home-link" href="<?php echo esc_url(home_url('/')); ?>">
                         <h1><?php echo esc_html($header_title); ?></h1>
                     </a>
                 </div>
-                <div class='gradient-nav'>
+                <div class='lasso-nav'>
                     <nav>
                         <ul>
                             <?php if ($products_page_link) : ?>
@@ -58,7 +59,7 @@
                                         <a class="cart-image" href="<?php echo esc_url(get_permalink($cart_page_link)); ?>">
                                             <img src="<?php echo esc_url(get_template_directory_uri()) . '/assets/images/commerce/cart.svg'; ?>" alt="cart">
                                             <!-- Display the number of items in the cart -->
-                                            <span><?php echo WC()->cart->get_cart_contents_count(); ?></span>
+                                            <span><?php echo $cart_count; ?></span>
                                         </a>
                                     </li>
                                 <?php endif; ?>
@@ -69,5 +70,5 @@
             </header>
         </div>
     <?php endif; ?>
-    <div class="gradient-header__spacer"></div>
-    <div class="gradient-gradient">
+    <div class="lasso-header__spacer"></div>
+    <div class="lasso-lasso">

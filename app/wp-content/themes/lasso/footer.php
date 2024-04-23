@@ -1,16 +1,16 @@
-                <footer class="gradient-footer">
+                <footer class="lasso-footer">
                     <?php
                     $company_logo = get_theme_mod('company_logo');
                     $company_name = get_theme_mod('company_name');
                     ?>
-                    <div class="gradient-footer__company">
+                    <div class="lasso-footer__company">
                     <?php if (!empty($company_logo)) : ?>
                         <span>
                             <img src="<?php echo esc_url($company_logo); ?>" alt="company logo">
                         </span>
                     <?php endif; ?>
                     <?php if (!empty($company_name)) : ?>
-                        <p class="gradient-footer__company--logo">
+                        <p class="lasso-footer__company--logo">
                             <?php echo esc_html($company_name); ?>
                         </p>
                     <?php endif; ?>
@@ -23,8 +23,8 @@
                     $company_zip    = get_theme_mod('company_zip');
                     $company_phone   = get_theme_mod('company_phone');
                     ?>
-                    <div class="gradient-footer__contact">
-                        <h4 class="gradient-footer__title">contact</h4>
+                    <div class="lasso-footer__contact">
+                        <h4 class="lasso-footer__title">contact</h4>
                         <ul>
                             <?php if (!empty($company_email)) : ?>
                             <li><?php echo esc_html($company_email) ?></li>
@@ -40,15 +40,15 @@
                             <?php endif; ?>
                         </ul>
                     </div>
-                    <div class="gradient-footer__social">
-                        <h4 class="gradient-footer__title">follow us</h4>
-                        <ul class="gradient-footer__social-icons__container">
+                    <div class="lasso-footer__social">
+                        <h4 class="lasso-footer__title">follow us</h4>
+                        <ul class="lasso-footer__social-icons__container">
                             <?php
                             $social_sites = array('Facebook' => 'facebook', 'Twitter' => 'twitter', 'Instagram' => 'instagram');
                             foreach ($social_sites as $site_name => $dashicon_slug) {
                                 $url = get_theme_mod("social_media_{$site_name}");
                                 if ($url) {
-                                    echo '<li class="gradient-footer__social-icons">';
+                                    echo '<li class="lasso-footer__social-icons">';
                                     echo "<a href='{$url}' target='_blank'><span class='dashicons dashicons-{$dashicon_slug}'></span></a>";
                                     echo '</li>';
                                 }
