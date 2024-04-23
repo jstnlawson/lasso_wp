@@ -2,7 +2,7 @@
 
 A e-comm wordpress theme developed by Justin Lawson.
 
-
+Homepage Flow (video):
 https://github.com/jstnlawson/lasso_wp/assets/121266226/b763a14f-ef26-42ce-b2fc-ad7dc469a287
 
 
