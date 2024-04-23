@@ -1,6 +1,6 @@
 # Lasso Wordpress Theme
 
-Lasso is an ecommerce wordpress theme I developed as a way to get more practice working with wordpress. Built with html, css, jquery, and php. All content is editable with the wordpress customiser.
+Lasso is an ecommerce wordpress theme. After doing some wordpress contract work I decided to builld this theme as a way to get more practice working with wordpress and php. Built with html, css, jquery, and php. All content is editable with the wordpress customiser.
 
 ## Homepage 
 
@@ -20,6 +20,12 @@ Fairly boiler plate stuff here but I did enjoy making it into sort of an ecommer
 
 
 <img width="887" alt="lasso__about-page" src="https://github.com/jstnlawson/lasso_wp/assets/121266226/a9d2dfd3-5322-4392-8be5-e921884d3cab">
+
+## Contact Page
+
+This was made using the Ninja Forms Plugin. Fairly normal contact form with the added challenge of figuring out the plugin's design system to make it work with my theme.
+
+<img width="880" alt="lasso__contact-page" src="https://github.com/jstnlawson/lasso_wp/assets/121266226/999fcecb-7ef6-472a-9bbb-f2599f9ea7e7">
 
 
 
