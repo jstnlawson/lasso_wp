@@ -8,8 +8,15 @@ I wanted to make a homepage that looks professional but not cookie cutter. I wan
 
 https://github.com/jstnlawson/lasso_wp/assets/121266226/b763a14f-ef26-42ce-b2fc-ad7dc469a287
 
+## Product Page
+
+I wanted to find a fun way to display a product and I love the cube swiper from swiper.js. The biggest challenge was incorperating my designs with the Woo-Commerce Plugin and swiper.js.
 
 ## Technology
+
+Uploading lasso__product-page.mov…
+
+
 
 **General Tooling**
 * [Docker](https://www.docker.com/)
