@@ -1,6 +1,6 @@
 # Lasso Wordpress Theme
 
-A e-comm wordpress theme developed by Justin Lawson.
+A e-comm wordpress theme developed by me as a way to get some practice working with wordpress.
 
 Homepage Flow (video):
 
